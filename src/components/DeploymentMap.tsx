@@ -268,6 +268,107 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [modalDate, setModalDate] = useState<string | null>(null);
 
+  const [tutorialStep, setTutorialStep] = useState(() => {
+    if (typeof window !== "undefined" && localStorage.getItem("map-tutorial-done")) return -1;
+    return 0;
+  });
+  const pointerRef = useRef<HTMLDivElement>(null);
+
+  const STEPS = [
+    {
+      title: "START HERE — JANUARY 16, 1968",
+      text: "San Diego. The deployment begins. Click this date in the panel to see what happened.",
+      pointerTarget: "[data-tutorial-id='panel-entry-1968-01-16']",
+      action: () => { setModalDate("1968-01-16"); setTutorialStep(1); },
+    },
+    {
+      title: "BROWSE THE DAY",
+      text: "The logbook entry, letters, photos, and audio for this day. Scroll to explore, then click Next.",
+      pointerTarget: null,
+      modal: true,
+      action: () => { setModalDate("1968-01-19"); setTutorialStep(2); },
+    },
+    {
+      title: "NAVIGATE BETWEEN DAYS",
+      text: "You jumped to January 19. Use PREV/NEXT or arrow keys to move through the deployment. Click Next to close and try another location.",
+      pointerTarget: null,
+      modal: true,
+      action: () => { setModalDate(null); setActivePopup(null); setTutorialStep(3); },
+    },
+    {
+      title: "EXPLORE THE MAP",
+      text: "Click any pin to see the days at that location. Try Da Nang — where Mike anchored and met his brother Bill.",
+      pointerTarget: ".pin-label",
+      pointerMatch: "DA NANG",
+      action: () => { setActivePopup("da-nang"); setTutorialStep(4); },
+    },
+    {
+      title: "PICK A DATE",
+      text: "The Da Nang panel lists every day at this port. Click June 13 to see that day's content.",
+      pointerTarget: "[data-tutorial-id='panel-entry-1968-06-13']",
+      action: () => { setModalDate("1968-06-13"); setTutorialStep(5); },
+    },
+    {
+      title: "YOU'VE GOT IT",
+      text: "Every pin. Every day. Every letter, tape, and logbook page. Explore freely.",
+      pointerTarget: null,
+      modal: true,
+      action: () => {
+        setTutorialStep(-1);
+        if (typeof window !== "undefined") localStorage.setItem("map-tutorial-done", "1");
+      },
+    },
+  ];
+
+  useEffect(() => {
+    if (tutorialStep < 0 || tutorialStep >= STEPS.length) return;
+    const step = STEPS[tutorialStep];
+    if (!step.pointerTarget || !pointerRef.current) return;
+
+    const findTarget = () => {
+      if ((step as any).pointerMatch) {
+        const els = document.querySelectorAll(step.pointerTarget!);
+        for (const el of els) {
+          if (el.textContent?.trim().includes((step as any).pointerMatch)) return el;
+        }
+        return null;
+      }
+      return document.querySelector(step.pointerTarget!);
+    };
+
+    const position = () => {
+      const el = findTarget();
+      if (!el || !pointerRef.current) return;
+      const rect = el.getBoundingClientRect();
+      pointerRef.current.style.display = "block";
+      pointerRef.current.style.top = `${rect.top + rect.height / 2 - 16}px`;
+      pointerRef.current.style.left = `${rect.left - 36}px`;
+    };
+
+    const timer = setTimeout(position, 200);
+    const interval = setInterval(position, 500);
+    return () => { clearTimeout(timer); clearInterval(interval); };
+  }, [tutorialStep]);
+
+  useEffect(() => {
+    if (tutorialStep < 0 || !STEPS[tutorialStep]?.pointerTarget) {
+      if (pointerRef.current) pointerRef.current.style.display = "none";
+    }
+  }, [tutorialStep]);
+
+  const dismissTutorial = () => {
+    setTutorialStep(-1);
+    if (typeof window !== "undefined") localStorage.setItem("map-tutorial-done", "1");
+  };
+
+  const resetTutorial = () => {
+    setModalDate(null);
+    setActivePopup("san-diego");
+    setSelectedDay(null);
+    setTutorialStep(0);
+    if (typeof window !== "undefined") localStorage.removeItem("map-tutorial-done");
+  };
+
   const sortedDates = useMemo(() => Object.keys(dayDetails).sort(), [dayDetails]);
 
   const dateToLocationId = useMemo(() => {
@@ -424,6 +525,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
               {activeLoc.days.map((day) => (
                 <button
                   key={day.date}
+                  data-tutorial-id={`panel-entry-${day.date}`}
                   class={`panel-entry ${day.significant ? "entry-sig" : ""} ${selectedDay === day.date ? "entry-active" : ""}`}
                   onMouseEnter={() => setSelectedDay(day.date)}
                   onClick={() => setModalDate(day.date)}
@@ -452,7 +554,34 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
         <span class="legend-item"><span class="legend-dot legend-ceremony"></span> CEREMONY</span>
         <span class="legend-item"><span class="legend-line"></span> TRACK</span>
         <span class="legend-item"><span class="legend-star">★</span> KEY EVENT</span>
+        {tutorialStep === -1 && (
+          <button class="legend-item tutorial-restart" onClick={resetTutorial} title="Replay tutorial">?</button>
+        )}
       </div>
+
+      <div ref={pointerRef} class="tutorial-pointer" style="display:none">
+        <span class="tutorial-pointer-arrow">▶</span>
+      </div>
+
+      {tutorialStep >= 0 && tutorialStep < STEPS.length && (
+        <div class={`tutorial-overlay ${(STEPS[tutorialStep] as any).modal ? "tutorial-over-modal" : ""}`}>
+          <div class="tutorial-card">
+            <div class="tutorial-step-indicator">
+              {STEPS.map((_, i) => (
+                <span key={i} class={`tutorial-dot ${i === tutorialStep ? "active" : ""} ${i < tutorialStep ? "done" : ""}`} />
+              ))}
+            </div>
+            <div class="tutorial-title">{STEPS[tutorialStep].title}</div>
+            <div class="tutorial-text">{STEPS[tutorialStep].text}</div>
+            <div class="tutorial-actions">
+              <button class="tutorial-skip" onClick={dismissTutorial}>Skip tour</button>
+              <button class="tutorial-next" onClick={STEPS[tutorialStep].action}>
+                {tutorialStep === STEPS.length - 1 ? "Start exploring" : "Next →"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Day detail modal */}
       {modalDay && (

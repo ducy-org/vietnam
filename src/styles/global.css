@@ -1769,6 +1769,188 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   font-size: 0.9rem;
 }
 
+/* Map Tutorial */
+.tutorial-pointer {
+  position: fixed;
+  z-index: 2500;
+  pointer-events: none;
+  transition: top 0.3s ease, left 0.3s ease;
+}
+
+.tutorial-pointer-arrow {
+  display: block;
+  font-size: 1.5rem;
+  color: #c4953a;
+  text-shadow: 0 0 10px rgba(196, 149, 58, 0.6);
+  animation: tutorial-bounce 1s ease-in-out infinite;
+}
+
+@keyframes tutorial-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+
+.tutorial-overlay {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+  pointer-events: none;
+}
+
+.tutorial-overlay.tutorial-over-modal {
+  position: fixed;
+  bottom: auto;
+  top: 1.5rem;
+  left: auto;
+  right: 1.5rem;
+  transform: none;
+  z-index: 2500;
+}
+
+.tutorial-card {
+  pointer-events: auto;
+  background: #0d1117;
+  border: 1px solid #c4953a;
+  padding: 1.25rem 1.5rem;
+  max-width: 380px;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0 0 30px rgba(196, 149, 58, 0.2);
+  animation: tutorial-fade 0.3s ease-out;
+}
+
+@keyframes tutorial-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tutorial-step-indicator {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.tutorial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1e2d1e;
+  border: 1px solid #3a5a3a;
+}
+
+.tutorial-dot.active {
+  background: #c4953a;
+  border-color: #c4953a;
+  box-shadow: 0 0 6px rgba(196, 149, 58, 0.5);
+}
+
+.tutorial-dot.done {
+  background: #33ff33;
+  border-color: #33ff33;
+}
+
+.tutorial-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #c4953a;
+  margin-bottom: 0.5rem;
+}
+
+.tutorial-text {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(51, 255, 51, 0.7);
+  margin-bottom: 1rem;
+}
+
+.tutorial-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tutorial-skip {
+  all: unset;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  color: rgba(51, 255, 51, 0.35);
+  letter-spacing: 0.08em;
+}
+
+.tutorial-skip:hover {
+  color: rgba(51, 255, 51, 0.6);
+}
+
+.tutorial-next {
+  all: unset;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0d1117;
+  background: #c4953a;
+  padding: 0.4rem 1rem;
+  transition: background 0.15s;
+}
+
+.tutorial-next:hover {
+  background: #d4a94e;
+}
+
+.tutorial-restart {
+  all: unset;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(51, 255, 51, 0.4);
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(51, 255, 51, 0.2);
+  border-radius: 50%;
+}
+
+.tutorial-restart:hover {
+  color: #33ff33;
+  border-color: rgba(51, 255, 51, 0.5);
+}
+
+@media (max-width: 768px) {
+  .tutorial-overlay {
+    bottom: 3rem;
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+  }
+
+  .tutorial-overlay.tutorial-over-modal {
+    top: auto;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .tutorial-card {
+    max-width: none;
+    padding: 1rem;
+  }
+
+  .tutorial-title {
+    font-size: 0.8rem;
+  }
+
+  .tutorial-text {
+    font-size: 0.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .map-container {
     height: calc(100vh - 44px - 50px);
