@@ -19,7 +19,7 @@
     "id": "guam",
     "name": "Guam",
     "lat": 13.4443,
-    "lng": -215.2063,
+    "lng": 144.7937,
     "description": "Naval Station Guam — Fuel and mail stop",
     "matchLocations": ["Guam", "Underway for Guam"]
   },
@@ -27,7 +27,7 @@
     "id": "subic-bay",
     "name": "Subic Bay",
     "lat": 14.7943,
-    "lng": -239.7478,
+    "lng": 120.2522,
     "description": "Subic Bay Naval Base, Philippines — Major logistics and liberty port",
     "matchLocations": ["Subic Bay", "Underway for Subic Bay"]
   },
@@ -35,7 +35,7 @@
     "id": "da-nang",
     "name": "Da Nang",
     "lat": 16.0544,
-    "lng": -251.7978,
+    "lng": 108.2022,
     "description": "Da Nang Harbor, South Vietnam — Anchorage and supply point",
     "matchLocations": ["Da Nang", "Underway for Da Nang"]
   },
@@ -43,7 +43,7 @@
     "id": "gulf-of-tonkin",
     "name": "Gulf of Tonkin",
     "lat": 18.5,
-    "lng": -252.0,
+    "lng": 108.0,
     "description": "SAR/AAW Station, Gulf of Tonkin — Search and Rescue operations off North Vietnam",
     "matchLocations": ["SAR Station, Gulf of Tonkin", "SAR/AAW Station, Gulf of Tonkin", "At Sea"]
   },
@@ -51,7 +51,7 @@
     "id": "hong-kong",
     "name": "Hong Kong",
     "lat": 22.2783,
-    "lng": -245.8253,
+    "lng": 114.1747,
     "description": "Hong Kong — R&R liberty port",
     "matchLocations": ["Hong Kong", "Underway for Hong Kong"]
   },
@@ -59,7 +59,7 @@
     "id": "yokosuka",
     "name": "Yokosuka",
     "lat": 35.2836,
-    "lng": -220.3300,
+    "lng": 139.6700,
     "description": "Yokosuka Naval Base, Japan — Port call, liberty in Tokyo",
     "matchLocations": ["Yokosuka", "In Port"]
   },
@@ -67,7 +67,7 @@
     "id": "equator-dateline",
     "name": "Equator / Date Line",
     "lat": 0.0,
-    "lng": -180.0,
+    "lng": 180.0,
     "description": "King Neptune's Court — Shellback initiation at the Equator (144th Meridian) and International Date Line crossing, 10 Jul 1968",
     "matchLocations": ["__equator_dateline__"]
   }

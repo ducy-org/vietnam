@@ -54,7 +54,9 @@ const locations = locationDefs.map((loc: any) => {
 
   for (const month of timelineData.months) {
     for (const day of month.days) {
-      if (day.location && loc.matchLocations.includes(day.location)) {
+      // Jan 16: departed San Diego (not Pearl Harbor). Jul 18: arrived San Diego.
+      const dayLoc = day.date === "1968-01-16" || day.date === "1968-07-18" ? "San Diego" : day.location;
+      if (dayLoc && loc.matchLocations.some((ml: string) => ml.toLowerCase() === dayLoc.toLowerCase())) {
         // Jul 10 equator/dateline crossing belongs on the equator pin, not Pearl Harbor
         if (day.date === "1968-07-10" && loc.id === "pearl-harbor") continue;
 
