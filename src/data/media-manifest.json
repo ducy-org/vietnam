@@ -7901,15 +7901,18 @@
     {
       "original": "Cruise Book - 1968/pg106-107.jpg",
       "web_path": "/media/cruisebook/pg106-107.jpg",
-      "date": "1968-06-04",
+      "date": "1968-06-19",
       "description": "pg106-107",
+      "also_dates": [
+        "1968-04-28"
+      ],
       "thumb_path": "/media/cruisebook/thumbs/pg106-107.jpg",
       "category": "cruisebook"
     },
     {
       "original": "Cruise Book - 1968/pg108-109.jpg",
       "web_path": "/media/cruisebook/pg108-109.jpg",
-      "date": "1968-06-19",
+      "date": "1968-05-07",
       "description": "pg108-109",
       "thumb_path": "/media/cruisebook/thumbs/pg108-109.jpg",
       "category": "cruisebook"
@@ -7917,8 +7920,11 @@
     {
       "original": "Cruise Book - 1968/pg110-111.jpg",
       "web_path": "/media/cruisebook/pg110-111.jpg",
-      "date": "1968-06-11",
+      "date": "1968-06-04",
       "description": "pg110-111",
+      "also_dates": [
+        "1968-05-08"
+      ],
       "thumb_path": "/media/cruisebook/thumbs/pg110-111.jpg",
       "category": "cruisebook"
     },
