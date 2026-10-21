@@ -13,6 +13,10 @@ const allTranscripts: Record<string, any[]> = transcriptsRaw as any;
 const mapTranscripts: Record<string, any[]> = transcriptsRaw as any;
 const locationDefs: any[] = locationsRaw;
 const manifest: any = manifestRaw;
+const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
+function m(path: string | undefined): string | undefined {
+  return path ? MEDIA_URL + path : path;
+}
 
 function flattenCategory(data: any): any[] {
   if (Array.isArray(data)) return data;
@@ -210,8 +214,8 @@ for (const cat of ["photos", "letters", "documents", "video", "slides", "cruiseb
   for (const item of flattenCategory(manifest[cat])) {
     if (!item.date || item.date.length < 10) continue;
     const entry: MediaEntry = {
-      src: item.web_path,
-      thumb: item.thumb_path,
+      src: m(item.web_path)!,
+      thumb: m(item.thumb_path),
       caption: item.description + (item.subcategory ? ` — ${item.subcategory}` : ""),
       type: cat === "video" ? "video" : "image",
     };
@@ -222,7 +226,7 @@ for (const cat of ["photos", "letters", "documents", "video", "slides", "cruiseb
 for (const item of flattenCategory(manifest.audio)) {
   if (!item.date || item.date.length < 10) continue;
   const entry: MediaEntry = {
-    src: item.web_path,
+    src: m(item.web_path)!,
     caption: item.description,
     type: "video" as const,
     who: item.who,

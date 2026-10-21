@@ -5,6 +5,10 @@ import "../styles/global.css";
 import manifestRaw from "../data/media-manifest.json";
 
 const manifest: any = manifestRaw;
+const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
+function m(path: string | undefined): string | undefined {
+  return path ? MEDIA_URL + path : path;
+}
 const raw: any[] = manifest.cruisebook || [];
 
 function parsePageNum(desc: string): { sort: number; label: string; pageNumbers: string } {
@@ -36,8 +40,8 @@ function parsePageNum(desc: string): { sort: number; label: string; pageNumbers:
 const pages = raw.map((item: any) => {
   const parsed = parsePageNum(item.description);
   return {
-    src: item.web_path,
-    thumb: item.thumb_path || item.web_path,
+    src: m(item.web_path)!,
+    thumb: m(item.thumb_path || item.web_path)!,
     label: parsed.label,
     pageNumbers: parsed.pageNumbers,
     sort: parsed.sort,

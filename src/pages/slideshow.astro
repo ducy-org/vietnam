@@ -4,7 +4,16 @@ import Slideshow from "../components/Slideshow.tsx";
 import "../styles/global.css";
 import slideshowsRaw from "../data/slideshows.json";
 
-const slideshows: any[] = slideshowsRaw as any;
+const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
+const slideshows: any[] = (slideshowsRaw as any[]).map((show: any) => ({
+  ...show,
+  audio: show.audio ? MEDIA_URL + show.audio : show.audio,
+  slides: show.slides?.map((s: any) => ({
+    ...s,
+    src: MEDIA_URL + s.src,
+    thumb: s.thumb ? MEDIA_URL + s.thumb : s.thumb,
+  })),
+}));
 ---
 
 <Layout title="Mike's Slideshows — Letters Home">
