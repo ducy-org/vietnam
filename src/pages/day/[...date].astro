@@ -6,12 +6,10 @@ import "../../styles/global.css";
 import timelineRaw from "../../data/timeline.json";
 import manifestRaw from "../../data/media-manifest.json";
 import transcriptsRaw from "../../data/transcripts.json";
-import logbookTranscriptsRaw from "../../data/logbook-transcripts.json";
 
 const timelineData: any = timelineRaw;
 const manifest: any = manifestRaw;
 const allTranscripts: Record<string, any[]> = transcriptsRaw as any;
-const logbookTranscripts: Record<string, any> = logbookTranscriptsRaw as any;
 
 export async function getStaticPaths() {
   const data: any = (await import("../../data/timeline.json")).default;
@@ -255,19 +253,6 @@ function getBadges(date: string): string[] {
           </div>
         )}
 
-        {logbookTranscripts[day.date] && (
-          <details open class="letter-transcript letter-mike">
-            <summary class="letter-header">
-              <span class="letter-from">Logbook Transcription</span>
-              <span class="letter-desc">FTG3 Mike Ducy's handwritten log</span>
-            </summary>
-            <div class="letter-body logbook-transcript-body">
-              {logbookTranscripts[day.date].text.split('\n').map((line: string) => (
-                line.trim() === '' ? <br /> : <p>{line}</p>
-              ))}
-            </div>
-          </details>
-        )}
 
         {day.quotes?.length > 0 && day.quotes.map((q: string) => (
           <div class={q.startsWith("Context:") || q.startsWith("Meanwhile") ? "context-block" : "quote-block"}>

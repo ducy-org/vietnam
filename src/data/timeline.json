@@ -14,13 +14,13 @@
           "day_number": 0,
           "day_of_week": "Tue",
           "entries": [
-            "1000 — Underway for Pearl Harbor from Naval Station San Diego. Condition III set. Steaming with USS Preble (DLG-15). COMDESRON ONE and COMCRUDESPAC Band embarked."
+            "1000 — Underway for Pearl Harbor from Nav Station San Diego, Calif. Condition III Set. Steaming with USS. Preble (DLG-15). ComDesRon One Embarked. ComCruDesPac Band. Embarked. 1000 — Underway for Pearl Harbor from Nav Station San Diego, Calif. Condition III Set. Steaming with USS. Preble (DLG-15). ComDesRon One Embarked. ComCruDesPac Band. Embarked."
           ],
           "sources": [
             "Logbook"
           ],
-          "significant": true,
-          "location": "San Diego",
+          "significant": false,
+          "location": "Underway for Pearl Harbor",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -30,7 +30,7 @@
           "day_number": 1,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Pearl Harbor. Condition III set."
+            "Underway for Pearl Harbor. Condition III Set."
           ],
           "sources": [
             "Logbook"
@@ -46,7 +46,7 @@
           "day_number": 2,
           "day_of_week": "Thu",
           "entries": [
-            "Underway for Pearl Harbor. Condition III set."
+            "Underway for Pearl Harbor. Condition III Set."
           ],
           "sources": [
             "Logbook"
@@ -62,7 +62,7 @@
           "day_number": 3,
           "day_of_week": "Fri",
           "entries": [
-            "Underway for Pearl Harbor. Rough seas encountered. Conduct approaches with USS Preble."
+            "Underway for Pearl Harbor. Condition III Set. Rough Seas Encountered. Conduct Approaches with. USS Preble."
           ],
           "sources": [
             "Logbook"
@@ -78,14 +78,17 @@
           "day_number": 4,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Pearl Harbor. Conduct approaches and gunnery shore bomb exercises with Preble."
+            "Underway for Pearl Harbor. Condition III Set. Conduct Approaches with Preble. Conduct Gunnery Shore Bomb. Exercises with Preble."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "Underway for Pearl Harbor",
-          "quotes": [],
+          "quotes": [
+            "From the Jan 19 Familygram: \"Tuesday, January 16th, was a warm, clear day in San Diego, but a number of eyes were moist as the long blast on JOUETT's whistle signified that she was backing away from pier No. 2... As JOUETT nosed her way out the channel, the pier thronged with families, the city of San Diego, and finally Point Loma disappeared in the mist as we proceeded west to new adventures and service to our country.\" [Familygram]",
+            "From Mike's letter, 21 Jan 1968: \"I got back to the ship about 5 PM last Tuesday. Bill called us at Georgia Mae's about 10 Monday evening... I stopped at Oceanside on the way back to San Diego and saw him for an hour or so. That was a long night but since it was the last time I'd see anyone I knew, it was worth it.\" [Letter]"
+          ],
           "photos": [
             {
               "description": "USS Preble (DLG-15) underway, steaming companion to Jouett.",
@@ -99,13 +102,13 @@
           "day_number": 5,
           "day_of_week": "Sun",
           "entries": [
-            "Arrive Hawaiian Islands. Shore bomb shoot at Kahoolawe Island. 1800 — Arrive and moor Pearl Harbor. Pay Day #62. Liberty on base, then into Honolulu, Hotel Street. Received mail for first time since leaving states."
+            "Underway for Pearl Harbor. Arrive Hawaiian Islands. Shore Bomb Shoot at Kahoolawe. Island. 1800 — Arrive and Moor Pearl Harbor. Pay Day - $62. Liberty on Base Then into. Honolulu, Hotel Street. Received Mail for First Time. Since Leaving States."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Pearl Harbor",
+          "location": "Underway for Pearl Harbor",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -115,7 +118,7 @@
           "day_number": 6,
           "day_of_week": "Mon",
           "entries": [
-            "In port Pearl Harbor. Liberty — Waikiki Beach, International Market Place."
+            "Inport Pearl Harbor. Liberty- Waikiki Beach, Inter- national Market Place."
           ],
           "sources": [
             "Logbook"
@@ -131,7 +134,7 @@
           "day_number": 7,
           "day_of_week": "Tue",
           "entries": [
-            "In port Pearl Harbor. Liberty — Waikiki Beach, International Market Place."
+            "Inport Pearl Harbor. Liberty- Waikiki Beach, International Market Place."
           ],
           "sources": [
             "Logbook"
@@ -147,14 +150,18 @@
           "day_number": 8,
           "day_of_week": "Wed",
           "entries": [
-            "In port Pearl Harbor. Duty."
+            "In Port Pearl Harbor. Duty."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "Pearl Harbor",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 21 Jan 1968: \"We have a calendar back here in the gun control room that we are keeping track of the days on. We figure the longest the cruise could last is 190 days (July 30). That seems like a long time but some day we will be able to look back on all the days as a lot of new experiences for most of us.\" [Letter]",
+            "Context: On 23 January 1968, USS Pueblo (AGER-2) was seized by North Korean forces in the Sea of Japan. One sailor (Fireman Duane D. Hodges) was killed; the 82 surviving crew were imprisoned and tortured for 11 months. The U.S. Navy responded with Operation Formation Star — the largest naval buildup around the Korean Peninsula since the Korean War — placing enormous strain on the Seventh Fleet just as it would be needed for the Tet Offensive. Jouett was in Pearl Harbor at the time.",
+            "From the Feb 18 Familygram: \"On January 21, the green mountains of the island of Oahu welcomed us into Pearl Harbor. A visit to this Naval Base is a visit into history... Directly across from our berth stood the impressive Arizona Memorial, built on the sunken battleship, that is still a tomb to a thousand men, and still bleeds oil occasionally into the placid harbor.\" [Familygram]"
+          ],
           "photos": [
             {
               "description": "Pearl Harbor; USS Arizona Memorial (2 photos).",
@@ -176,7 +183,7 @@
           "day_number": 9,
           "day_of_week": "Thu",
           "entries": [
-            "0700 — Depart Pearl Harbor, underway for Guam. ASW ops off Oahu with USS Flasher (SS-). Depart area for Guam with USS Preble (DLG-15) and USS Hull (DD-945)."
+            "0700 — Depart Pearl Harbor, Underway for Guam. ASW Ops off Oahu with. USS Flasher (SS-  ). Depart Area for Guam with. USS Preble (DLG-15) and. USS Hull (DD-945). Condition III Set."
           ],
           "sources": [
             "Logbook"
@@ -192,7 +199,7 @@
           "day_number": 10,
           "day_of_week": "Fri",
           "entries": [
-            "Underway for Guam. Approaches and shore bomb exercises with Hull and Preble."
+            "Underway for Guam. Condition III Set. Approaches with Hull and. Preble. Conduct Shore Bomb Exercises. with Same Two Ships."
           ],
           "sources": [
             "Logbook"
@@ -208,7 +215,7 @@
           "day_number": 11,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Guam. Highline Commodore Emerson and DESRON ONE staff aboard from Hull to Jouett — \"A JOUETT FIRST!\""
+            "Underway for Guam. Condition III Set. Highline Commodore Emerson. and Des Ron One Staff. Aboard from Hull to Jouett A Jouett First!."
           ],
           "sources": [
             "Logbook"
@@ -224,7 +231,7 @@
           "day_number": 12,
           "day_of_week": "Sun",
           "entries": [
-            "Steaming for Guam. Refuel from USS Cacapon (AO-52). Holiday routine. \"Started mustache.\""
+            "Steaming for Guam. Condition III Set. Conduct Approaches with Hull. and Preble. 1300 — Refuel from USS Cacapon (AO-52). Holiday Routine Observed. Started Mustache."
           ],
           "sources": [
             "Logbook"
@@ -240,7 +247,7 @@
           "day_number": 13,
           "day_of_week": "Mon",
           "entries": [
-            "Crossed International Date Line — skipped this day."
+            "Crossed International. Date Line - Skipped This. Day."
           ],
           "sources": [
             "Logbook"
@@ -256,7 +263,7 @@
           "day_number": 14,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Guam. Approaches with Hull and Preble. Moved to Mk 51 GFCS for cleaning & maintenance on 03 level."
+            "Underway for Guam. Condition III Set. Approaches with Hull and. Preble. Moved to MK 51 GFCS for. Cleaning & Maint. on 03 Level."
           ],
           "sources": [
             "Logbook"
@@ -272,7 +279,7 @@
           "day_number": 15,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Guam. Exercises with Hull & Preble. Passed north of Wake Island — unable to see it due to poor visibility, over 20 miles."
+            "Underway for Guam. Condition III Set. Exercises with Hull & Preble. Passed North of Wake Is. Unable to See It Because. of Poor Visibility, Over 20 Mi."
           ],
           "sources": [
             "Logbook"
@@ -280,6 +287,7 @@
           "significant": false,
           "location": "Underway for Guam",
           "quotes": [
+            "USS Jouett Evening News, 26 January 1968: \"TWO MOVES WERE MADE THURSDAY BY THE UNITED STATES IN CONNECTION WITH THE NORTH KOREAN CRISIS. NEARLY FIFTEEN THOUSAND RESERVE AIRMEN HAVE BEEN CALLED UP...\" The ship's teletype news carried the Pueblo crisis and called-up reserves while Jouett transited the Pacific. [Evening News]",
             "Context: The Tet Offensive began on January 30–31, 1968 — the largest coordinated offensive by NVA/Viet Cong forces during the entire war, with simultaneous attacks across South Vietnam. U.S. intelligence had completely failed to predict it. Mike's brother Bill Ducy (USMC) arrived at Da Nang on January 30 (per his letter). Jouett was still in transit, crossing the Pacific into what would become the most dangerous period of the Vietnam War."
           ],
           "photos": [
@@ -301,7 +309,7 @@
           "day_number": 16,
           "day_of_week": "Thu",
           "entries": [
-            "Underway for Guam. Approaches with Hull & Preble."
+            "Underway for Guam. Condition III Set. Approaches with Hull & Preble."
           ],
           "sources": [
             "Logbook"
@@ -317,7 +325,7 @@
           "day_number": 17,
           "day_of_week": "Fri",
           "entries": [
-            "Steaming for Guam. Approached steamer from New York and resumed course. \"Bill arrives Da Nang\" — Mike's brother Bill Ducy (USMC) arrives in Vietnam."
+            "Steaming for Guam. Condition III Set. Approached Steamer from. New York and Resumed Course. Bill Arrives Da Nang."
           ],
           "sources": [
             "Logbook"
@@ -333,7 +341,7 @@
           "day_number": 18,
           "day_of_week": "Sat",
           "entries": [
-            "0830 — Arrive Guam for fuel and mail. \"Saw Bill given aboard USS Blanco County (LST-344).\" Went to EM Club and Navy Exchange. 1900 — Depart Guam. Observed Russian trawler off Guam snooping on military movements in area."
+            "0830 — Arrive Guam for Fuel and Mail. Saw Bill Given Aboard. USS Blanco County (LST 344). Went to E.M. Club and. Navy Exchange. 1800 — Depart Guam, Observed Russian Trawler off Guam Snooping on Military Movements in Area."
           ],
           "sources": [
             "Logbook"
@@ -349,7 +357,7 @@
           "day_number": 19,
           "day_of_week": "Sun",
           "entries": [
-            "Underway for Subic Bay, Philippines. Holiday routine. Entertainment on helo deck by CRUDESPAC Band and crew."
+            "Underway for Subic Bay, Philippines. Condition III Set. Holiday Routine. Entertainment in Afternoon. on Helo Deck by CruDesPac. Band and Crew."
           ],
           "sources": [
             "Logbook"
@@ -365,7 +373,7 @@
           "day_number": 20,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Subic Bay."
+            "Underway for Subic Bay. Condition III Set."
           ],
           "sources": [
             "Logbook"
@@ -381,7 +389,7 @@
           "day_number": 21,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Subic Bay. 1100 — Sighted first Philippine island. 1800 — Entered San Bernardino Straits."
+            "Underway for Subic Bay. Condition III Set. 1100 — Sighted First Philippine Island. 1800 — Entered San Bernadino Straits."
           ],
           "sources": [
             "Logbook"
@@ -397,14 +405,18 @@
           "day_number": 22,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Subic Bay. \"Passage beautiful.\" Pay Day #115. 1600 — Arrive Subic Bay, moor starboard side to USS Newport News (CA-148). Base liberty, EM Club."
+            "Underway for Subic Bay. Condition III Set. Passage Beautiful. Pay Day $115. 1600 — Arrive Subic Bay Moor Starboard Side to USS Newport News (CA-148). Base Liberty, E.M. Club."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "Underway for Subic Bay",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 2 Feb 1968: \"By all means keep up the prayers for Bill and me, because there is no safe place when you are in the combat zone. We figure to draw combat pay 5 months of the 6 so you know we will see some action.\" [Letter]",
+            "From Mike's letter, 4 Feb 1968: \"Last week the captian was talking to the crew. One of the first things he said was, 'No one is going to take the Jouett into port.' We will be operating off of N. Viet Nam but from what this buddy told me there isn't really that much action at sea.\" [Letter]",
+            "From Mike's letter, 4 Feb 1968: \"I got a letter from Bill yesterday and he said he was to leave for Nam at 0930 on the 30th of Jan.\" [Letter]"
+          ],
           "photos": [
             {
               "description": "Guam — entering Guam (2 photos); captured German U-boat; floating dry dock; LST-344 (Bill Ducy's ship to Vietnam); USS Jouett moored in Guam.",
@@ -430,7 +442,7 @@
           "day_number": 23,
           "day_of_week": "Thu",
           "entries": [
-            "In port Subic Bay. Duty."
+            "23. THURS. 8 FEB., 1968. INPORT SUBIC BAY, P.I. DUTY."
           ],
           "sources": [
             "Logbook"
@@ -446,7 +458,7 @@
           "day_number": 24,
           "day_of_week": "Fri",
           "entries": [
-            "In port Subic Bay. Drove division personnel to ammo magazine — unsuccessful in obtaining ammo but \"it was a good working party.\" Base liberty, EM Club."
+            "24. FRI. 9 FEB., 1968. INPORT SUBIC BAY, P.I. DROVE DIVISION PERSONELL TO. AMMO MAGAZINE, UNSUCCESSFUL. IN OBTAINING AMMO, BUT IT WAS. A GOOD WORKING PARTY. BASE LIBERTY - E.M. CLUB."
           ],
           "sources": [
             "Logbook"
@@ -462,7 +474,7 @@
           "day_number": 25,
           "day_of_week": "Sat",
           "entries": [
-            "In port Subic Bay. Received 81mm mortar aboard for jamming radar-guided missiles. Base liberty. Sent home $130.00."
+            "25. SAT. 10 FEB., 1968. IN PORT SUBIC BAY. RECIEVED 81 MM MORTAR. ABOARD FOR JAMMING RADAR. GUIDED MISSLES. BASE LIBERTY - EM CLUB. SENT HOME - $130.00."
           ],
           "sources": [
             "Logbook"
@@ -478,7 +490,7 @@
           "day_number": 26,
           "day_of_week": "Sun",
           "entries": [
-            "In port Subic Bay. Duty. 0730–2000 — Supervised installation of 81mm mortar by yard personnel."
+            "26. SUN. 11 FEB., 1968. IN PORT SUBIC BAY. DUTY. 0730 — 2000- SUPERVISED INSTALL-ATION OF 81MM MORTAR BY YARD PERSONELL."
           ],
           "sources": [
             "Logbook"
@@ -494,7 +506,7 @@
           "day_number": 27,
           "day_of_week": "Mon",
           "entries": [
-            "In port Subic Bay. 0730 — Underway for gunnery shoots, very successful. 1500 — Anchor in Subic Bay, no liberty! Lincoln's Birthday."
+            "27. MON. 12 FEB., 1968. IN PORT SUBIC BAY. 0730 — UNDERWAY FOR GUNNERY SHOOTS, VERY SUCCESSFUL. 1500 — ANCHOR IN SUBIC BAY, NO LIBERTY! LINCOLN'S BIRTHDAY."
           ],
           "sources": [
             "Logbook"
@@ -510,14 +522,16 @@
           "day_number": 28,
           "day_of_week": "Tue",
           "entries": [
-            "0530 — Underway for missile shoots. Shot two missiles, then set course for Da Nang, South Vietnam. Took SAR helo aboard. Steaming with USS Sutherland (DD-743). Free mail goes into effect."
+            "28. TUES. 13 FEB., 1968. 0530 — UNDERWAY FOR MISSLE. SHOOTS, SHOT TWO MISSLES. THEN SET COURSE FOR. DA NANG S. VIET NAM. TOOK SAR HELO ABOARD. STEAMING WITH USS SUTHERLAND. (DD-743). FREE MAIL GOES INTO EFFECT. CONDITION III SET."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "Da Nang",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 9 Feb 1968: \"This afternoon I took some of the guys from the division to pick up some machine-gun ammunition in the pick up truck. As is usual we didn't get it because of a lack of proper authorization on the part of the ship... No one really knows for sure what ships we will join when we leave here. One thing is for sure, we'll be in the combat zone at last.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -526,13 +540,13 @@
           "day_number": 29,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Da Nang. Overcast and rainy. Helicopter almost hit water when cargo door opened causing damage — landed back aboard safely. Fired 81mm mortar. Observed tropical working hours for first time. Valentine's Day."
+            "29. WED. 14 FEB., 1968. UNDERWAY FOR DA NANG. CONDITION III SET. OVERCAST AND RAINY. HELICOPTER ALMOSET HIT. WATER WHEN CARGO DOOR. OPENED CAUSING DAMAGE, LANDED. BACK ABOARD SAFELY. FIRED 81MM MORTAR. OBSERVED TROPICAL WORKING. HOURS FOR FIRST TIME. VALENTINE'S DAY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Da Nang",
+          "location": "Underway for DA NANG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -542,13 +556,13 @@
           "day_number": 30,
           "day_of_week": "Thu",
           "entries": [
-            "Underway for Da Nang. Entered Vietnamese waters early in the morning. 0810 — Anchor in Da Nang Harbor. Have M-1 rifles at hand in topside working spaces. Observed large amount of air traffic over bay."
+            "30. THURS 15 FEB., 1968. UNDERWAY FOR DA NANG. CONDITION III SET. ENTERED VIETNAMESE WATERS. EARLY IN THE MORNING. 0810 — ANCHOR IN DA NANG HARBOR. HAVE M-1 RIFLES AT HAND. IN TOPSIDE WORKING SPACES. OBSERVED LARGE AMOUNT OF. AIR TRAFFIC OVER BAY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Da Nang",
+          "location": "Underway for DA NANG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -558,7 +572,7 @@
           "day_number": 31,
           "day_of_week": "Fri",
           "entries": [
-            "Anchored in Da Nang. Stood 0600–0800 sentry with BAR. Cloudy, overcast, cool. 1420 — Underway for South SAR station. Conduct exercises with USAF \"Jolly Greens.\""
+            "31. FRI. 16 FEB., 1968. ANCHORED IN DA NANG. STOOD 0600-0800 SENTRY WITH BAR. CLOUDY, OVERCAST, COOL. 1420 — UNDERWAY FOR S. SAR STATION CONDITION III SET CONDUCT EXERCISES WITH USAF \"JOLLY GREEN'S\"."
           ],
           "sources": [
             "Logbook"
@@ -574,7 +588,7 @@
           "day_number": 32,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, underway for South SAR station. Conduct exercises with helos. Refuel from USS Hassayampa (AO-145). 2200 — Relieve USS King (DLG-10) on South SAR station. Load 90 rounds 81mm mortar ammo."
+            "32. SAT. 17 FEB., 1968. AT SEA, UNDERWAY FOR S. SAR. STATION. CONDITION III SET. CONDUCT EXERCISES WITH HELOS. REFUEL FROM USS HASAYAMPA. (AO-145). CLOUDY, RAINY, COOL. 2200 — RELIEVE USS KING (DLG-10). ON S. SAR STATION. LOAD 90 ROUNDS 81 MM. MORTAR AMMO."
           ],
           "sources": [
             "Logbook"
@@ -590,12 +604,12 @@
           "day_number": 33,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Holiday routine. Cloudy, rainy, cool. 1315 — Mail brought aboard by helo."
+            "33. SUN. 18 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. HOLIDAY ROUTINE. CLOUDY, RAINY, COOL. 1315 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
           ],
-          "significant": true,
+          "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
           "quotes": [],
           "photos": [],
@@ -606,7 +620,7 @@
           "day_number": 34,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Cloudy, rainy, cool."
+            "34. MON. 19 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAINY, COOL."
           ],
           "sources": [
             "Logbook"
@@ -622,7 +636,7 @@
           "day_number": 35,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Cloudy, rainy, cool. 1500 — Mail brought aboard by helo."
+            "35. TUES. 20 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAINY, COOL. 1500 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -638,14 +652,19 @@
           "day_number": 36,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Cloudy, rainy, cool. 2030 — Refuel from USS Neches (AO-47)."
+            "36. WED. 21 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAINY, COOL. 2030 — REFUEL FROM USS. NECHES (AO-47)."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 18 Feb 1968 — FIRST LETTER FROM THE COMBAT ZONE: \"While we were anchored there I had an M-1 rifle and a clip of cartridges by my side during the day while I was topside working. When they say there are about 500 air strikes a day you better believe it. With all the air traffic a person might think he was at O'Hare or some other large airport. We could hear some shooting in the hills but we were in a safe place (I think).\" [Letter]",
+            "From Mike's letter, 18 Feb 1968: \"I have been keeping a day to day log of the days on the cruise. By the time we get back to the states I'll have a good summary of what and where we went.\" — This is the logbook that forms the backbone of this timeline. [Letter]",
+            "From Mike's letter, 18 Feb 1968: \"Everyone looks at this from a serious view and thats the way it should be. I often wonder about Bill, knowing he is close around here somewhere. I know he is going to have some hard times in the year he is over here and I also pray that he can make it okay. As for myself I can think of no better way and safer way to get in the combat duty and extra $65 a month than to be right here where I'm at.\" [Letter]",
+            "From the Feb 18 Familygram: \"Since that morning when we cast off all lines and slowly moved away from Pier Two in San Diego, we have cruised almost 8,000 miles.\" [Familygram]"
+          ],
           "photos": [
             {
               "description": "Da Nang Harbor — harbor view; LST in Da Nang Harbor; Monkey Mountain from Da Nang Harbor; USS Repose (hospital ship) in Da Nang Harbor.",
@@ -665,7 +684,7 @@
           "day_number": 37,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Cloudy, cool. 1630 — Mail by helo. Pay Day — leave $167 on books."
+            "37. THURS. 22 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL. 1630 — MAIL BROUGHT ABOARD. BY HELO. PAY DAY - LEAVE $167 ON BOOKS."
           ],
           "sources": [
             "Logbook"
@@ -681,7 +700,7 @@
           "day_number": 38,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Cloudy, cool."
+            "38. FRI. 23 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL."
           ],
           "sources": [
             "Logbook"
@@ -697,7 +716,7 @@
           "day_number": 39,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Cloudy, cool. 1800 — Mail by helo."
+            "39. SAT. 24 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL. 1800 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -713,7 +732,7 @@
           "day_number": 40,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Cloudy, rainy, cool. Holiday routine. 2130 — Conduct hi-line with USS Halsey (DLG-23)."
+            "40. SUN. 25 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAINY, COOL. OBSERVE HOLIDAY ROUTINE. 2130 — CONDUCT HI-LINE WITH. USS HALSEY (DLG-23)."
           ],
           "sources": [
             "Logbook"
@@ -729,7 +748,7 @@
           "day_number": 41,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Cloudy, cold. 1730 — Mail by helo."
+            "41. MON. 26 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COLD. 1730 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -745,7 +764,7 @@
           "day_number": 42,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. 1730 — GENERAL QUARTERS: MIG closes to 60 miles. No action taken. 2030 — Refuel from USS Tolovana (AO-64), 110,000 gallons. Mail brought aboard. 2200 — Replenish with USS Zelima (AF-49), 8 tons — \"A JOUETT FIRST!\""
+            "42. TUES. 27 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY COOL. 1730 — GENERAL QUARTERS, MIG. CLOSES TO 60 MILES. NO ACTION TAKEN. 2030 — REFUEL FROM USS. TOLOVANA (AO-64) 110,000 GAL. MAIL BROUGHT ABOARD. 2200 — REPLENISH WITH USS ZELIMA (AF-49) 8 TONS A JOUETT FIRST!"
           ],
           "sources": [
             "Logbook"
@@ -761,7 +780,7 @@
           "day_number": 43,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. 1630 — Mail by helo. 1630 — Jouett's first radio newscast."
+            "43. WED. 28 FEB., 1968. AT SEA, SAR STATION. CONDITION III SET. COOL, CLOUDY. 1630 — MAIL BROUGHT ABOARD. BY HELO. 1630 — JOUETT'S FIRST RADIO. NEWSCAST."
           ],
           "sources": [
             "Logbook"
@@ -777,14 +796,18 @@
           "day_number": 44,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1700 — GENERAL QUARTERS: MIG in area, 70 miles."
+            "44. THURS. 29 FEB., 1968. AT SEA SAR STATION. CONDITION III SET. CLOUDY, COOL. 1700 — GENERAL QUARTERS, MIG IN AREA, 70 MILES"
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 21 Feb 1968: \"No, as you probably have figured out by now Bill and I were unable to see each other in Da Nang. For obvious reasons that is not a liberty port... I figure that Bill and I are about 10,000 miles from home now that we are here.\" [Letter]",
+            "From Mike's letter, 22 Feb 1968: \"Tomorrow is payday. I will get $167. Thats tax-free base pay for two weeks and combat pay for 22 days.\" [Letter]",
+            "From Mike's letter, 26 Feb 1968: \"Over the weekend two planes did go down somewhere away from our station. They rescued the pilot from one with a helo from one of the carriers. The other ones they gave up for lost. There are three carriers operating in our vicinity. They are the Enterprise, Bon Homme Richard, and Ticonderoga. Watch for them in the news, of course they get all the publicity. The only time someone pays any attention to the other ships is when they get captured (the Pueblo).\" [Letter]"
+          ],
           "photos": [
             {
               "description": "Big Mother and Clem II helicopters — Big Mother, Clem II hovering above USS Sutherland, Clem II on Jouett flight deck, SAR helo (5 photos); helo mail and personnel transfers — LOG helo \"Here Comes the Mail!\", LOG helo, man approaching deck from helo, helo lowering man, helo raising man, man reaching helo (6 photos); Mike Ducy — on deck, operating MK51, standing by MK51, the \"Mustache\" (4 photos); USS Enterprise anchored in Subic Bay after arriving from Tonkin Gulf; at sea underway for Yokosuka.",
@@ -798,7 +821,7 @@
           "day_number": 45,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. 1500 — Boat from USS Sutherland (DD-743) brings remains and debris of A-6A Intruder (BuNo 152944) from VA-35, USS Enterprise, to Jouett. The aircraft was lost on a night strike northeast of Haiphong. Crew: LCDR Thomas E. Scheurich (pilot, Nebraska) and LTJG Richard C. \"Tito\" Lannom (bombardier/navigator, Union City, TN) — both KIA. Their remains were not identified for over 50 years: Lannom in 2018, Scheurich in 2025. Both eventually laid to rest with full military honors. 1630 — Mail by helo. 2000 — Refuel from USS Taluga (AO-)."
+            "45. FRI. MAR. 1, 1968. AT SEA SAR STATION. CONDITION III SET. CLOUDY, COOL, RAIN. 1500 — BOAT FROM USS SUTHERLAND BRINGS REMAINS OF PLANE DOWNED TO JOUETT. 1630 — MAIL BROUGHT ABOARD BY. HELO. 2000 — REFUEL FROM USS TALUGA (AO- MAIL BROUGHT ABOARD"
           ],
           "sources": [
             "Logbook"
@@ -814,7 +837,7 @@
           "day_number": 46,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Holiday routine. 1500 — Mail by helo."
+            "46. SAT. 2 MAR., 1968. AT SEA SAR STATION. CONDITION III SET. CLOUDY, COOL. 1130 — HOLIDAY ROUTINE COMMENCES. 1500 — MAIL BROUGHT ABOARD BY. HELO."
           ],
           "sources": [
             "Logbook"
@@ -830,7 +853,7 @@
           "day_number": 47,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Partly cloudy, warming. Holiday routine."
+            "47. SUN. 3 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. PARTLY CLOUDY, WARMING. 0930 — HOLIDAY ROUTINE."
           ],
           "sources": [
             "Logbook"
@@ -846,7 +869,7 @@
           "day_number": 48,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Partly cloudy, sunny, warmer. 1530 — Mail by helo. Take malaria pill."
+            "48. MON. 4 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. PARTLY CLOUDY, SUNNY, WARMER. 1530 — MAIL BROUGHT ABOARD BY. HELO. TAKE MALARIA PILL."
           ],
           "sources": [
             "Logbook"
@@ -862,7 +885,7 @@
           "day_number": 49,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Cloudy, warming. 1530 — Mail by helo."
+            "49. TUES. 5 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, WARMING. 1530 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -878,7 +901,7 @@
           "day_number": 50,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Cloudy, warming. 1430 — Intelligence briefing."
+            "50. WED. 6 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, WARMING. 1430 — INTELLEGENCE BRIEFING."
           ],
           "sources": [
             "Logbook"
@@ -894,7 +917,7 @@
           "day_number": 51,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Cloudy, overcast. Pay Day — leave $149 on books. 2000 — Refuel from USS Neches (AO-). 2130 — Replenish with USS Castor (AES-)."
+            "51. THURS. 7 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, OVERCAST. PAY DAY - LEAVE $149 ON BOOKS. 2000 — REFUEL FROM USS NECHES (AO- 3rd + 4th CLASS MAIL. BROUGHT ABOARD. 2130 — REPLENISH WITH USS CASTOR. (AKS- )."
           ],
           "sources": [
             "Logbook"
@@ -910,7 +933,7 @@
           "day_number": 52,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Cloudy, foggy. 1330 — Catholic divine services. 1430 — Intelligence briefing. 1530 — Mail by helo."
+            "52. FRI. 8 MAR, 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, FOGGY. 1330 — CATHOLIC DIVINE SERVICES. HELD. 1430 — INTELLEGENCE BRIEFING. 1530 — MAIL BROUGHT ABOARD BY. HELO."
           ],
           "sources": [
             "Logbook"
@@ -926,7 +949,7 @@
           "day_number": 53,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Cloudy, cool. Holiday routine. 1700 — Mail by helo."
+            "53. SAT. 9 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL. 1130 — HOLIDAY ROUTINE. 1700 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -942,14 +965,18 @@
           "day_number": 54,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Cloudy, cool, overcast. Holiday routine. 1500 — Mail by helo."
+            "54. SUN. 10 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL, OVERCAST. 0930 — HOLIDAY ROUTINE. 1500 — MAIL BROUGHT ABOARD BY HELO."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 1 Mar 1968: \"Yesterday a plane went down near us. In the afternoon we moved into the area but they only found the wreckage, no pilot. We have the remains of the plane and the helmet of the pilot on board. I took some pictures of it.\" [Letter]",
+            "From Mike's letter, 1 Mar 1968: \"Twice this week we went to general quarters when they picked up MIG's on the radar, the closest they got was about 60 miles but we were manned and ready just in case.\" [Letter]",
+            "From Mike's letter, 1 Mar 1968: \"Its been 19 continuous days at sea for us now. The 25th of March seems so far away when we go back to Subic Bay. There is very little to look forward to and when the mail comes it makes the day seem a little brighter.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -958,14 +985,16 @@
           "day_number": 55,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. 1230 — SAR ALERT: Air Force F-4 Phantom reported downed 60 miles southwest, 300 yards inland. UNABLE TO FIND PILOTS. 1700 — Mail by helo."
+            "55. MONDAY 11 MAR, 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL. 1230 — SAR ALERT, AIR FORCE F-4. DOWNED 60 MILES SOUTHWEST. 300 YARDS INLAND. UNABLE TO. FIND PILOTS. 1700 — MAIL BROUGHT ABOARD BY HELO"
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 12 Mar 1968: \"Yesterday an Air Force plane went down inland about 65 miles southwest of us. They made some attempts to find the pilots but gave them up for lost in a couple of hours.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -974,7 +1003,7 @@
           "day_number": 56,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Cloudy, rain, cool. 1600 — Mail by helo."
+            "56. TUES. 12 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAIN, COOL. 1600 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -990,7 +1019,7 @@
           "day_number": 57,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Clearing, cool. 1830 — Refuel from USS Hassayampa (AO-145)."
+            "57. WED. 13 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLEARING, COOL. 1830 — REFUEL FROM USS. HASSAYMPA (AO-145)."
           ],
           "sources": [
             "Logbook"
@@ -1006,7 +1035,7 @@
           "day_number": 58,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Cloudy, rain, cool. 1630 — Mail by helo."
+            "58. THURS. 14 MAR., 1961. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAIN, COOL. 1630 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
@@ -1022,7 +1051,7 @@
           "day_number": 59,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Cloudy, clearing. 1700 — Mail by helo."
+            "59. FRI. 15 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, CLEARING. 1800 MAIL BROUGHT ABOARD BY. HELO."
           ],
           "sources": [
             "Logbook"
@@ -1038,7 +1067,7 @@
           "day_number": 60,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Cloudy, clearing. 100th helo landing. 1600 — Mail by helo. 1330 — General Quarters for fire in YY Radio Room — no casualties."
+            "60. SAT. 16 MAR. 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, CLEARING. 100th HELO LANDING. 1600 — MAIL BROUGHT ABOARD. BY HELO. 1330 — GENERAL QUARTERS FOR. FIRE IN 48 RADAR ROOM, NO CASUALTIES."
           ],
           "sources": [
             "Logbook"
@@ -1054,14 +1083,20 @@
           "day_number": 61,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Holiday routine. 1600 — Mail by helo."
+            "61. SUN. 17 MAR, 1968. AT SEA, SAR STATION. CONDITION III SET. 0930 — HOLIDAY ROUTINE. 1600 — MAIL BROUGHT ABOARD. BY HELO."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 12 Mar 1968: \"We have had a couple of intelligence briefings since we have been out here on station. They point out on the map what operations have been taking place and how it involves us... They say that at Khe Sahn there is most likely to be one of the most decisive battles take place soon.\" [Letter]",
+            "From Mike's letter, 12 Mar 1968: \"I have held off long enough telling you, but I have grown a mustache. I started it on Jan. 28 and will probably shave it off in Japan.\" [Letter]",
+            "From Mike's letter, 16 Mar 1968: \"Today the ship had its 100th helicopter landing... About 1330 we had a fire break out in one of the radar power rooms. They got it put out quick and there was very little damage. It was an electrical fire caused by some overheated wiring. So today has been one of our more eventful days out here.\" [Letter]",
+            "From Mike's letter, 16 Mar 1968: \"Every Monday evening at supper they pass out these malaria pills for us to take. They make you feel a little sick the next day but thats better than being laid up in some hospital for a couple of months. I suppose those Marines welcome that because at least they can get away from here without having to take a bullet to do it.\" [Letter]",
+            "From the Mar 18 Familygram: \"Not all days, however, are filled with the drama of a SAR incident... Our helicopter, affectionately known as 'Clem II', is readied for immediate launch. As the Officer of the Deck turns the ship into the wind, pilots and flight crew dash to their places in Clem II; the ship's Helo Detail--deck handlers and firefighters--man their stations. Within minutes, Clem II is cleared for take-off and rises into the air.\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -1070,7 +1105,7 @@
           "day_number": 62,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. 0550 — SAR ALERT: Plane downed 5 miles from Jouett. Recover debris — NO TRACE OF SURVIVORS. 1230 — Boat launched to search for classified materials thrown overboard. Likely the S-2E Tracker \"Abilene 10\" (BuNo 149274) from VS-23, USS Yorktown, lost the previous night (Mar 17) on a surveillance mission near Hon Me island. All four crew — CDR Donald R. Hubbs, LTJG Lee D. Benson, AX2 Randall J. Nightingale, and ADR3 Thomas D. Barber — remain unaccounted for to this day. Starboard wing section recovered Mar 20. \"Shave off mustache.\""
+            "62. MON 18 MAR. 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, HAZY, WARMING. 0550 — SAR ALERT, PLANE DOWNED. 5 MILES FROM JOUETT. RECOVER DEBRIS NO TRACE. OF SURVIVORS. SHAVE OFF MUSTACHE"
           ],
           "sources": [
             "Logbook"
@@ -1091,7 +1126,7 @@
           "day_number": 63,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Some plane debris [taken to return]."
+            "63. TUES. 19 MAR, 1968. AT SEA, SAR STATION. CONDITION III SET. CLEARING, WARMER. 0830 — MAIL BROUGHT ABOARD. BY LOG HELO. 1230 — BOAT LAUNCHED TO. SEARCH FOR CLASSIFIED. MATERIAL THROWN OVER BOARD. 1930 — REFUEL FROM USS. MATTIPONI (AO-41). RECIEVE 3rd + 4th CLASS MAIL."
           ],
           "sources": [
             "Logbook"
@@ -1107,7 +1142,7 @@
           "day_number": 64,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station."
+            "64. WED. 20 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLEARING WARMER. 1400 — SAR ALERT, A.F. PILOT. DOWNED 15 MILES INLAND, CAP DESTROY CONVOY OF. TRUCKS IN AREA, UNABLE. TO RESCUE PILOT. 1600 — MAIL BROUGHT ABOARD BY. HELO."
           ],
           "sources": [
             "Logbook"
@@ -1123,7 +1158,7 @@
           "day_number": 65,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Pay Day."
+            "65. THURS. 21 MAR., 1968. AT SEA, SAR STATION. CONDITION III SET. FOGGY, WARMER. PAY DAY- DRAW $ 455."
           ],
           "sources": [
             "Logbook"
@@ -1155,7 +1190,7 @@
           "day_number": 67,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station."
+            "67. SAT. 23 MAR., 1968. AT SEA, SAR STATION UNDERWAY. FOR SUBIC BAY. CONDITION III SET. CLEAR, WARM."
           ],
           "sources": [
             "Logbook"
@@ -1171,13 +1206,13 @@
           "day_number": 68,
           "day_of_week": "Sun",
           "entries": [
-            "Underway. Refuel."
+            "68. SUN. 24 MAR, 1968. UNDERWAY FOR SUBIC BAY. CONDITION III SET. CLEAR, WARM. 1545 — ARRIVE SUBIC BAY FOR. FUEL, MAIL, PROVISIONS. DETACH SAR HELO. 2100 — UNDERWAY FOR YOKOSUKA, JAPAN."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "At Sea",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1187,13 +1222,13 @@
           "day_number": 69,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Subic Bay."
+            "69. MON. 25 MAR, 1968. UNDERWAY FOR YOKOSUKA. CONDITION III SET. CLEAR, WARM. HIGH SEAS. 0930 — GENERAL QUARTERS, FIRE IN CIC LIGHTING. TRANSFORMER."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for YOKOSUKA",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1203,13 +1238,13 @@
           "day_number": 70,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Subic Bay."
+            "70. TUES. 26 MAR., '68. UNDERWAY FOR YOKOSUKA. CONDITION III SET. RAINY, COLD. ROUGH SEAS."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for YOKOSUKA",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1219,13 +1254,13 @@
           "day_number": 71,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Subic Bay."
+            "Underway for Yokosuka. Condition III Set. Cool, Clear."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for Yokosuka",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1235,13 +1270,13 @@
           "day_number": 72,
           "day_of_week": "Thu",
           "entries": [
-            "Arrive Subic Bay."
+            "Underway for Yokosuka. Condition III Set. 1440 — Arrive Naval Station Yokosuka, Japan. 1630 — Liberty - Hon-Cho Street (Thieves Alley)."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Subic Bay",
+          "location": "Underway for Yokosuka",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1251,13 +1286,13 @@
           "day_number": 73,
           "day_of_week": "Fri",
           "entries": [
-            "In port Subic Bay. Liberty."
+            "In Port Yokosuka. 1200 Liberty, Hon-Cho Street Souvineer Shopping Buy Hi-Fi Equipment."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Subic Bay",
+          "location": "Yokosuka",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1267,14 +1302,19 @@
           "day_number": 74,
           "day_of_week": "Sat",
           "entries": [
-            "In port Subic Bay. Duty."
+            "In Port Yokosuka. Duty. Rain, Cool."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Subic Bay",
-          "quotes": [],
+          "location": "Yokosuka",
+          "quotes": [
+            "From Mike's letter, 26 Mar 1968: \"After the 2½ months of this cruise I am well convinced this isn't the life for me. Some of the nonsense and fools you have to put up really get under your skin during these days at sea.\" [Letter]",
+            "From Mike's letter, 26 Mar 1968: \"Since I have last wrote we have had two fires here on the ship. One was in a radar power room and yesterday a transformer burnt up... Things like that can sink a ship just as well as anything else.\" [Letter]",
+            "From Mike's letter, 26 Mar 1968: \"We left the Gulf of Tonkin Friday evening after 34 days up there.\" [Letter]",
+            "From the Apr 8 Familygram: \"Vietnam, as you may know, was under the influence of the northeast monsoon during JOUETT's first period on station; rain, fog, and low visibility were standard during the five weeks we spent in Tonkin Gulf.\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         }
@@ -1289,13 +1329,13 @@
           "day_number": 75,
           "day_of_week": "Sun",
           "entries": [
-            "In port. 0830–1700 — Tour to Tokyo."
+            "In Port Yokosuka. Sunny, Mild. 0830 — Tour to Tokoyo. 2330 — Return from Tour."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "In Port",
+          "location": "Yokosuka",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1305,7 +1345,7 @@
           "day_number": 76,
           "day_of_week": "Mon",
           "entries": [
-            "In port Yokosuka. 1200 — Liberty, downtown Yokosuka."
+            "In Port Yokosuka. 1200 Liberty, Downtown Yokosuka, Hon-Cho Street."
           ],
           "sources": [
             "Logbook"
@@ -1321,7 +1361,7 @@
           "day_number": 77,
           "day_of_week": "Tue",
           "entries": [
-            "In port Yokosuka. Duty."
+            "In Port Yokosuka. Sunny, Mild. Duty."
           ],
           "sources": [
             "Logbook"
@@ -1337,7 +1377,7 @@
           "day_number": 78,
           "day_of_week": "Wed",
           "entries": [
-            "In port Yokosuka. Stay aboard."
+            "In Port Yokosuka. Sunny, Mild. Stay Aboard. (ONI)."
           ],
           "sources": [
             "Logbook"
@@ -1353,7 +1393,7 @@
           "day_number": 79,
           "day_of_week": "Thu",
           "entries": [
-            "In port Yokosuka. 1200 — Liberty."
+            "In Port Yokosuka. Sunny, Mild. 1200 — Liberty. Took Train to Kamakura, Saw. Budda Shrine + Sinto. Thieves Alley."
           ],
           "sources": [
             "Logbook"
@@ -1369,7 +1409,7 @@
           "day_number": 80,
           "day_of_week": "Fri",
           "entries": [
-            "In port Yokosuka. Duty."
+            "In Port Yokosuka. Sunny Mild. Duty."
           ],
           "sources": [
             "Logbook"
@@ -1385,7 +1425,7 @@
           "day_number": 81,
           "day_of_week": "Sat",
           "entries": [
-            "In port Yokosuka. 1200 — Liberty."
+            "In Port Yokosuka. Sunny, Mild. 1200 — Liberty."
           ],
           "sources": [
             "Logbook"
@@ -1401,14 +1441,20 @@
           "day_number": 82,
           "day_of_week": "Sun",
           "entries": [
-            "Depart Yokosuka. Underway for Subic Bay. ASW exercises with submarine (SS-?)."
+            "Inport Yokosuka. Sunny, Mild. 1100 — Underway for Subic Bay Condition III Set. A/S Exercises with USS. Bone Fish (SS-  )."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "Underway for Subic Bay",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 30 Mar 1968: \"I have sent some brochures on the stereo equipment I have bought... I can buy a cartridge recorder like yours for $34.00 and I'll get over to buy it next week. If you want to you can answer this with a tape and I'll send one back.\" — This purchase in Yokosuka is the origin of the family's cassette tape collection. [Letter]",
+            "From Mike's letter, 30 Mar 1968: \"After those 45 days since our last liberty it was good to get off the ship Thursday and get some of that good American beer for 15¢.\" [Letter]",
+            "From Mike's letter, 30 Mar 1968: \"I also bought a pair of 16 x 50 binoculars here for $17.50... I am going to get [a slide projector] here and I will be all set for slides.\" [Letter]",
+            "From the Apr 8 Familygram: \"We were most fortunate in that our visit to Japan coincided with the first weeks of spring; the cherry blossoms, long a symbol of this island nation, were in full bloom while JOUETT was in port... Under the direction of the Chaplain of Destroyer Squadron ONE, LT A. R. TREIBEL, and JOUETT's Master Chief Petty Officer, J. V. PATTISON, [32 volunteers] contributed their labor to two small churches in villages near Yokosuka, completely painting one church and the pastor's home.\" [Familygram]",
+            "Context: On 4 April 1968, Dr. Martin Luther King Jr. was assassinated in Memphis, Tennessee. Jouett was in Yokosuka, Japan. Mike's letter of April 19 notes: \"The ships in the fleet flew the flag at half-mast for about five days.\" [Letter, 19 Apr 1968]"
+          ],
           "photos": [],
           "documents": [
             {
@@ -1421,7 +1467,7 @@
           "day_number": 83,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Subic Bay. General Quarters drills."
+            "Underway for Subic Bay. Condition III Set. Mild, Fair Seas. General Quarters and Man. Overboard Drills."
           ],
           "sources": [
             "Logbook"
@@ -1437,7 +1483,7 @@
           "day_number": 84,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Subic Bay."
+            "Underway for Subic Bay. Condition III Set. Mild, Fair Seas. G.Q. for AAW Tracking Exercises."
           ],
           "sources": [
             "Logbook"
@@ -1453,7 +1499,7 @@
           "day_number": 85,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Subic Bay."
+            "Underway for Subic Bay. Condition III Set. Mild."
           ],
           "sources": [
             "Logbook"
@@ -1469,13 +1515,13 @@
           "day_number": 86,
           "day_of_week": "Thu",
           "entries": [
-            "Arrive Subic Bay. Base liberty."
+            "Underway for Subic Bay. Condition III Set. Mild, Sunny, Calm Seas. 1245 — Moor Naval Station Subic Bay, P.I. Liberty-, Base, Olongapo."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Subic Bay",
+          "location": "Underway for Subic Bay",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1485,7 +1531,7 @@
           "day_number": 87,
           "day_of_week": "Fri",
           "entries": [
-            "In port Subic Bay. Duty."
+            "In Port Subic Bay. Duty. Went Aboard USS Swordfish (SSN-)."
           ],
           "sources": [
             "Logbook"
@@ -1501,7 +1547,7 @@
           "day_number": 88,
           "day_of_week": "Sat",
           "entries": [
-            "In port Subic Bay. 1235 — Underway for gunnery shoots, then anchor in Subic Bay."
+            "In Port Subic Bay. 0725 — Underway for Gun + Missle Shoots. 1145 Anchor in Subic Bay."
           ],
           "sources": [
             "Logbook"
@@ -1517,13 +1563,13 @@
           "day_number": 89,
           "day_of_week": "Sun",
           "entries": [
-            "Anchored in Subic Bay. Load ammunition for South Vietnam, Da Nang."
+            "Anchored in Subic Bay. Hot - 95°, Clear. [crossed out] Loaded Ammo + Missles. 1800 — Underway for Da Nang S. Viet Nam Easter Sunday."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Subic Bay",
+          "location": "Underway for Da Nang",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -1533,7 +1579,7 @@
           "day_number": 90,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Da Nang."
+            "Underway for Da Nang. Condition III Set. Calm Sea, Hot. Test Fire 50 Cal. Mach. Gun. and Mt. 31."
           ],
           "sources": [
             "Logbook"
@@ -1549,7 +1595,7 @@
           "day_number": 91,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Da Nang. Anchor in Da Nang Harbor. 1230 — Bill Ducy (USMC) comes aboard ship. 1630 — Bill departs. .50 cal. machine gun watch. Observed large amount of air traffic. Set shore bomb exercise stations."
+            "Underway for Da Nang. Condition III Set. Hot, Clear, Humid. 0850 — Anchor in Danang Harbor. 1230 — Bill Comes Aboard Ship. 1630 — Bill Departs Ship. 1600 — 1800 - Stand Sentry with 50 Cal. Machine Gun Observe Large Amount of Small Craft in Waters. 1800 — Depart Danang Conduct P.T. Boat Exercises. Then Set Course for. S. SAR"
           ],
           "sources": [
             "Logbook"
@@ -1565,7 +1611,7 @@
           "day_number": 92,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for South SAR station."
+            "Underway for S. SAR Station. Condition III Set. Clear, Warm. 1700 — Relieve USS Halsey (DLG-23) on S. SAR."
           ],
           "sources": [
             "Logbook"
@@ -1581,14 +1627,17 @@
           "day_number": 93,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Refuel from USS Ponchatoula (AO-148). 2100 — Stores from USS Vega (AF-17)."
+            "At Sea, SAR Station. Condition III Set. Hazy, Rain, Sunny, Warm. 0700 — Mail Brought Aboard by Helo, 1-Letter. 2000 — Refuel from USS Ponchotula (AO -148). 2100 — UNREP from USS Vega (AF-17)."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 19 Apr 1968: \"You should have got the tape by now that Bill and I made in Da Nang. We were glad to see one another and I was surprized he was able to make it. You know we have been pretty fortunate to see each other since we went into the service and I guess this is no exception even though we are over 12,000 miles from home.\" — The tape Mike and Bill recorded in Da Nang became part of the family's cassette collection. [Letter]",
+            "From Mike's letter, 19 Apr 1968: \"On the first of May I will be working with the E.T.'s (electronic technicians) on maintence and troubleshooting. This is something I have always wanted to do.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -1597,7 +1646,7 @@
           "day_number": 94,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station."
+            "At Sea, SAR Station. Condition III Set. Hazy, Warm. 0700 — Mail Brought Aboard by Helo'. 1- Letter. 2030 — Movie \"Alfie\" Moved to 68 System for. Cleaning and Maintence."
           ],
           "sources": [
             "Logbook"
@@ -1613,7 +1662,7 @@
           "day_number": 95,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Mail by helo. Holiday routine."
+            "[Page 95]. SAT. 20 APR, 1968. AT SEA, SAR STATION. CONDITION III SET. 0645 — MAIL BROUGHT ABOARD BY HELO'. 1330 — HOLIDAY ROUTINE. 1400 — MOVIE - \"THE IDOL\"."
           ],
           "sources": [
             "Logbook"
@@ -1629,7 +1678,7 @@
           "day_number": 96,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Mail by helo. Holiday routine."
+            "[Page 96]. SUN. 21 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLEAR, WARM, SUNNY. 0645 — MAIL BROUGHT ABOARD BY HELO'. 0930 — HOLIDAY ROUTINE. 1000 — MOVIE \"BOTANY BAY\"."
           ],
           "sources": [
             "Logbook"
@@ -1645,7 +1694,7 @@
           "day_number": 97,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Mail by helo."
+            "[Page 97]. MON. 22 APRIL, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 0730 — MAIL BROUGHT ABOARD BY HELO'. 4 - LETTERS. 1600 — MOVIE \"THREE VIOLENT PEOPLE\". 1700 — MAIL BROUGHT ABOARD BY HELO'."
           ],
           "sources": [
             "Logbook"
@@ -1661,7 +1710,7 @@
           "day_number": 98,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. SAR alert."
+            "[Page 98]. TUES. 23 APR, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, RAIN. 1800 — SAR ALERT AIRCRAFT WITH 34 PASSENGERS, RETURNS TO YANKEE STATION. 1000 — DIVISION BEGINS PHYSICAL EXERCISES."
           ],
           "sources": [
             "Logbook"
@@ -1677,7 +1726,7 @@
           "day_number": 99,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station."
+            "[Page 99]. WED. 24 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 0645 — MAIL BROUGHT ABOARD BY HELO'. 2 - PAPERS. 2045 — REFUEL FROM USS PASSUMPIC (AO-107)."
           ],
           "sources": [
             "Logbook"
@@ -1693,7 +1742,7 @@
           "day_number": 100,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1130 — Mail by helo, includes slides."
+            "[Page 100]. THURS. 25 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 0630 — MAIL BROUGHT ABOARD BY HELO'. 1- LETTER 1- SLIDES."
           ],
           "sources": [
             "Logbook"
@@ -1709,7 +1758,7 @@
           "day_number": 101,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Warm, overcast, windy. 0700 — Mail by helo."
+            "[Page 101]. FRI, 26 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, OVERCAST, WINDY. 0700 — MAIL BROUGHT ABOARD BY HELO'."
           ],
           "sources": [
             "Logbook"
@@ -1725,14 +1774,17 @@
           "day_number": 102,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Warm, sunny, windy. 1145 — Mail by helo."
+            "[Page 102]. SAT. 27 APR, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY, WINDY. 0645 — MAIL BROUGHT ABOARD BY HELO."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "Stars & Stripes, 22 April 1968 — \"160 Missions Pound N. Vietnam\": Mike underlined the passage about the \"coastal area between Vinh and Dong Hoi\" and starred the weather paragraph noting the monsoon was ending and strikes expected to increase. Vinh airfield was approximately 24 miles from Jouett's SAR station. [Stars & Stripes]",
+            "From Mike's letter, 25 Apr 1968: \"Vinh is an airfield about 24 miles from us. We can usually see the explosions from the air raids there on a clear night.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -1749,7 +1801,10 @@
           ],
           "significant": true,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From the May 19 Familygram: \"The evening meal in JOUETT was suddenly interrupted by the announcement over the ship's broadcast system 'SAR ALERT. DOWNED AIRCRAFT BEARING 251 DEGREES, RANGE 38 MILES.'... JOUETT's first Search and Rescue Effort was completed in just twenty-nine minutes.\" [Familygram]",
+            "From the May 19 Familygram, quoting the rescued pilot: \"LCDR D. E. Hernandez of San Diego, recalled that 'The helo was on the scene before I had time to complete my ditch routine. It was terrific,' and LTJG D. J. Lortscher of Rylander, Wisconsin, the second survivor, recalled thinking while approaching JOUETT, 'It's the smallest flight deck I've ever landed on, but it sure looks great from here.'\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         }
@@ -1764,7 +1819,7 @@
           "day_number": 104,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Overcast, cloudy, rainy. 1600 — GQ for fire/engineering casualty drills."
+            "[Page 104]. MON. 29 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. OVERCAST, CLOUDY, RAINY. 0930 — MAIL BROUGHT ABOARD BY HELO. 1600 — G.Q. FOR ENGINEERING CASUALTY DRILLS."
           ],
           "sources": [
             "Logbook"
@@ -1780,7 +1835,7 @@
           "day_number": 105,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Cloudy, rainy. 1415 — Refuel from USS Sacramento (AOE-1). Vert-rep from USS Niagara Falls (AFS-3)."
+            "[Page 105]. TUES. 30 APR., 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, RAINY. 1915 — REFUEL FROM USS SACRAMENTO (AOE-1) VERT-REP FROM USS NIAGARA FALLS (AFS-3)."
           ],
           "sources": [
             "Logbook"
@@ -1796,7 +1851,7 @@
           "day_number": 106,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Cloudy, cool. Mail by helo — \"1 tape, 1 letter.\" 1145 — Holiday routine. 1800 — USO show \"Chico & Chili\" performs aboard."
+            "[Page 106]. WED. 1 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. CLOUDY, COOL. 0630 — MAIL BROUGHT ABOARD BY HELO. 1 -TAPE 1- LETTER. 1145 — HOLIDAY ROUTINE. 1600 — USO SHOW \"CHICO & CHILLE\"."
           ],
           "sources": [
             "Logbook"
@@ -1812,7 +1867,7 @@
           "day_number": 107,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1700 — SAR ALERT: Search for \"MIG\" pilots downed 70 miles north of Jouett. NO LUCK. 1430 — Catholic divine services. Pay Day — took $15, left $275 on books."
+            "[Page 107]. THURS. 2 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. 0630 — MAIL BROUGHT ABOARD BY HELO 1- LETTER. 1430 — CATHOLIC DIVINE SERVICES. 1700 — SAR ALERT SEARCH FOR \"MIG\" PILOTS DOWNED 70 MILES NORTH OF JOUETT, NO LUCK. PAY DAY - TOOK $15, LEFT $275.00 ON BOOKS"
           ],
           "sources": [
             "Logbook"
@@ -1828,7 +1883,7 @@
           "day_number": 108,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. 0615 — Mail by helo."
+            "[Page 108]. FRI. 3 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. 0615 — MAIL BROUGHT ABOARD BY HELO'."
           ],
           "sources": [
             "Logbook"
@@ -1844,7 +1899,7 @@
           "day_number": 109,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Warm, sunny. 100th helo landing this line period."
+            "[Page 109]. SAT. 4 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY, LIGHT CLOUDS. 0800 — MAIL BROUGHT ABOARD BY HELO' (100TH LANDING THIS LINE PERIOD)."
           ],
           "sources": [
             "Logbook"
@@ -1860,7 +1915,7 @@
           "day_number": 110,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Warm, sunny. Holiday routine. 2020 — Movie: \"The Borgia Stick.\""
+            "[Page 110]. SUN. 5 MAY, 1968. AT SEA SAR STATION. CONDITION III SET. WARM, SUNNY, CLOUDS. 0645 — MAIL BROUGHT ABOARD BY HELO'. 0930 — HOLIDAY ROUTINE. 2030 MOVIE. \"THE BORGIA STICK\"."
           ],
           "sources": [
             "Logbook"
@@ -1876,14 +1931,18 @@
           "day_number": 111,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. Sunny, warm, rain. 2030 — Refuel from USS Tappahannock (AO-43)."
+            "[Page 111]. MON. 6 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. SUNNY, WARM, RAIN. 0930 — MAIL BROUGHT ABOARD BY HELO', 2- LETTERS. 2030 — REFUEL FROM USS TAPPAHANNOCK (AO-43)."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "Jouett Jargon, 4 May 1968 — \"MIG 21 SHOT DOWN OVER GULF\": The ship's newspaper initially reported a MIG-21 shot down by Navy F-4 Phantom pilots Lt. John E. Ryan and LCDR Barlan Hall from USS Ranger. Jouett launched her SAR helicopter to search for the assumed pilot. \"Two days later it was disclosed that the 'Mig' reported shot down was actually a USAF drone carrying radar and radio detection gear over North Viet Nam.\" The parachute was the drone's equipment recovery chute. [Jouett Jargon]",
+            "From Mike's letter, 2 May 1968: \"Just a short while ago two Migs were shot down by aircraft from the Ranger, one of the carriers out here. We sent our helo out to search for the VC pilots but I don't think they will have any luck.\" — Mike wrote this before the drone revelation. [Letter]",
+            "From Mike's letter, 2 May 1968: \"Our gun system is in pretty bad shape. The fire-control radar is down and we are waiting on parts. Two of the three gun mounts are down and also awaiting repair parts. It kind of makes a guy wonder just what we would do if we had to have some defense sometime.\" [Letter]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -1919,7 +1978,8 @@
           "location": "SAR Station, Gulf of Tonkin",
           "quotes": [
             "Stars & Stripes, ~May 1968 — \"2 Jets Lost in N. Viet\": Mike annotated this clipping with the handwritten note \"OUR HELO PICKED THEM UP\" and starred the passage about the F-4 Phantom crew rescued near Vinh. The article reported 830 total American planes lost over North Vietnam. [Stars & Stripes]",
-            "From Mike's letter, 8 May 1968 (typewritten): \"This afternoon we rescued two more pilots who were shot down about 1/2 mile off the coast. We launched the helo and in about 30 minutes they were back with the pilots... We got with in 12 miles of the mainland which is the closest we have ever been up here. It was a real clear day and you could see a lot of the land over there... So, this makes four rescues for us and all of them in this line period.\" [Letter]"
+            "From Mike's letter, 8 May 1968 (typewritten): \"This afternoon we rescued two more pilots who were shot down about 1/2 mile off the coast. We launched the helo and in about 30 minutes they were back with the pilots... We got with in 12 miles of the mainland which is the closest we have ever been up here. It was a real clear day and you could see a lot of the land over there... So, this makes four rescues for us and all of them in this line period.\" [Letter]",
+            "From the May 19 Familygram: \"In the most hazardous rescue of the three, JOUETT's helicopter had to fly deep into enemy territory and rescue the downed pilot from dense jungle.\" [Familygram]"
           ],
           "photos": [],
           "documents": []
@@ -1929,7 +1989,7 @@
           "day_number": 114,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1730 — GENERAL QUARTERS: MIGs close to 60 miles."
+            "[Page 114]. THURS 9 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. SUNNY, WARM. 1645 — MAIL BROUGHT ABOARD BY HELO WINTER SHIPS OUT. 1730 — G.Q. MIGS CLOSE TO 60 MILES"
           ],
           "sources": [
             "Logbook"
@@ -1945,7 +2005,7 @@
           "day_number": 115,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, on station. 0830 — Took USAFI test. Mail from USS Buckley — \"20 papers.\""
+            "[Page 115]. FRI. 10, MAY, 1968. AT SEA, ON STATION. CONDITION III SET. 0830 — TOOK USAFI TEST. 1030 — MAIL BROUGHT ABOARD BY [crossed out] BOAT [crossed out] FROM BUCKLEY, 20- PAPERS."
           ],
           "sources": [
             "Logbook"
@@ -1961,7 +2021,7 @@
           "day_number": 116,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, on station. 1400 — GENERAL QUARTERS: MIGs close to 50 miles. Mail by helo."
+            "[Page 116]. SAT. 11 MAY, 1968. AT SEA, ON STATION. CONDITION III SET. WARM, SUNNY. 1400 — GENERAL QUARTERS MIGS CLOSE TO 50 MILES. 1440 — MAIL BROUGHT ABOARD BY HELO'. 1- LETTER"
           ],
           "sources": [
             "Logbook"
@@ -1977,7 +2037,7 @@
           "day_number": 117,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, on station. Warm, sunny. Holiday routine. 2000 — Refuel from USS Ponchatoula (AO-148). Replenish from USS Bellatrix (AF-). \"A fine day for sunbathing. Mother's Day.\""
+            "[Page 117]. SUN. 12 MAY, 1968. AT SEA, ON STATION. CONDITION III SET. WARM, SUNNY. 0930 — HOLIDAY ROUTINE. 1650 — MAIL BROUGHT ABOARD BY HELO. 2000 — REFUEL FROM USS PONCHOTULA (AO-148) 1- PACKAGE 3- PAPERS, 1- MAGAZINE. 2130 — REPLENISH FROM USS BELLATRIX (AF- ). A FINE DAY FOR SUNBATHING. MOTHER'S DAY."
           ],
           "sources": [
             "Logbook"
@@ -1993,7 +2053,7 @@
           "day_number": 118,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. 2330 — SAR alert, pilot returns to Yankee Station and is rescued there."
+            "[Page 118]. MON. 13 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 1600 — MAIL BROUGHT ABOARD BY HELO. 2330 — SAR ALERT, PILOT RETURNS TO YANKEE STATION AND IS RESCUED THERE."
           ],
           "sources": [
             "Logbook"
@@ -2009,7 +2069,7 @@
           "day_number": 119,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. 1300 — SAR ALERT: Pilot downed 41 miles from ship. NO CONTACT MADE — GAVE UP FOR LOST. 1400 — Take Military Leadership test."
+            "[Page 119]. TUES. 14 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 1300 — SAR ALERT PILOT DOWNED 41 MILES FROM SHIP. NO CONTACT MADE, GAVE UP FOR LOST. 1400 — TAKE MILITARY LEADERSHIP TEST. 1600 — MAIL BROUGHT ABOARD BY HELO. 1- LETTER"
           ],
           "sources": [
             "Logbook"
@@ -2025,7 +2085,7 @@
           "day_number": 120,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Cruiser-Destroyer Force 7th Fleet arrives. Mail — \"1 letter, 1 tape.\" 2030 — Refuel from USS Ponchatoula (AO-148)."
+            "[Page 120]. WED. 15 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 1430 — CRUSIER DESTROYER FORCE [crossed out] 7th FLEET ARRIVES. 1615 — MAIL BROUGHT ABOARD BY HELO, 1-LETTER, 1-TAPE. 1750 — MAIL BROUGHT ABOARD BY HELO. 1- LETTER. 2030 — REFUEL FROM USS PONCHO-TULA (AO-148)."
           ],
           "sources": [
             "Logbook"
@@ -2041,7 +2101,7 @@
           "day_number": 121,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1000 — Catholic divine services. Pay Day — drew $417, sent home $200."
+            "[Page 121]. THURS. 16 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 1000 — CATHOLIC DIVINE SERVICES. PAYDAY - DREW $417.00 SENT HOME $200.00."
           ],
           "sources": [
             "Logbook"
@@ -2057,14 +2117,20 @@
           "day_number": 122,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. 1330 — Enterprise pilots give \"fly by\" for Jouett. 1450 — CLEM II makes Jouett's 300th safe helo landing (177th this line period). 1600 — Relieved on South SAR by USS Halsey (DLG-23). Set course for Subic Bay."
+            "[Page 122]. FRI. 17 MAY, 1968. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 1330 — ENTERPRIZE PILOTS GIVE \"FLY BY\" FOR JOUETT. 1450 — CLEM II MAKES JOUETTS 300th SAFE HELO LANDING (177th THIS LINE PERIOD). 1600 — RELIEVED ON SOUTH SAR BY USS HALSEY (DLG-23) SET COURSE FOR SUBIC BAY PHILLIPINES."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 12 May 1968: Handmade Mother's Day card with hand-drawn flowers and typewritten poem. [Letter]",
+            "From Mike's letter, 13 May 1968: \"There was a destroyer hit up here by gun fire off the mainland. They were south of us and one day last week came up to our area. It wasn't too much and only one guy was injured.\" [Letter]",
+            "From Mike's letter, 13 May 1968: \"I got a letter from Bill two days ago which he wrote on April 24. How about that service, 17 days to get here. He described an attack they had there and maybe this was the one you read about in the paper.\" [Letter]",
+            "From Mike's letter, 13 May 1968: \"I am really glad you are enjoying and using the tape we made. Don't wear it out though, because we didn't have a chance to play it back.\" [Letter]",
+            "From Mike's letter, 16 May 1968: $200 money order sent home. Brief cover note: \"Tapes now primary communication.\" [Letter]"
+          ],
           "photos": [
             {
               "description": "USS Enterprise jets fly by Jouett; USS Enterprise in the Gulf of Tonkin.",
@@ -2078,13 +2144,13 @@
           "day_number": 123,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Subic Bay. 1500 — GQ for gun test firing. 1730 — \"Fantail Frolic\" picnic on fantail."
+            "[Page 123]. SAT. 18 MAY, 1968. UNDERWAY FOR SUBIC BAY. CONDITION III SET. WARM, SUNNY, CLEAR. 1500 — GENERAL QUARTERS FOR GUN TEST FIRING. 1730 — \"FANTAIL FROLIC\" PICNIC ON FANTAIL. 2345 — SECURE CONDITION III IN GUN BATTERY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2094,13 +2160,13 @@
           "day_number": 124,
           "day_of_week": "Sun",
           "entries": [
-            "Underway for Subic Bay. 0830 — Man the rail for pictures from helo. 1215 — Moor Subic Bay. Liberty — base, EM Club, Navy Exchange. 2015 — Underway for Hong Kong. Mail call — \"4 letters, 1 slides, 2 packages, 1 magazine.\""
+            "[Page 124]. SUN. 19 MAY, 1968. UNDERWAY FOR SUBIC BAY. CONDITION III SECURED. WARM, SUNNY, CLEAR. 0830 — MAN THE RAIL FOR PICTURES FROM HELO. 1215 — MOOR USNS SUBIC BAY. 1235 — LIBERTY CALL -BASE, EM CLUB, BG EXCHANGE. 2015 — UNDERWAY FOR HONG KONG MAIL CALL 4- LETTERS 1- SLIDES 2- PACKAGES 1- MAGAZINE."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2110,13 +2176,13 @@
           "day_number": 125,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Hong Kong. 1600 — GQ for test firing gun mounts."
+            "[Page 125]. MON. 20 MAY, 1968. UNDERWAY FOR HONG KONG. CONDITION III SET. WARM SUNNY. 1000 — G.Q. FOR TEST FIRING OF GUN MOUNTS."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Hong Kong",
+          "location": "Underway for HONG KONG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2126,13 +2192,13 @@
           "day_number": 126,
           "day_of_week": "Tue",
           "entries": [
-            "0800 — Anchor in Hong Kong Harbor. 1130 — Liberty call. China Fleet Club, Hong Kong Hilton. \"Bought Super 8 camera.\""
+            "[Page 126]. TUES. 21 MAY, 1968. UNDERWAY FOR HONG KONG. CONDITION III SET. CLOUDY, OVERCAST. 0800 — ANCHOR IN HONG KONG HARBOR. 1130 — LIBERTY CALL, CHINA FLEET CLUB, HONG KONG HILTON, MAIL BROUGHT ABOARD. 2- LETTERS. MDII - Bought Super 8 Camera."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "Hong Kong",
+          "location": "Underway for HONG KONG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2142,7 +2208,7 @@
           "day_number": 127,
           "day_of_week": "Wed",
           "entries": [
-            "Anchored in Hong Kong. Rainy, cloudy. Duty. Ship painted out."
+            "[Page 127]. WED. 22 MAY, 1968. ANCHORED IN HONG KONG. RAINY CLOUDY. DUTY. SHIP PAINTED OUT. MAIL BROUGHT ABOARD. 1- LETTER."
           ],
           "sources": [
             "Logbook"
@@ -2158,7 +2224,7 @@
           "day_number": 128,
           "day_of_week": "Thu",
           "entries": [
-            "Anchored in Hong Kong. Hong Kong Island tour, 1100–1900."
+            "[Page 128]. THURS. 23 MAY, 1968. ANCHORED IN HONG KONG. RAINY CLOUDY. 0900 — LIBERTY HONG KONG ISLAND TOUR 1100 - 1400. mdii-."
           ],
           "sources": [
             "Logbook"
@@ -2174,7 +2240,7 @@
           "day_number": 129,
           "day_of_week": "Fri",
           "entries": [
-            "Anchored in Hong Kong. Rainy, cloudy. Liberty."
+            "[Page 129]. FRI. 24 MAY, 1968. ANCHORED IN HONG KONG. RAINY, CLOUDY. LIBERTY, 0900-."
           ],
           "sources": [
             "Logbook"
@@ -2190,7 +2256,7 @@
           "day_number": 130,
           "day_of_week": "Sat",
           "entries": [
-            "Anchored in Hong Kong. Rainy. Duty."
+            "[Page 130]. SAT 25 MAY, 1968. ANCHORED IN HONG KONG RAINY. DUTY."
           ],
           "sources": [
             "Logbook"
@@ -2206,14 +2272,18 @@
           "day_number": 131,
           "day_of_week": "Sun",
           "entries": [
-            "Anchored in Hong Kong. Rainy, rough seas. 0940 — Underway for Subic Bay. Shore bombardment exercises, test fire gun mounts."
+            "[Page 131]. SUN. 26 MAY, 1968. ANCHORED IN HONG KONG. RAINY, ROUGH SEAS. 0840 — UNDERWAY FOR SUBIC BAY SET CONDITION III WATCH. 1245 — HOLIDAY ROUTINE. 1500 — SHORE BOMBARDMENT EXERCISES TEST FIRE GUN MOUNTS."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
-          "quotes": [],
+          "location": "Underway for SUBIC BAY",
+          "quotes": [
+            "From the ~Jun 1968 Familygram: \"There were more than fifty ships in the harbor when JOUETT arrived with our crew smartly lined up at quarters. We moored to a huge anchored buoy right in the downtown section of the harbor. With our national flag flying from the flagstaff, we felt like personal representatives of the U. S. A.\" [Familygram]",
+            "From the ~Jun 1968 Familygram: The ship's song, flag, and nickname were officially chosen during the Fantail Frolic. Jouett became the \"Jolly J.\" The song \"The Frigate 29\" mentions \"Clem 2 and Big Mother\" and the SAR callsign \"Loveland.\" [Familygram]",
+            "Meanwhile in Hoi An — Bill's letter, 24 May 1968: While Mike was anchored in Hong Kong harbor buying a Super 8 camera, his brother was in firefights: \"Boy we had some more hell here again the other night. There were fire fights all over the place. We were lucky only 5 rounds come up our way. It all lasted about on 1½ hours.\" That same day, Bill was messing with a blasting cap from a dud — \"I got hit 23 times with shrapnel in the right arm and chest. I dug it all out and put some shit on it to help heal it up. I guess I wont try that again.\" A visiting Major told Bill's unit they \"live like pigs and don't even act like Marines.\" It was 107° on the 20th. Bill signed off: \"THEY CAN FUCK WITH ME ALL THEY WANT BUT THEY CAN'T STOP THE CLOCK.\" 276 days left in Nam & 15 months left in the Corps. I AM GETTING SHORT! HAHA. [Bill's letter to Mike]"
+          ],
           "photos": [],
           "documents": []
         }
@@ -2228,13 +2298,13 @@
           "day_number": 132,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Subic Bay. GQ for gun firing exercises. 1740 — Moor alongside USS Piedmont (AD-17) anchored in Subic Bay. Liberty — base EM Club."
+            "[Page 132]. MON. 27 MAY, 1968. UNDERWAY FOR SUBIC BAY. CLEAR, WARM. SECURE CONDITION III WATCH. 0800 — 1000 - G.Q. FOR A/A GUN FIRING EX. 1200 — 1400 - G.Q. FOR SHORE BOMB EX. 1740 — MOOR ALONGSIDE USS PIEDMONT (AD-17) ANCHORED IN SUBIC BAY. 1800 — LIBERTY CALL. BASE E.M. CLUB 1- TAPE 1- LETTER."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2244,7 +2314,7 @@
           "day_number": 133,
           "day_of_week": "Tue",
           "entries": [
-            "Anchored in Subic Bay. Stay aboard. Mail — 3 letters."
+            "[Page 133]. TUES. 28 MAY, 1968. ANCHORED IN SUBIC BAY. CLEAR WARM. STAY ABOARD. 1440 — MAIL CALL 3- LETTERS."
           ],
           "sources": [
             "Logbook"
@@ -2260,7 +2330,7 @@
           "day_number": 134,
           "day_of_week": "Wed",
           "entries": [
-            "Anchored in Subic Bay. Duty. Material inspection. Pay Day — $142.00."
+            "[Page 134]. WED. 29 MAY, 1968. ANCHORED IN SUBIC BAY. CLEAR HOT. DUTY DAY. 0800 — 1200 - QUARTERDECK MESS-ENGER WATCH. 1300 — MATERIAL INSPECTION PAY DAY - $142.00."
           ],
           "sources": [
             "Logbook"
@@ -2276,7 +2346,7 @@
           "day_number": 135,
           "day_of_week": "Thu",
           "entries": [
-            "Anchored in Subic Bay. Holiday routine. Liberty — Navy Exchange, EM Club, Olongapo. Margaret Whiting at EM Club. Memorial Day."
+            "[Page 135]. THURS. 30 MAY, 1968. ANCHORED IN SUBIC BAY. CLEAR, HOT. 1000 — LIBERTY CALL HOLIDAY ROUTINE NAVY EX., EM CLUB, OLONGAPO MARGARET WHITING AT E.M. CLUB. MEMORIAL DAY."
           ],
           "sources": [
             "Logbook"
@@ -2292,13 +2362,13 @@
           "day_number": 136,
           "day_of_week": "Fri",
           "entries": [
-            "Anchored in Subic Bay. 1740 — Load 3\" & 5\" ammo. 2400 — Underway for Da Nang."
+            "[Page 136]. FRI. 31 MAY, 1968. ANCHORED IN SUBIC BAY. CLEAR, HOT, RAIN. 1830 — LOAD 3\" + 5\" AMMO. 2010 — UNDERWAY FOR DA NANG CONDITION III SET."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Da Nang",
+          "location": "Underway for DA NANG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2308,13 +2378,13 @@
           "day_number": 137,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Da Nang. Test fire gun mounts. 1650 — GQ for test firing."
+            "[Page 137]. SAT. 1 JUNE, 1968. UNDERWAY FOR DA NANG. CONDITION III SET. CLEAR, HOT. TEST FIRE GUN MOUNTS. 1630 — G.Q. FOR TEST FIRING OF GUN MOUNTS."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Da Nang",
+          "location": "Underway for DA NANG",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2324,14 +2394,20 @@
           "day_number": 138,
           "day_of_week": "Sun",
           "entries": [
-            "Underway for Da Nang. 1200 — Anchor in Da Nang Harbor. 1400–1600 — Stand .50 cal machine gun watch. 1750 — Underway for South SAR station. Conduct PT boat exercises."
+            "[Page 138]. SUN. 2 JUNE, 1968. UNDERWAY FOR DA NANG. CONDITION III SET. CLEAR, HOT, RAIN. 0930 — COMMENCE HOLIDAY ROUTINE. 1200 — ANCHOR IN DA NANG HARBOR. 1400 — 1600- STAND 50 CAL. MACHINE GUN WATCH. 1750 — UNDERWAY FOR S. SAR STATION CONDUCT PT BOAT EXERCISES."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Da Nang",
-          "quotes": [],
+          "location": "Underway for DA NANG",
+          "quotes": [
+            "From Mike's letter, 28 May 1968: \"I got a tape from Bill yesterday. His letters never say much but he sure had a lot to talk about on the tape. I'll send him one back tonight.\" [Letter]",
+            "From Bill's note, 27 May 1968: A brief cover letter with pictures and tape recorder specs: \"Here the pictures and the speed and type of recorder — '3 3/4 I.P.S.' 'MONO.' Be looking for a tape from you real soon too.\" Signed: \"Little Brother, Bill USMC.\" The brothers were exchanging tapes between the Tonkin Gulf and Hoi An — reel-to-reel at 3¾ ips, mono. [Bill's letter to Mike]",
+            "From Mike's letter, 31 May 1968: \"Yesterday was Memorial Day here and really a hot one... Margaret Whiting was at the club last night and performed for about an hour.\" [Letter]",
+            "From Mike's letter, 31 May 1968: \"We will leave here this evening and proceed on our usual route back on station. We are due for a short stop in Da Nang.\" [Letter]",
+            "From the ~Jun 1968 Familygram: Jouett's new XO was LCDR John A. Walker, who came from staff duty with Commander Service Force, U.S. Pacific Fleet. [Familygram]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -2340,14 +2416,16 @@
           "day_number": 139,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for South SAR station. 0830 — Mail by SAR helo from USS Ticonderoga. 0915 — Refuel from USS Kawishiwi (AO-146). 1545 — Mail by helo. 1600 — Movie: \"The Perfect Furlough.\" 1800 — Relieve USS Halsey as South SAR ship. USS D.J. Buckley (DD-808) is shotgun ship. Mike used two logbook pages for this busy day (Days 139–140), causing his day count to drift by one from here forward."
+            "[Page 139]. MON. 3 JUNE, 1968. UNDERWAY FOR S. SAR STATION. CONDITION III SET. CLEAR, HOT. 0830 — MAIL BROUGHT ABOARD BY SAR HELO. [crossed out] FROM USS TICONDER- OGA. 1-LETTER. 2- MOVIES. 0915 — REFUEL FROM USS KAWISHIWI (AO-146). 1800 — RELIEVE USS HALSEY (DLG-23) AS S. SAR SHIP USS D.J. BUCKLEY (DD-808) IS SHOTGUN SHIP."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "Context: On 5 June 1968, Senator Robert F. Kennedy was assassinated in Los Angeles after winning the California Democratic primary. This was two months after the assassination of Dr. Martin Luther King Jr. The Jun 20 Jouett Jargon carried a story about the resulting Presidential Commission on Violence chaired by Milton Eisenhower, which described investigating \"political assassination, criminal attacks on individuals and civil disorders such as riots.\" [Jouett Jargon, 20 Jun 1968]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -2373,7 +2451,7 @@
           "day_number": 141,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. 1545 — Mail by helo."
+            "[Page 140]. WED. 5. [crossed out] JUNE, 1968. AT SEA, SAR STATION. CONDITION III SET. CLEAR, HOT. 1545 — MAIL BROUGHT ABOARD BY HELO. 1- LETTER. 1600 — MOVIE \"THE PERFECT FURLOUGH\". [Page 142]. THURS. 6 JUNE, 1968. AT SEA, SAR STATION. CONDITION III SET. CLEAR HOT. 1545 — MAIL BROUGHT ABOARD BY LOG HELO. 1- LETTER."
           ],
           "sources": [
             "Logbook"
@@ -2389,7 +2467,7 @@
           "day_number": 143,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Mail by helo — \"1 tape, 1 letter.\""
+            "At Sea, SAR Station. Condition III Set. Clear, Hot, Rain. 1415 — Mail Brought Aboard by Helo. 1- Tape 1- Letter."
           ],
           "sources": [
             "Logbook"
@@ -2405,7 +2483,7 @@
           "day_number": 144,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Refuel operations."
+            "At Sea, SAR Station. Condition III Set. Clear, Hot. 1400 — Observe USS St. Paul Firing on Shore Positions. 2030 — Refuel from USS Kenebec (AO-46). 2130 — Replenish from USS Pollux (AKS-4)."
           ],
           "sources": [
             "Logbook"
@@ -2421,7 +2499,7 @@
           "day_number": 145,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. Holiday routine."
+            "At Sea, SAR Station. Condition III Set. Cloudy, Rainy, Warm. 0930 — Holiday Routine."
           ],
           "sources": [
             "Logbook"
@@ -2437,7 +2515,7 @@
           "day_number": 146,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station."
+            "At Sea, SAR Station. Condition III Set. Cloudy, Rainy, Warm."
           ],
           "sources": [
             "Logbook"
@@ -2458,7 +2536,7 @@
           "day_number": 147,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. 0300 — SAR ALERT: A-7 Corsair (from USS America) downed 1000 yards inland, 20 miles from Jouett. Pilot calls he is OK with broken arm. SAR helo launched — unable to find pilot. 0600 — BIG MOTHER 71 takes part in search. 1050 — Big Mother 71 returns to ship WITH SMALL ARMS FIRE DAMAGE AND WOUNDED CREW MEMBER. 1200 — Send injured man back to USS Yorktown (CVS-10). DISCONTINUE SEARCH FOR PILOT — BELIEVED CAPTURED. 1900 — Rendezvous with USS Yorktown to attempt transfer of Big Mother 73 by crane. 2400 — Fail to transfer helo, return to South SAR station."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 0300 — Downed A7 Corsair 20 Miles from Island, Launched Pilot. 0400 — Cruised 100 Yards. SAR Helo is Overturned, Pilot with Broken Blades. Launched, Unable to Find Pilot. Found America Plane Too. 0900 — Big Mother 71 Makes Ship with Small Arms and Wounded Crew. 1050 — Big Mother 71 Returns to USS Yorktown Continue Search with 71 Back to Dis- Believed Captured for Pilot. 1515 — Mail Brought Aboard by Helo. 2- Letters. 1900 — Rendezvous (CUS-10) with USS Yorktown to Attempt Transfer of Big Mother 73 by Crane, 2000- Fail to Transfer Helo. Helo Destroy S. SAR Station"
           ],
           "sources": [
             "Logbook"
@@ -2474,12 +2552,12 @@
           "day_number": 148,
           "day_of_week": "Wed",
           "entries": [
-            "At sea, SAR station. Relieved on South SAR by USS Truxton (DLGN-35). Set course for Da Nang to offload Big Mother 73 helo. 2345 — Arrive and anchor in Da Nang. Set .50 cal machine gun watch."
+            "At Sea, SAR Station. Condition III, Set. Warm, Sunny. 1515 — Mail Brought Aboard by Helo. 1- Movie Film 1- Letter. 1530 — Relieved on S. SAR by USS Truxton (DLGN-35) Set Course for Da Nang to Off Load Big Mother 73 Helo. 1600 — G.Q. for D.C. Drills. 2345 — Arrive and Anchor in Da Nang, Secure Condition III Set 50 Cal. Machine Gun Watch."
           ],
           "sources": [
             "Logbook"
           ],
-          "significant": true,
+          "significant": false,
           "location": "Da Nang",
           "quotes": [],
           "photos": [],
@@ -2490,12 +2568,12 @@
           "day_number": 149,
           "day_of_week": "Thu",
           "entries": [
-            "Anchored in Da Nang. 0915 — Flying crane removes Big Mother 73 from helo deck. 0900 — Underway for South SAR station. Pay Day, $132.00."
+            "Anchored in Da Nang. Warm, Sunny. 0815 — Flying Crane Removes Big Mother 73 from Helo Deck. 0900 — Underway for S. SAR Station. - Pay Day, $132.00. 1245 — G.Q. for Damage Control Drills."
           ],
           "sources": [
             "Logbook"
           ],
-          "significant": true,
+          "significant": false,
           "location": "Da Nang",
           "quotes": [],
           "photos": [],
@@ -2506,14 +2584,18 @@
           "day_number": 150,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. 2000 — Refuel from USS Mispillion (AO-105)."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 1510 — Mail Brought Aboard by Helo. 2000 — Refuel from USS Mispillion (AO-105) Receive 3rd Class Mail."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 13 Jun 1968: \"Our past three days up here have been quite active with more than the usual everyday happenings. It all started about 3 AM Tuesday when one of our planes was shot down overland. The search continued into the next morning and one of the helicopters got hit by some small arms fire from some VC troops on the side of a hill. They landed back here and one of it's crew was hit in both legs from the machine gun fire... They finally gave up the pilot for lost and called off the search.\" [Letter]",
+            "From Mike's letter, 13 Jun 1968: \"Later in the day one of the helo's on deck couldn't be launched because of engine trouble. We then proceeded to an aircraft carrier to have it lifted off by crane. Well it got dark by the time we got there and it looked like too risky of an operation anyway so they called that off too. Yesterday we set course for Da Nang to have another helo lift it off our deck... We cruised at 29 knots (49 mph) all the way there and back.\" [Letter]",
+            "From Mike's letter, 13 Jun 1968: \"They had some Migs get in pretty close up here this afternoon while we were gone but there hasn't been anything happen yet.\" — This was six days before the Medal of Honor rescue. [Letter]"
+          ],
           "photos": [
             {
               "description": "Rendezvous with USS Yorktown; USS Jouett hangar with Big Mother 73 on deck.",
@@ -2531,7 +2613,7 @@
           "day_number": 151,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Mail by helo."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 0730 — Mail Brought Aboard by Helo."
           ],
           "sources": [
             "Logbook"
@@ -2547,7 +2629,7 @@
           "day_number": 152,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station / AAW 19th parallel. Holiday routine. Father's Day."
+            "At Sea, SAR Station. AAW 19th Parallel. Condition III Set. Warm Sunny. 0930 — Holiday Routine. 1515 — Mail Brought Aboard by Helo. 2- Movies 1- Letter. FATHER'S DAY."
           ],
           "sources": [
             "Logbook"
@@ -2563,14 +2645,16 @@
           "day_number": 153,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR/AAW station, 19th parallel. 1515 — FIRE TWO RIM-2 TERRIER MISSILES AT MIGS, RANGE 58 MILES. NO HITS."
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 1515 — Fire Two Terrier Missiles at MIGs, Range 38 Miles, No Hits"
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
-          "quotes": [],
+          "location": "SAR Station, Gulf of Tonkin",
+          "quotes": [
+            "Jouett Jargon, 20 June 1968 — \"HOBART\": \"THE AUSTRALIAN DESTROYER HMAS HOBART STEAMED INTO THE BIG U.S. NAVAL BASE OF SUBIC BAY IN THE PHILLIPINES TODAY FOR REPAIRS FOLLOWING A ROCKET ATTACK OFF THE VIETNAM COAST. HOBART WAS HIT SUNDAY BY AN 'AIR-TO-AIR ROCKET POSSIBLY FIRED BY FRIENDLY AIRCRAFT.'\" Two Australian sailors were killed. Mike annotated this article: \"This gave us a scare!\" The friendly fire incident involving USAF F-4 Phantoms mistakenly attacking HMAS Hobart, USS Boston, and several small craft near Tiger Island on 17 June indicated chaotic air defense conditions in the same area where Jouett was firing Terrier missiles at MIGs that same day. [Jouett Jargon]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -2579,13 +2663,13 @@
           "day_number": 154,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR/AAW station. Mail by boat from Buckley and by helo."
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 0830 — Mail Brought Aboard by Boat from USS Buckley, 3rd Class. 1645 — Mail Brought Aboard by Helo."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
+          "location": "SAR Station, Gulf of Tonkin",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2603,7 +2687,12 @@
           ],
           "significant": true,
           "location": "SAR/AAW Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "Stars & Stripes, 26 June 1968 — \"After 2 Hairy Hours, F4 Crew Rescued\": \"The rescue of a downed fighter-bomber crew climaxed two hours of dramatic action aboard the carrier America and in the air over North Vietnam. It began just 12 minutes after midnight, when the two-man F4 Phantom was downed by enemy fire northwest of Vinh... In less than a minute, radarmen on the missile frigate Jouett had pin-pointed the location of the downed pilots.\" [Stars & Stripes]",
+            "From the Jul 1 Familygram, Captain Hayes' detailed account of the Medal of Honor rescue: \"Radarman First Class, Joseph T. WHITTFALL, while on watch in the Combat Information Center of JOUETT, heard the distress call... Under the skillful direction of Radarman First Class Alan R. MELTON, the rescue helicopter and accompanying fixed wing escorts were vectored by radar control through the pitch black night toward the hillside where the survivors were believed to be located.\" [Familygram]",
+            "From the Jul 1 Familygram: \"Suddenly, under the canopy of flare illumination, the two survivors splattered with mud, flight suits ripped to shreds, hurtled out of the brush, ran some 20 yards across the clearing, and dove into the waiting helicopter.\" [Familygram]",
+            "From the Jul 1 Familygram: \"Then came the report, 'feet wet', which meant they were out over water. Everyone who heard it felt like cheering. The JOUETT, which had been closing the coast at high speed to reduce the length of the flight, now turned on all her aircraft landing lights, and swung into the wind, to receive the helicopter.\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -2612,13 +2701,13 @@
           "day_number": 156,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR/AAW station. Catholic divine services. 1000 — Refuel from USS Kennebec (AO-46). Vert-rep from USS Niagara Falls (AFS-3)."
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 0900 — Catholic Divine Services. 1000 — Refuel from USS Kennebec (AO-46) 3rd Class Mail Received. 1 Package. 1030 — Vert. Rep. from USS Niagra Falls (AFS-3)."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
+          "location": "SAR Station, Gulf of Tonkin",
           "quotes": [
             "Meanwhile on Market Time — Given's letter, 20 June 1968: Mike's FTG \"A\" school classmate W.F. \"Giv\" Given (FTG-3, SN 7942408) wrote from a DER (radar picket escort ship) on Operation Market Time patrol. His ship served as mother ship to 4 Swift boats, carrying ammo, fuel, spare parts, and spare crews: \"Once each day, each boat, comes alongside for a spare crew and re-supply.\" He'd been doing river supply runs and had no laundry or fresh water showers since Taiwan. Turning 20 and celebrating his 1st anniversary, Given was getting orders to USS Tulare (AKA-112) out of San Diego in September — a ship with 6x 3\"/50 gun mounts relevant to his FTG rate. He planned to be in Subic July 3–25, then Guam for 5 weeks: \"Just think Duc — pretty soon we're half way.\" [Given's letter to Mike]"
           ],
@@ -2630,14 +2719,15 @@
           "day_number": 157,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR/AAW station. Holiday routine."
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 0900 — Holiday Routine. 1300 — Turn To."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
+          "location": "SAR Station, Gulf of Tonkin",
           "quotes": [
+            "From the Jul 1 Familygram: \"On 21 June, JOUETT was paid a great honor and enjoyed a rare privilege when she was visited by three of the most important U.S. Navy Commanders in the Pacific Fleet... Admiral John J. HYLAND, USN; Vice Admiral William F. BRINGLE, USN; and Rear Admiral Ralph W. COUSINS, USN... He predicted that in years to come they would be happy and proud to know that they had served their nation when it needed them.\" [Familygram]",
             "Meanwhile in Da Nang — Bill's letter, 21 June 1968: While three admirals were visiting Jouett to congratulate the crew on the Medal of Honor rescue, Bill was on mess duty: \"Sounds as if you poor squids had a little action up your way. Just make sure you get those MIG pilots back safe and fuck the others (ha ha.)\" He'd seen Bob White from back home, now in the Seabees in Hoi An. Shopping for a Sony 907 tape recorder from an Allied catalog ($34.50) — PX had one for $31 but 3–4 month wait: \"So I said fuck that!\" Enclosed the $30 he owed Mike. Signed off: \"Be good and don't 'fall off the ship.'\" [Bill's letter to Mike; water-damaged scan, fully legible]"
           ],
           "photos": [],
@@ -2648,13 +2738,13 @@
           "day_number": 158,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR/AAW station. 1630 — FIRE FIVE TERRIER MISSILES AT MIGS, RANGE 36 MILES. NO HITS CONFIRMED. Mail by helo — \"1 tape, 1 letter.\" 2015 — Movie: \"Assault on a Queen.\" Note: COR records \"two salvoes of two and one Terrier HTR missiles at a flight of three MIG-21 aircraft\" — Mike's logbook count of five may include the two from Jun 17 in a running total, or the COR may undercount."
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 1300 — Man Refueling Stations for Pictures from Buckley. 1400 — Mail Brought Aboard by Helo. 1- Tape 1- Letter. 1630 — Fire 5 Terrier Missiles at MIGs Range 38 Miles, No Hits Confirmed. 2015 — Movie - \"Assault on a Queen\""
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
+          "location": "SAR Station, Gulf of Tonkin",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2664,13 +2754,13 @@
           "day_number": 159,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR/AAW station. Holiday routine. Mail — \"1 tape, 1 letter.\""
+            "At Sea, SAR Station. AAW Station, 19th Parallel. Condition III Set. Warm, Sunny. 0700 — Mail Brought Aboard by Helo. 1- Tape 1- Letter. 0930 — Holiday Routine."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "SAR/AAW Station, Gulf of Tonkin",
+          "location": "SAR Station, Gulf of Tonkin",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2680,7 +2770,7 @@
           "day_number": 160,
           "day_of_week": "Mon",
           "entries": [
-            "At sea, SAR station. USS Buckley relieved as shotgun ship by USS Henderson (DD-884). 1600 — Movie: \"The Bramble Bush.\""
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 0700 — Mail Brought Aboard by Helo. 1600 — Movie \"The Bramble Bush\". - USS Buckley is Relieved as Shotgun Ship by USS Henderson (DD-884) 785?."
           ],
           "sources": [
             "Logbook"
@@ -2696,7 +2786,7 @@
           "day_number": 161,
           "day_of_week": "Tue",
           "entries": [
-            "At sea, SAR station. Mail by helo. 2015 — Movie: \"The Great Impostor.\""
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 0930 — Mail Brought Aboard by Helo. 1- Movie 2- USAFI Courses. 1630 — Mail Brought Aboard by Helo. 1- Movie 1- Letter. 2015 — Movie \"The Great Impostor\"."
           ],
           "sources": [
             "Logbook"
@@ -2728,7 +2818,7 @@
           "day_number": 163,
           "day_of_week": "Thu",
           "entries": [
-            "At sea, SAR station. Mail by helo."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 1545 — Mail Brought Aboard by Helo. 1- Letter."
           ],
           "sources": [
             "Logbook"
@@ -2744,7 +2834,7 @@
           "day_number": 164,
           "day_of_week": "Fri",
           "entries": [
-            "At sea, SAR station. Mail by helo."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 1530 — Mail Brought Aboard by Helo."
           ],
           "sources": [
             "Logbook"
@@ -2760,7 +2850,7 @@
           "day_number": 165,
           "day_of_week": "Sat",
           "entries": [
-            "At sea, SAR station. Mail by helo. 1900–1910 — Conduct boat transfers with USS Horne (DLG-30)."
+            "At Sea, SAR Station. Condition III Set. Warm Sunny. 1530 — Mail Brought Aboard by Helo. 1400 — 1500- Conduct Boat Transfers with USS Horne (DLG-30)."
           ],
           "sources": [
             "Logbook"
@@ -2776,14 +2866,18 @@
           "day_number": 166,
           "day_of_week": "Sun",
           "entries": [
-            "At sea, SAR station. 2100 — Officially relieved on South SAR by USS Horne (DLG-30). Set course for Subic Bay, P.I."
+            "At Sea, SAR Station. Condition III Set. Warm, Sunny. 0930 — Holiday Routine. 1030 — Mail Brought Aboard by Helo. 1- Package (Books). 2100 — Officially Relieved on S. SAR by USS Horne (DLG-30) Depart Station Set Course for Subic Bay, P.I. AT SEA, SAR STATION. CONDITION III SET. WARM, SUNNY. 0930 — HOLIDAY ROUTINE. 1030 — MAIL BROUGHT ABOARD BY. HELO. 1- PACKAGE (BOOKS). 2100 — OFFICIALLY RELIEVED ON S. SAR BY USS HORNE (DLG-30). DEPART STATION SET COURSE FOR. SUBIC BAY, P.I."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
           "location": "SAR Station, Gulf of Tonkin",
-          "quotes": [],
+          "quotes": [
+            "From Mike's letter, 29 Jun 1968 — LAST LETTER FROM THE COMBAT ZONE: \"It's about 12:30 AM Saturday morning here and I'm on watch... We get relieved up here at 8:00 AM Sunday then head for Subic Bay.\" [Letter]",
+            "From Mike's letter, 29 Jun 1968: \"Since I made the last tape on the 23rd, there hasn't been anything new happen up here. We had our last refueling here Wednesday night. Of course every day they have MIG tracking alerts several times but they seldom get within 40 miles from us.\" [Letter]",
+            "From Mike's letter, 29 Jun 1968: \"I just remembered this will be the last 'free' letter I write from over here. Boy, thats too bad! We are starting to lose out on some of the combat zone benefits now that it's time to leave.\" [Letter]"
+          ],
           "photos": [
             {
               "description": "Mike Ducy in front of USS Horne; unknown sailor in front of USS Horne; USS Horne DLG-30.",
@@ -2803,13 +2897,13 @@
           "day_number": 167,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Subic Bay. Rain, seas rather rough."
+            "UNDERWAY FOR SUBIC BAY. CONDITION III SET. RAIN, SEAS RATHER ROUGH. 1600 — SECURE CONDITION III IN GUN. BATTERY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Subic Bay",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2819,13 +2913,13 @@
           "day_number": 168,
           "day_of_week": "Tue",
           "entries": [
-            "0754 — Anchor Subic Bay, offload ammunition. 1200 — Base liberty. 1930 — Underway for Guam."
+            "UNDERWAY FOR SUBIC BAY. RAINY. 0734 — ANCHOR SUBIC BAY, OFFLOAD. AMMUNITION. 1200 — BASE LIBERTY. - MAIL BROUGHT ABOARD. 2- LETTERS. - 1930 UNDERWAY FOR GUAM. CONDITION IV SET."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Guam",
+          "location": "Underway for SUBIC BAY",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2835,14 +2929,16 @@
           "day_number": 169,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Guam. 0830 — Clear San Bernardino Straits. Observe active volcano in straits. 2000 — \"Moonlighting as an SK, a job I 'volunteered' for. Hours 2000–0600.\" Inventory ship's storeroom."
+            "UNDERWAY FOR GUAM. CONDITION IV SET. WARM, SUNNY, CALM SEAS. 0830 — CLEAR SAN BERNARDINO. STRAITS. OBSERVE ACTIVE VOLCANO. IN STRAITS. 2000 — ASSUME DUTIES, INVENTORY. SHIP'S STOREROOMS;. MOONLIGHTING AS AN SK, A JOB I \"VOLUNTEERED\". FOR. HOURS 2000 - 0600."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Guam",
-          "quotes": [],
+          "location": "Underway for GUAM",
+          "quotes": [
+            "From the Jul 5 Familygram: \"Since departing Tonkin Gulf on 1 July, the JOLLY 'J' has been traveling fast on our homeward voyage... Across the almost glassy calm of the blue Philippine Sea, JOUETT left a beautiful wake that seemed to stretch all the way to the horizon. Sunbathing during the noon meal hours became a favorite pastime.\" [Familygram]"
+          ],
           "photos": [
             {
               "description": "DD-785 USS Henderson.",
@@ -2860,14 +2956,16 @@
           "day_number": 170,
           "day_of_week": "Thu",
           "entries": [
-            "Underway for Guam. 1200 — 21-gun salute, reading of Declaration of Independence. 1350 — Movie: \"Hostile Guns.\" 1630–2000 — Flight deck frolic, FIREWORKS. 2000 — Inventory in storerooms."
+            "UNDERWAY FOR GUAM. CONDITION IV SET. WARM, SUNNY. 1200 — 21 GUN SALUTE, READING. OF DECLARATION OF INDEPEND- ENCE. 1330 — MOVIE, \"HOSTILE GUNS\". 1630 — 2000, - FLIGHT DECK FROLIC, FIREWORKS. 2000 — INVENTORY IN STOREROOMS"
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "Underway for Guam",
-          "quotes": [],
+          "location": "Underway for GUAM",
+          "quotes": [
+            "From the Jul 5 Familygram: \"For those of us who have been directly assisting a young nation maintain its independence, and who were seeing our own nation from the perspective of 8000 miles, I believe this day had greater significance than usual.\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -2876,13 +2974,13 @@
           "day_number": 171,
           "day_of_week": "Fri",
           "entries": [
-            "Underway for Guam. 1420 — Arrive Guam for fuel stop. 1945 — Underway for Pearl Harbor. 2000 — Mail call, 2 letters. 2100 — Work in storeroom."
+            "UNDERWAY FOR GUAM. CONDITION IV SET. WARM, SUNNY, RAIN. 1420 — ARRIVE IN GUAM FOR FUEL. STOP, 1945- UNDERWAY FOR P.H. 2000 — MAIL CALL 2- LETTERS. 2100 — WORK IN STOREROOM."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Guam",
+          "location": "Underway for GUAM",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2892,13 +2990,13 @@
           "day_number": 172,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Pearl Harbor."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION IV SET. WARM, SUNNY, RAIN. 2000 — WORK IN STOREROOM."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2908,13 +3006,13 @@
           "day_number": 173,
           "day_of_week": "Sun",
           "entries": [
-            "Underway for Pearl Harbor. 1700 — Flight deck frolic."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION IV SET. WARM, SUNNY, OCCASIONAL RAIN. 1700 — FLIGHT DECK FROLIC. 2000 — WORK IN STOREROOM."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2924,13 +3022,13 @@
           "day_number": 174,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for Pearl Harbor."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION III SET. WARM, SUNNY, LIGHT RAIN."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2940,13 +3038,13 @@
           "day_number": 175,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for Pearl Harbor. 1730 — Davy Jones appears to summon pollywogs for tomorrow's equator crossing ceremony."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION IV SET. WARM, SUNNY, LIGHT RAIN. 1830 — DAVIE JONES APPEARS TO. SUMMON POLLYWOGS OF. CEREMONIES FOR TOMORROWS. EQUATOR CROSSING."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2956,15 +3054,17 @@
           "day_number": 176,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for Pearl Harbor. 0850 — King Neptune and court board Jouett. 0900 — SHIP CROSSES EQUATOR AT 144th MERIDIAN. SHELLBACK INITIATION CEREMONY BEGINS. 1235 — Neptune Rex and court depart Jouett.",
-            "Underway for Pearl Harbor. 1100 — Approach Japanese fishing vessel, then resume course. (Crossed Date Line — same calendar date repeated.)"
+            "1ST WEDENSDAY. WED. 10 JULY, 1968. UNDERWAY FOR PEARL HARBOR. CONDITION II SET. WARM, SUNNY. 0830 — KING NEPTUNE & COURT. BOARDS JOUETT. 0900 — SHIP CROSSES EQUATOR. AT 180TH MERIDIAN, SHELLBACK. INIATION   CEREMONY BEGINS. 1235 — NEPTUNUS REX AND COURT. DEPART JOUETT. 2ND WEDENSDAY. WED. 10 JULY, 1968. UNDERWAY FOR PEARL HARBOR. CONDITION III SET. WARM, SUNNY. 1100 — APPROACH JAPANESE. FISHING VESSEL, THEN. RESUME COURSE",
+            "1ST WEDENSDAY. WED. 10 JULY, 1968. UNDERWAY FOR PEARL HARBOR. CONDITION II SET. WARM, SUNNY. 0830 — KING NEPTUNE & COURT. BOARDS JOUETT. 0900 — SHIP CROSSES EQUATOR. AT 180TH MERIDIAN, SHELLBACK. INIATION   CEREMONY BEGINS. 1235 — NEPTUNUS REX AND COURT. DEPART JOUETT. 2ND WEDENSDAY. WED. 10 JULY, 1968. UNDERWAY FOR PEARL HARBOR. CONDITION III SET. WARM, SUNNY. 1100 — APPROACH JAPANESE. FISHING VESSEL, THEN. RESUME COURSE."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "Underway for Pearl Harbor",
-          "quotes": [],
+          "location": "Underway for PEARL HARBOR",
+          "quotes": [
+            "From Mike's letter, 29 Jun 1968: \"As I mentioned before, we cross the equator on the 10th.\" [Letter]"
+          ],
           "photos": [
             {
               "description": "King Neptune Court — Mike Ducy; Royal Court; the Royal Judges; stocks; kissing the royal belly with gun grease.",
@@ -2978,13 +3078,13 @@
           "day_number": 177,
           "day_of_week": "Thu",
           "entries": [
-            "Underway for Pearl Harbor."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION III SET. WARM, SUNNY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -2994,13 +3094,13 @@
           "day_number": 178,
           "day_of_week": "Fri",
           "entries": [
-            "Underway for Pearl Harbor. Warm, overcast."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION IV SET. WARM, OVERCAST."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -3010,13 +3110,13 @@
           "day_number": 179,
           "day_of_week": "Sat",
           "entries": [
-            "Underway for Pearl Harbor. 0800 — Arrive Pearl Harbor to load stores, fuel, and receive mail. \"5 letters, 1 package (books), 1 movie film.\" 1230 — Liberty, base exchange, EM Club. 1900 — Underway for San Diego."
+            "UNDERWAY FOR PEARL HARBOR. CONDITION III SET. WARM, SUNNY. 0800 — ARRIVE PEARL HARBOR TO. LOAD STORES, REFUEL, AND. RECEIVE MAIL. 5- LETTERS 1- PACKAGE (BOOKS) 1- MOVIE FILM. 1230 — LIBERTY CALL. BASE EXCHANGE. E.M. CLUB. 1900 — UNDERWAY FOR SAN DIEGO."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for Pearl Harbor",
+          "location": "Underway for PEARL HARBOR",
           "quotes": [
             "Meanwhile in Da Nang — Bill's letter, 13 July 1968: While Mike was at Pearl Harbor 5 days from home, Bill had 226 days left: \"You should be back in the states by the time you get this letter you lucky fucker.\" Bill reacted to Mike's tape about the SAR rescues: \"You said in your tape that the chopper got their ass's kicked when they went in land. Boy I bet those chopper guys were really shitting their skivvies when the V.C. started giving them hell.\" Two red alerts the previous week — rockets hit the air strip and Marble Mountain, 5 miles away. A jeep driver fell asleep at 4 AM and rolled 50 feet down an embankment. \"Its been fairly quiet around here the past few nites, but we are expecting to be hit soon.\" Signed off with dark humor: \"I keep you informed if anything big comes up. You know like pulling all the U.S. Troops out or something like that. ha ha!\" [Bill's letter to Mike]"
           ],
@@ -3028,13 +3128,13 @@
           "day_number": 180,
           "day_of_week": "Sun",
           "entries": [
-            "Underway for San Diego. Holiday routine. 1700 — Flight deck frolic."
+            "UNDERWAY FOR SAN DIEGO. CONDITION IV SET. WARM, SUNNY. 0930 — HOLIDAY ROUTINE. 1700 — FLIGHT DECK FROLIC."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for San Diego",
+          "location": "Underway for SAN DIEGO",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -3044,13 +3144,13 @@
           "day_number": 181,
           "day_of_week": "Mon",
           "entries": [
-            "Underway for San Diego."
+            "UNDERWAY FOR SAN DIEGO. CONDITION IV SET. WARM, SUNNY."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for San Diego",
+          "location": "Underway for SAN DIEGO",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -3060,13 +3160,13 @@
           "day_number": 182,
           "day_of_week": "Tue",
           "entries": [
-            "Underway for San Diego. Warm, rainy, cooler, high seas. 0800 — Pay Day, drew $201.00."
+            "UNDERWAY FOR SAN DIEGO. CONDITION IV SET. WARM, RAINY, COOLER, HIGH SEAS. 0800 — PAY DAY, DREW $201.00."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for San Diego",
+          "location": "Underway for SAN DIEGO",
           "quotes": [],
           "photos": [],
           "documents": []
@@ -3076,14 +3176,16 @@
           "day_number": 183,
           "day_of_week": "Wed",
           "entries": [
-            "Underway for San Diego. Cool, high seas. 0830 — Conduct hi-line transfer of personnel from USS Hull (DD-945). 1530 — Safe driving lecture by California State Trooper. 2030 — Movie: \"Rage to Live.\" All night movies."
+            "UNDERWAY FOR SAN DIEGO. CONDITION III SET. COOL, HIGH SEAS. 0830 — CONDUCT HI-LINE. TRANSFER OF PERSONELL. FROM USS HULL (DD-945). 1530 — SAFE DRIVING LECTURE. BY CALIFORNIA STATE. TROOPER. 2030 — MOVIE \"RAGE TO LIVE\". ALL NIGHT MOVIES."
           ],
           "sources": [
             "Logbook"
           ],
           "significant": false,
-          "location": "Underway for San Diego",
-          "quotes": [],
+          "location": "Underway for SAN DIEGO",
+          "quotes": [
+            "From the Jul 5 Familygram: \"It is presently planned that the returning ships of Destroyer Squadron One, JOUETT, PREBLE, and HULL, will arrive in San Diego as a unit... we plan to display the hull number 29 on our helo flight deck as we enter the harbor at Ballast Point. The number 29, formed of crewmembers in white uniforms, when displayed against the grey background of the ship should be visible from the Cabrillo Monument on Point Loma.\" [Familygram]"
+          ],
           "photos": [],
           "documents": []
         },
@@ -3092,15 +3194,17 @@
           "day_number": 184,
           "day_of_week": "Thu",
           "entries": [
-            "1011 — ARRIVE AND MOOR PIER #4, U.S. NAVAL STATION, SAN DIEGO. Holiday routine. END OF DEPLOYMENT."
+            "UNDERWAY FOR SAN DIEGO. CONDITION IV SET. 1011 — ARRIVE AND MOOR PIER #4. U.S. NAVAL STATION, SAN DIEGO. - HOLIDAY ROUTINE"
           ],
           "sources": [
             "Logbook"
           ],
           "significant": true,
-          "location": "San Diego",
+          "location": "Underway for SAN DIEGO",
           "quotes": [
-            "From the Plan of the Day, 18 July 1968: At 0830, a press helicopter took aerial photographs as the crew — in Tropical Whites — formed the number \"29\" on the flight deck, visible from the Cabrillo Monument on Point Loma. A large sign on the port side read \"Happiness is Homecoming.\" Balloons streamed from the forecastle and fantail. After mooring at Pier 4, refreshments were served on the helo deck and mess decks; dependents and guests were invited aboard for tours. Signed by LCDR J. A. Walker, Jr., Executive Officer. [Plan of the Day]"
+            "From the Plan of the Day, 18 July 1968: At 0830, a press helicopter took aerial photographs as the crew — in Tropical Whites — formed the number \"29\" on the flight deck, visible from the Cabrillo Monument on Point Loma. A large sign on the port side read \"Happiness is Homecoming.\" Balloons streamed from the forecastle and fantail. After mooring at Pier 4, refreshments were served on the helo deck and mess decks; dependents and guests were invited aboard for tours. Signed by LCDR J. A. Walker, Jr., Executive Officer. [Plan of the Day]",
+            "From the San Diego Union, 19 July 1968 — \"Three Warships Return From Vietnam Duty\": \"The Jouett, with Capt. A. T. Emerson Jr., squadron commander, aboard, wore eight parachutes painted on the superstructure below her bridge, signifying eight aviators were rescued during the deployment.\" Emerson, of Coronado, had served as commander of the Navy's search and rescue units in the Tonkin Gulf. Capt. Robert S. Hayes reported 932 helicopter takeoffs and landings, 25 night replenishments, and 103 days in the combat zone without a serious accident among his crew of 400. USS Preble (DLG-15) — the ship from which Lassen's Medal of Honor rescue launched — and USS Hull (DD-945) returned alongside. Hull had fired 25,000 five-inch shells, believed to be a record for a single deployment. [San Diego Union]",
+            "From the Jul 5 Familygram: \"I can assure you that your JOUETTmen are returning home in good health and with a great pride in their achievements.\" [Familygram]"
           ],
           "photos": [],
           "documents": []

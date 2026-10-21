@@ -35,7 +35,11 @@ def normalize_text(lines):
             continue
         if stripped.startswith('       ') or stripped.startswith('\t'):
             if result:
-                result[-1] += ' ' + stripped.strip()
+                # Join with no space if previous line ends with hyphen (word split)
+                if result[-1].endswith('-'):
+                    result[-1] += stripped.strip()
+                else:
+                    result[-1] += ' ' + stripped.strip()
             else:
                 result.append(stripped.strip())
         else:
