@@ -129,9 +129,10 @@ export default function Slideshow({ show }: { show: SlideshowData }) {
           <audio
             ref={audioRef}
             controls
-            controlslist="nodownload"
+            controlsList="nodownload"
             preload="metadata"
             class="ss-audio"
+            onContextMenu={(e) => e.preventDefault()}
           >
             <source src={show.audio} type="audio/mpeg" />
           </audio>

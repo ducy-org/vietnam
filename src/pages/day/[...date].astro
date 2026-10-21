@@ -328,7 +328,7 @@ function getBadges(date: string): string[] {
             <h3 class="media-section-label">Familygram</h3>
 
             {familygramTranscripts.map((fg: any) => (
-              <details open class={`letter-transcript letter-${fg.who}`}>
+              <details class={`letter-transcript letter-${fg.who}`}>
                 <summary class="letter-header">
                   <span class="letter-from">{fg.label}</span>
                   <span class="letter-desc">{fg.description}</span>
@@ -364,7 +364,7 @@ function getBadges(date: string): string[] {
             <h3 class="media-section-label">Documents</h3>
 
             {documentTranscripts.map((dt: any) => (
-              <details open class={`letter-transcript letter-${dt.who}`}>
+              <details class={`letter-transcript letter-${dt.who}`}>
                 <summary class="letter-header">
                   <span class="letter-from">{dt.label}</span>
                   <span class="letter-desc">{dt.description}</span>
@@ -400,7 +400,7 @@ function getBadges(date: string): string[] {
             <h3 class="media-section-label">Vigilance Magazine</h3>
 
             {vigilanceTranscripts.map((vt: any) => (
-              <details open class="letter-transcript letter-ship">
+              <details class="letter-transcript letter-ship">
                 <summary class="letter-header">
                   <span class="letter-from">{vt.label}</span>
                   <span class="letter-desc">{vt.description}</span>
@@ -449,7 +449,7 @@ function getBadges(date: string): string[] {
             <h3 class="media-section-label">Cruise Book</h3>
 
             {cruisebookTranscripts.map((ct: any) => (
-              <details open class="letter-transcript letter-ship">
+              <details class="letter-transcript letter-ship">
                 <summary class="letter-header">
                   <span class="letter-from">{ct.label}</span>
                   <span class="letter-desc">{ct.description}</span>

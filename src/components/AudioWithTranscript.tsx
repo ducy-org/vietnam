@@ -94,6 +94,7 @@ export default function AudioWithTranscript({
         controlsList="nodownload"
         preload="metadata"
         class="audio-player"
+        onContextMenu={(e) => e.preventDefault()}
       >
         <source src={src} type="audio/mpeg" />
       </audio>

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "preact/hooks";
+import { useState, useMemo, useEffect } from "preact/hooks";
 
 type ArchiveItem = {
   id: string;
@@ -55,11 +55,39 @@ function m(path: string, mediaUrl: string): string {
   return mediaUrl + path.replace(/^\/media/, "");
 }
 
+const VALID_TABS = new Set(TABS.map(t => t.key));
+
+function getInitialTab(): string {
+  if (typeof window !== "undefined") {
+    const hash = window.location.hash.replace("#", "");
+    if (VALID_TABS.has(hash)) return hash;
+  }
+  return "letters";
+}
+
 export default function MediaArchive({ items, mediaUrl }: Props) {
-  const [activeTab, setActiveTab] = useState("letters");
+  const [activeTab, setActiveTab] = useState(getInitialTab);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"date" | "description">("date");
+
+  function switchTab(key: string) {
+    setActiveTab(key);
+    setExpandedId(null);
+    window.history.replaceState(null, "", `#${key}`);
+  }
+
+  useEffect(() => {
+    function onHashChange() {
+      const hash = window.location.hash.replace("#", "");
+      if (VALID_TABS.has(hash)) {
+        setActiveTab(hash);
+        setExpandedId(null);
+      }
+    }
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   const counts = useMemo(() => {
     const c: Record<string, number> = {};
@@ -98,7 +126,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
           <button
             key={tab.key}
             class={`archive-tab ${activeTab === tab.key ? "active" : ""}`}
-            onClick={() => { setActiveTab(tab.key); setExpandedId(null); }}
+            onClick={() => switchTab(tab.key)}
           >
             <span class="tab-label">{tab.label}</span>
             {counts[tab.key] && <span class="tab-count">{counts[tab.key]}</span>}
@@ -127,7 +155,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
             return (
               <div key={item.id} class="archive-grid-item" onClick={() => setLightboxSrc(m(item.web_path, mediaUrl))}>
                 {isVideo ? (
-                  <video src={src} muted preload="metadata" class="archive-grid-video" />
+                  <video src={src} muted preload="metadata" class="archive-grid-video" controlsList="nodownload" onContextMenu={(e) => e.preventDefault()} />
                 ) : (
                   <img src={src} alt={item.description} loading="lazy" />
                 )}
@@ -241,7 +269,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
                     </div>
                     <div class="list-item-date">{formatDate(item.date)}</div>
                     {activeTab === "audio" && (
-                      <audio controls preload="metadata" class="archive-audio">
+                      <audio controls controlsList="nodownload" preload="metadata" class="archive-audio" onContextMenu={(e) => e.preventDefault()}>
                         <source src={m(item.web_path, mediaUrl)} type="audio/mpeg" />
                       </audio>
                     )}
@@ -291,7 +319,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
       {lightboxSrc && (
         <div class="archive-lightbox" onClick={() => setLightboxSrc(null)}>
           {lightboxSrc.endsWith(".mp4") || lightboxSrc.endsWith(".webm") ? (
-            <video src={lightboxSrc} controls autoplay class="archive-lb-video" onClick={(e) => e.stopPropagation()} />
+            <video src={lightboxSrc} controls controlsList="nodownload" autoplay class="archive-lb-video" onClick={(e) => e.stopPropagation()} onContextMenu={(e) => e.preventDefault()} />
           ) : (
             <img src={lightboxSrc} alt="" onClick={(e) => e.stopPropagation()} />
           )}

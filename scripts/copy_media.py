@@ -78,6 +78,30 @@ def extract_date(filename: str) -> str | None:
     if m:
         d = m.group(1)
         return f"{d[:4]}-{d[4:6]}-01"
+    tape_date_patterns = [
+        (r"April 3rd 1968", "1968-04-03"),
+        (r"April 14th to 16th 1968", "1968-04-14"),
+        (r"April 16th 1968", "1968-04-16"),
+        (r"May 16 1968", "1968-05-16"),
+        (r"May 20th 1968", "1968-05-20"),
+        (r"May 25th 1968", "1968-05-25"),
+        (r"May 31st 1968", "1968-05-31"),
+        (r"June 1st 1968", "1968-06-01"),
+        (r"June 8th 1968", "1968-06-08"),
+        (r"June 14th 1968", "1968-06-14"),
+        (r"June 22 1968", "1968-06-22"),
+        (r"June 23 1968", "1968-06-23"),
+        (r"July 11 1968", "1968-07-11"),
+        (r"July 13th 1968", "1968-07-13"),
+        (r"July 28th 1968", "1968-07-28"),
+        (r"July 31st 1968", "1968-07-31"),
+        (r"August 20th 1968", "1968-08-20"),
+        (r"August 28th 1968", "1968-08-28"),
+        (r"Aug 28th 1968", "1968-08-28"),
+    ]
+    for pattern, date in tape_date_patterns:
+        if pattern in filename:
+            return date
     return None
 
 
@@ -152,6 +176,69 @@ def apply_watermark(img_path: Path) -> None:
         img.save(img_path, "JPEG", quality=92)
     except Exception as e:
         print(f"  WARNING: Watermark failed for {img_path.name}: {e}")
+
+
+def apply_video_watermark(video_path: Path) -> None:
+    """Burn watermark into video using ffmpeg overlay with a Pillow-generated PNG."""
+    if not HAS_PILLOW:
+        print(f"  WARNING: Pillow not available, skipping video watermark for {video_path.name}")
+        return
+    try:
+        probe = subprocess.run(
+            ["ffprobe", "-v", "quiet", "-print_format", "json", "-show_streams", str(video_path)],
+            capture_output=True, text=True, timeout=15,
+        )
+        import json as _json
+        streams = _json.loads(probe.stdout)
+        vstream = next(s for s in streams["streams"] if s["codec_type"] == "video")
+        w, h = int(vstream["width"]), int(vstream["height"])
+
+        font_size = max(12, min(36, int(w * 0.02)))
+        try:
+            font = ImageFont.truetype("/System/Library/Fonts/Courier.ttc", font_size)
+        except (OSError, IOError):
+            try:
+                font = ImageFont.truetype("/Library/Fonts/Courier New.ttf", font_size)
+            except (OSError, IOError):
+                font = ImageFont.load_default()
+
+        overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(overlay)
+        pad_x = max(5, int(w * 0.015))
+        pad_y = max(5, int(h * 0.015))
+
+        bbox_l = draw.textbbox((0, 0), WATERMARK_LEFT, font=font)
+        th_l = bbox_l[3] - bbox_l[1]
+        x_l, y_l = pad_x, h - th_l - pad_y
+        shadow = max(1, font_size // 12)
+        draw.text((x_l + shadow, y_l + shadow), WATERMARK_LEFT, font=font, fill=(0, 0, 0, 100))
+        draw.text((x_l, y_l), WATERMARK_LEFT, font=font, fill=(255, 255, 255, 130))
+
+        bbox_r = draw.textbbox((0, 0), WATERMARK_RIGHT, font=font)
+        tw_r, th_r = bbox_r[2] - bbox_r[0], bbox_r[3] - bbox_r[1]
+        x_r, y_r = w - tw_r - pad_x, h - th_r - pad_y
+        draw.text((x_r + shadow, y_r + shadow), WATERMARK_RIGHT, font=font, fill=(0, 0, 0, 100))
+        draw.text((x_r, y_r), WATERMARK_RIGHT, font=font, fill=(255, 255, 255, 130))
+
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp_png:
+            overlay.save(tmp_png.name, "PNG")
+            tmp_out = video_path.with_suffix(".tmp.mp4")
+            result = subprocess.run(
+                ["ffmpeg", "-y", "-i", str(video_path), "-i", tmp_png.name,
+                 "-filter_complex", "overlay=0:0",
+                 "-c:a", "copy", "-movflags", "+faststart",
+                 str(tmp_out)],
+                capture_output=True, text=True, timeout=600,
+            )
+            Path(tmp_png.name).unlink(missing_ok=True)
+            if result.returncode == 0:
+                tmp_out.replace(video_path)
+                print(f"  [watermark] {video_path.name}")
+            else:
+                tmp_out.unlink(missing_ok=True)
+                print(f"  WARNING: Video watermark failed for {video_path.name}: {result.stderr[-200:]}")
+    except Exception as e:
+        print(f"  WARNING: Video watermark failed for {video_path.name}: {e}")
 
 
 def convert_heic(src: Path, dst: Path) -> bool:
@@ -360,12 +447,16 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
     is_pdf = dst.suffix.lower() == ".pdf"
     thumb_web_path = None
 
+    is_video = dst.suffix.lower() in {".mp4", ".webm", ".mov"}
+
     if is_image:
         resize_for_web(dst)
         if should_watermark and HAS_PILLOW:
             apply_watermark(dst)
         thumb_dir = dst_dir / "thumbs"
         thumb_web_path = generate_thumbnail(dst, thumb_dir)
+    elif is_video and should_watermark:
+        apply_video_watermark(dst)
     elif is_pdf:
         thumb_dir = dst_dir / "thumbs"
         thumb_web_path = generate_pdf_thumbnail(dst, thumb_dir)
@@ -489,7 +580,7 @@ CATEGORIES = {
     },
     "video": {
         "sources": [("Videos", "video", False)],
-        "watermark": False,
+        "watermark": True,
     },
     "audio": {
         "sources": [("Audio Cassettes/denoised recordings", "audio", False)],

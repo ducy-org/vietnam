@@ -49,7 +49,7 @@ export default function Lightbox({ items }: { items: LightboxItem[] }) {
           >
             {item.type === "video" ? (
               <div class="lb-thumb-video">
-                <video src={item.src} preload="metadata" />
+                <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
                 <span class="lb-play">&#9654;</span>
               </div>
             ) : item.type === "pdf" ? (
@@ -86,8 +86,10 @@ export default function Lightbox({ items }: { items: LightboxItem[] }) {
               <video
                 key={current.src}
                 controls
+                controlsList="nodownload"
                 autoplay
                 class="lb-video"
+                onContextMenu={(e) => e.preventDefault()}
               >
                 <source src={current.src} type="video/mp4" />
               </video>

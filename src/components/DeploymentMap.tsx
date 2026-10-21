@@ -84,7 +84,7 @@ function ModalLightbox({ items, label }: { items: MediaEntry[]; label: string })
           <button key={i} class="modal-thumb" onClick={() => setOpen(i)}>
             {item.type === "video" ? (
               <div class="modal-thumb-video">
-                <video src={item.src} preload="metadata" />
+                <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
                 <span class="modal-play">&#9654;</span>
               </div>
             ) : item.src.endsWith(".pdf") ? (
@@ -116,7 +116,7 @@ function ModalLightbox({ items, label }: { items: MediaEntry[]; label: string })
           )}
           <div class="lb-content">
             {current.type === "video" ? (
-              <video key={current.src} controls autoplay class="lb-video">
+              <video key={current.src} controls controlsList="nodownload" autoplay class="lb-video" onContextMenu={(e) => e.preventDefault()}>
                 <source src={current.src} type="video/mp4" />
               </video>
             ) : current.src.endsWith(".pdf") ? (
@@ -209,7 +209,7 @@ function ModalSyncedAudio({ src, transcript, who }: {
         <span class="modal-audio-speaker">{transcript.label}</span>
         {!isMike && <span class="modal-audio-loc">DECATUR, IL</span>}
       </div>
-      <audio ref={audioRef} controls controlslist="nodownload" preload="metadata" class="modal-audio-player">
+      <audio ref={audioRef} controls controlsList="nodownload" preload="metadata" class="modal-audio-player" onContextMenu={(e) => e.preventDefault()}>
         <source src={src} type="audio/mpeg" />
       </audio>
       {segments.length > 0 ? (
@@ -673,7 +673,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                 <div class="modal-media-section">
                   <div class="modal-media-label">FAMILYGRAM</div>
                   {modalFamilygrams.map((fg, i) => (
-                    <details key={i} open class={`letter-transcript letter-${fg.who}`}>
+                    <details key={i} class={`letter-transcript letter-${fg.who}`}>
                       <summary class="letter-header">
                         <span class="letter-from">{fg.label}</span>
                         <span class="letter-desc">{fg.description}</span>
@@ -693,7 +693,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                 <div class="modal-media-section">
                   <div class="modal-media-label">DOCUMENTS</div>
                   {modalDocTranscripts.map((dt, i) => (
-                    <details key={i} open class={`letter-transcript letter-${dt.who}`}>
+                    <details key={i} class={`letter-transcript letter-${dt.who}`}>
                       <summary class="letter-header">
                         <span class="letter-from">{dt.label}</span>
                         <span class="letter-desc">{dt.description}</span>
@@ -717,7 +717,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                 <div class="modal-media-section">
                   <div class="modal-media-label">VIGILANCE MAGAZINE</div>
                   {modalVigilanceTranscripts.map((vt, i) => (
-                    <details key={i} open class="letter-transcript letter-ship">
+                    <details key={i} class="letter-transcript letter-ship">
                       <summary class="letter-header">
                         <span class="letter-from">{vt.label}</span>
                         <span class="letter-desc">{vt.description}</span>
@@ -741,7 +741,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                 <div class="modal-media-section">
                   <div class="modal-media-label">CRUISE BOOK</div>
                   {modalCruisebookTranscripts.map((ct, i) => (
-                    <details open key={i} class="letter-transcript letter-ship">
+                    <details key={i} class="letter-transcript letter-ship">
                       <summary class="letter-header">
                         <span class="letter-from">{ct.label}</span>
                         <span class="letter-desc">{ct.description}</span>
@@ -767,7 +767,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                   <div class="modal-audio-list">
                     {modalMedia.audio.map((a, i) => {
                       const at = modalAudioTranscripts.find(t =>
-                        t.match_key && a.caption?.includes(t.match_key)
+                        t.match_key && (a.caption?.includes(t.match_key) || t.match_key.includes(a.caption || ""))
                       ) || modalAudioTranscripts.find(t =>
                         a.caption?.includes(t.tape?.split(",")[0] || "___")
                       );
@@ -780,7 +780,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                             <span class="modal-audio-speaker">{a.speaker || a.caption}</span>
                             {a.who === "family" && <span class="modal-audio-loc">DECATUR, IL</span>}
                           </div>
-                          <audio controls controlslist="nodownload" preload="metadata" class="modal-audio-player">
+                          <audio controls controlsList="nodownload" preload="metadata" class="modal-audio-player" onContextMenu={(e) => e.preventDefault()}>
                             <source src={a.src} type="audio/mpeg" />
                           </audio>
                         </div>
