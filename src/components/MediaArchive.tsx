@@ -153,12 +153,9 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
             const isVideo = item.web_path.endsWith(".mp4") || item.web_path.endsWith(".webm");
             const src = m(item.thumb_path || item.web_path, mediaUrl);
             return (
-              <div key={item.id} class="archive-grid-item" onClick={() => setLightboxSrc(m(item.web_path, mediaUrl))}>
-                {isVideo ? (
-                  <video src={src} muted preload="metadata" class="archive-grid-video" controlsList="nodownload" onContextMenu={(e) => e.preventDefault()} />
-                ) : (
-                  <img src={src} alt={item.description} loading="lazy" />
-                )}
+              <div key={item.id} class={`archive-grid-item ${isVideo ? "archive-grid-video-item" : ""}`} onClick={() => setLightboxSrc(m(item.web_path, mediaUrl))}>
+                <img src={src} alt={item.description} loading="lazy" />
+                {isVideo && <span class="grid-play-badge">&#9654;</span>}
                 <div class="grid-item-caption">
                   <span class="grid-item-date">{formatDate(item.date)}</span>
                   <span class="grid-item-desc">{item.description}</span>

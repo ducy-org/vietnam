@@ -84,7 +84,11 @@ function ModalLightbox({ items, label }: { items: MediaEntry[]; label: string })
           <button key={i} class="modal-thumb" onClick={() => setOpen(i)}>
             {item.type === "video" ? (
               <div class="modal-thumb-video">
-                <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
+                {item.thumb ? (
+                  <img src={item.thumb} alt={item.caption} loading="lazy" />
+                ) : (
+                  <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
+                )}
                 <span class="modal-play">&#9654;</span>
               </div>
             ) : item.src.endsWith(".pdf") ? (

@@ -350,6 +350,25 @@ def generate_pdf_thumbnail(pdf_path: Path, thumb_dir: Path) -> str | None:
         return None
 
 
+def generate_video_thumbnail(video_path: Path, thumb_dir: Path) -> str | None:
+    """Generate a JPEG thumbnail from a video frame using ffmpeg."""
+    thumb_dir.mkdir(parents=True, exist_ok=True)
+    thumb_path = thumb_dir / (video_path.stem + ".jpg")
+    try:
+        result = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(video_path),
+             "-vf", f"select=eq(n\\,30),scale={THUMB_WIDTH}:-1",
+             "-frames:v", "1", "-q:v", "5", str(thumb_path)],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode == 0 and thumb_path.exists():
+            return "/" + str(thumb_path.relative_to(PROJECT_ROOT / "public"))
+        return None
+    except Exception as e:
+        print(f"  WARNING: Video thumbnail failed for {video_path.name}: {e}")
+        return None
+
+
 def collect_files(src_dir: Path, recurse: bool = False) -> list[Path]:
     if not src_dir.exists():
         return []
@@ -420,7 +439,8 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
         }
         if also_dates:
             result["also_dates"] = also_dates
-        if is_image or src.suffix.lower() == ".pdf":
+        is_vid = src.suffix.lower() in {".mp4", ".webm", ".mov"}
+        if is_image or src.suffix.lower() == ".pdf" or is_vid:
             thumb_name = web_name if is_image else Path(web_name).stem + ".jpg"
             result["thumb_path"] = "/" + str((thumb_dir / thumb_name).relative_to(PROJECT_ROOT / "public"))
         return result
@@ -455,8 +475,11 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
             apply_watermark(dst)
         thumb_dir = dst_dir / "thumbs"
         thumb_web_path = generate_thumbnail(dst, thumb_dir)
-    elif is_video and should_watermark:
-        apply_video_watermark(dst)
+    elif is_video:
+        if should_watermark:
+            apply_video_watermark(dst)
+        thumb_dir = dst_dir / "thumbs"
+        thumb_web_path = generate_video_thumbnail(dst, thumb_dir)
     elif is_pdf:
         thumb_dir = dst_dir / "thumbs"
         thumb_web_path = generate_pdf_thumbnail(dst, thumb_dir)

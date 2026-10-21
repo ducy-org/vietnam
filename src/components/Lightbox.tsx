@@ -49,7 +49,11 @@ export default function Lightbox({ items }: { items: LightboxItem[] }) {
           >
             {item.type === "video" ? (
               <div class="lb-thumb-video">
-                <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
+                {item.thumb ? (
+                  <img src={item.thumb} alt={item.caption} loading="lazy" />
+                ) : (
+                  <video src={item.src} preload="metadata" onContextMenu={(e) => e.preventDefault()} />
+                )}
                 <span class="lb-play">&#9654;</span>
               </div>
             ) : item.type === "pdf" ? (

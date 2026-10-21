@@ -7587,6 +7587,7 @@
       "web_path": "/media/video/19680521-liberty-in-hong-kong.mp4",
       "date": "1968-05-21",
       "description": "Liberty in Hong Kong",
+      "thumb_path": "/media/video/thumbs/19680521-liberty-in-hong-kong.jpg",
       "category": "video"
     },
     {
@@ -7594,6 +7595,7 @@
       "web_path": "/media/video/19680527-anchored-in-subic-bay.mp4",
       "date": "1968-05-27",
       "description": "Anchored in Subic Bay",
+      "thumb_path": "/media/video/thumbs/19680527-anchored-in-subic-bay.jpg",
       "category": "video"
     },
     {
@@ -7601,6 +7603,7 @@
       "web_path": "/media/video/19680603-underway-refueling-with-a0-146.mp4",
       "date": "1968-06-03",
       "description": "Underway Refueling with A0-146",
+      "thumb_path": "/media/video/thumbs/19680603-underway-refueling-with-a0-146.jpg",
       "category": "video"
     },
     {
@@ -7608,6 +7611,7 @@
       "web_path": "/media/video/19680604-dlg-29-flight-quarters.mp4",
       "date": "1968-06-04",
       "description": "DLG-29 Flight Quarters",
+      "thumb_path": "/media/video/thumbs/19680604-dlg-29-flight-quarters.jpg",
       "category": "video"
     },
     {
@@ -7615,6 +7619,7 @@
       "web_path": "/media/video/19680610-on-south-sar-station-gulf-of-tonkin.mp4",
       "date": "1968-06-10",
       "description": "On South SAR Station - Gulf of Tonkin",
+      "thumb_path": "/media/video/thumbs/19680610-on-south-sar-station-gulf-of-tonkin.jpg",
       "category": "video"
     },
     {
@@ -7622,6 +7627,7 @@
       "web_path": "/media/video/19680613-da-nang-harbor-flying-crane.mp4",
       "date": "1968-06-13",
       "description": "Da Nang Harbor - Flying Crane",
+      "thumb_path": "/media/video/thumbs/19680613-da-nang-harbor-flying-crane.jpg",
       "category": "video"
     },
     {
@@ -7629,6 +7635,7 @@
       "web_path": "/media/video/19680703-san-bernadino-straits-with-volcano.mp4",
       "date": "1968-07-03",
       "description": "San Bernadino Straits with Volcano",
+      "thumb_path": "/media/video/thumbs/19680703-san-bernadino-straits-with-volcano.jpg",
       "category": "video"
     },
     {
@@ -7636,6 +7643,7 @@
       "web_path": "/media/video/19680704-july-4th-flight-deck-frolic.mp4",
       "date": "1968-07-04",
       "description": "July 4th Flight Deck Frolic",
+      "thumb_path": "/media/video/thumbs/19680704-july-4th-flight-deck-frolic.jpg",
       "category": "video"
     },
     {
@@ -7643,6 +7651,7 @@
       "web_path": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4",
       "date": "1968-07-10",
       "description": "King Neptune's Court - Equator at 180th",
+      "thumb_path": "/media/video/thumbs/19680710-king-neptunes-court-equator-at-180th.jpg",
       "category": "video"
     },
     {
@@ -7650,6 +7659,7 @@
       "web_path": "/media/video/19680713-pearl-harbor.mp4",
       "date": "1968-07-13",
       "description": "Pearl Harbor",
+      "thumb_path": "/media/video/thumbs/19680713-pearl-harbor.jpg",
       "category": "video"
     },
     {
@@ -7657,6 +7667,7 @@
       "web_path": "/media/video/19680718-homecoming-san-diego.mp4",
       "date": "1968-07-18",
       "description": "Homecoming - San Diego",
+      "thumb_path": "/media/video/thumbs/19680718-homecoming-san-diego.jpg",
       "category": "video"
     }
   ],

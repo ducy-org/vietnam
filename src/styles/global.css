@@ -3503,6 +3503,21 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   transform: translateY(-1px);
 }
 
+.archive-grid-video-item {
+  position: relative;
+}
+
+.grid-play-badge {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
 .archive-grid-item img,
 .archive-grid-item video {
   width: 100%;
