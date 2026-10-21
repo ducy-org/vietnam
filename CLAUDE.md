@@ -106,7 +106,9 @@ Reads `deployment-timeline.md` → writes `src/data/timeline.json`. Extracts dat
 python3 scripts/copy_media.py [--category photos|letters|documents|logbook|slides|video|audio|all]
 ```
 
-Scans the Vietnam Project directories, converts HEIC→JPEG (via `sips`), generates thumbnails, applies watermarks, and writes to `public/media/`. Also generates `src/data/media-manifest.json`. Dates extracted from filenames (`YYYYMMDD - description.ext`).
+Scans the Vietnam Project directories, converts HEIC→JPEG (via `sips`), generates thumbnails, applies watermarks, and writes to `public/media/`. Also generates `src/data/media-manifest.json`. Dates extracted from filenames (`YYYYMMDD - description.ext`). Audio tape filenames use natural-language dates (e.g., `Tape 1 - Mike Ducy April 14th to 16th 1968.WAV`) — these are matched by a hardcoded pattern list in `extract_date()`.
+
+**Video watermarking**: Videos are watermarked via ffmpeg overlay — Pillow generates a transparent PNG with the watermark text, ffmpeg composites it onto the video. Video thumbnails are also extracted via ffmpeg (frame 30).
 
 **SSN redaction**: The script warns about DD-214 and ACDUTRA files that contain SSNs. These must be manually redacted before publishing.
 
@@ -270,6 +272,30 @@ npm run build                  # production build to dist/
 ### Map Tutorial
 
 6-step guided walkthrough stored in `DeploymentMap.tsx`. Persists completion in `localStorage` (`map-tutorial-done`). Replayable via `?` button in the map legend. Uses a bouncing `▶` pointer positioned via DOM queries on `data-tutorial-id` attributes.
+
+### Map Mobile Layout
+
+- Pin tap flies/centers the map on the location
+- **Portrait**: Panel slides up from bottom (50% height), drag handle at top to expand to 85%
+- **Landscape**: Panel on the right side like desktop (50% width), expandable to 75%
+- Uses `panelExpanded` state and `.panel-expanded` CSS class
+
+### Archive Page
+
+- Uses `client:only="preact"` (NOT `client:load`) to avoid SSR hydration mismatch with URL hash anchors
+- Tabs support `#anchor` URLs (e.g., `/archive#audio`) — hash is read on mount and updated on tab switch
+- Video grid items use `<img>` thumbnails with play badge overlay, NOT `<video>` elements
+
+### Content Display
+
+- Letters and audio transcripts open by default (`<details open>`)
+- Familygrams, documents, vigilance, and cruise book transcripts collapsed by default (no `open` attribute)
+- Do NOT touch logbook format
+- Audio/video elements use `controlsList="nodownload"` and `onContextMenu` prevention (JSX camelCase: `controlsList`, not `controlslist`)
+
+### Transcript Matching
+
+Audio transcripts are matched to media items bidirectionally — check both `caption.includes(match_key)` AND `match_key.includes(caption)`. This is needed because some filenames have date prefixes in one system but not the other. This pattern must be consistent in both `DeploymentMap.tsx` (map modal) and `day/[...date].astro` (timeline).
 
 ## Sensitive Data
 
