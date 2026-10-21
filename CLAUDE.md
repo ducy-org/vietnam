@@ -244,6 +244,12 @@ Workflow: `.github/workflows/deploy.yml`
 
 ## Development
 
+**Always activate the venv before running Python scripts:**
+
+```bash
+source venv/bin/activate       # REQUIRED — Pillow, etc. live here
+```
+
 ```bash
 npm install
 npm run dev                    # localhost:4321

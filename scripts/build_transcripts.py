@@ -89,6 +89,10 @@ def parse_audio_date(filename):
     for pattern, date in date_patterns:
         if pattern in filename:
             return date
+    m = re.match(r"(\d{8})", filename)
+    if m:
+        d = m.group(1)
+        return f"{d[:4]}-{d[4:6]}-{d[6:8]}"
     return None
 
 
