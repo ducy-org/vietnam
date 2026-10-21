@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MediaArchive from "../components/MediaArchive.tsx";
+import "../styles/global.css";
+import manifestRaw from "../data/media-manifest.json";
+import transcriptsRaw from "../data/transcripts.json";
+import timelineRaw from "../data/timeline.json";
+
+const manifest: any = manifestRaw;
+const allTranscripts: Record<string, any[]> = transcriptsRaw as any;
+const timelineData: any = timelineRaw;
+const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
+
+function flattenCategory(data: any): any[] {
+  if (Array.isArray(data)) return data;
+  if (data && typeof data === "object") return Object.values(data).flat() as any[];
+  return [];
+}
+
+const timelineDates = new Set<string>();
+for (const month of timelineData.months) {
+  for (const day of month.days) {
+    timelineDates.add(day.date);
+  }
+}
+
+const transcriptsByDateType: Record<string, any> = {};
+for (const [date, entries] of Object.entries(allTranscripts)) {
+  for (const entry of entries as any[]) {
+    const key = `${date}::${entry.type}`;
+    if (!transcriptsByDateType[key]) transcriptsByDateType[key] = entry;
+  }
+}
+
+const CATEGORY_TO_TRANSCRIPT_TYPE: Record<string, string[]> = {
+  letters: ["letter"],
+  audio: ["audio"],
+  documents: ["document", "familygram", "vigilance"],
+  cruisebook: ["cruisebook"],
+  logbook: [],
+  photos: [],
+  slides: [],
+  video: [],
+};
+
+type ArchiveItem = {
+  id: string;
+  category: string;
+  subcategory?: string;
+  date: string | null;
+  description: string;
+  web_path: string;
+  thumb_path?: string;
+  transcript?: { label: string; who: string; text: string; attribution?: string };
+  timelineDate?: string;
+};
+
+const items: ArchiveItem[] = [];
+let itemId = 0;
+
+for (const category of Object.keys(CATEGORY_TO_TRANSCRIPT_TYPE)) {
+  const rawItems = flattenCategory(manifest[category]);
+  const transcriptTypes = CATEGORY_TO_TRANSCRIPT_TYPE[category];
+  const seenTranscripts = new Set<string>();
+
+  for (const item of rawItems) {
+    const date = item.date && item.date.length >= 10 ? item.date : null;
+
+    let transcript: ArchiveItem["transcript"] | undefined;
+    if (date && transcriptTypes.length > 0) {
+      for (const tt of transcriptTypes) {
+        const key = `${date}::${tt}`;
+        if (transcriptsByDateType[key] && !seenTranscripts.has(key)) {
+          const t = transcriptsByDateType[key];
+          transcript = { label: t.label, who: t.who, text: t.text, attribution: t.attribution };
+          seenTranscripts.add(key);
+          break;
+        }
+      }
+    }
+
+    items.push({
+      id: `${category}-${itemId++}`,
+      category,
+      subcategory: item.subcategory,
+      date,
+      description: item.description,
+      web_path: item.web_path,
+      thumb_path: item.thumb_path,
+      transcript,
+      timelineDate: date && timelineDates.has(date) ? date : undefined,
+    });
+  }
+}
+---
+
+<Layout title="Archive — Letters Home">
+  <div class="archive-page">
+    <div class="archive-header">
+      <h1>Source Materials Archive</h1>
+      <p class="archive-intro">
+        Browse the complete collection of primary source materials from Mike Ducy's 1968 WestPac deployment
+        aboard USS Jouett (DLG-29). Over 1,000 digitized items including letters, audio recordings,
+        photographs, official documents, and the ship's logbook.
+      </p>
+    </div>
+    <MediaArchive items={items} mediaUrl={MEDIA_URL} client:load />
+  </div>
+</Layout>
