@@ -34,7 +34,8 @@ export async function getStaticPaths() {
 const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
 function m(path: string | undefined): string | undefined {
   if (!path) return path;
-  return MEDIA_URL + path;
+  if (!MEDIA_URL) return path;
+  return MEDIA_URL + path.replace(/^\/media/, '');
 }
 
 type MediaItem = {

@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
 const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
+function m(path: string): string {
+  if (!MEDIA_URL) return path;
+  return MEDIA_URL + path.replace(/^\/media/, '');
+}
 ---
 
 <Layout>
@@ -12,12 +16,12 @@ const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
 
     <div class="portraits">
       <div class="portrait">
-        <img src={`${MEDIA_URL}/media/photos/mike-ducy-dress-blues.jpg`} alt="FTG3 Michael F. Ducy, U.S. Navy" />
+        <img src={m("/media/photos/mike-ducy-dress-blues.jpg")} alt="FTG3 Michael F. Ducy, U.S. Navy" />
         <div class="portrait-name">FTG3 Michael F. Ducy, 20</div>
         <div class="portrait-branch">U.S. Navy</div>
       </div>
       <div class="portrait">
-        <img src={`${MEDIA_URL}/media/photos/bill-ducy-portrait.jpg`} alt="PFC William P. Ducy, U.S. Marine Corps" />
+        <img src={m("/media/photos/bill-ducy-portrait.jpg")} alt="PFC William P. Ducy, U.S. Marine Corps" />
         <div class="portrait-name">PFC William P. Ducy, 19</div>
         <div class="portrait-branch">U.S. Marine Corps</div>
       </div>

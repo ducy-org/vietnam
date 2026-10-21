@@ -7,7 +7,9 @@ import manifestRaw from "../data/media-manifest.json";
 const manifest: any = manifestRaw;
 const MEDIA_URL = import.meta.env.PUBLIC_MEDIA_URL || '';
 function m(path: string | undefined): string | undefined {
-  return path ? MEDIA_URL + path : path;
+  if (!path) return path;
+  if (!MEDIA_URL) return path;
+  return MEDIA_URL + path.replace(/^\/media/, '');
 }
 const raw: any[] = manifest.cruisebook || [];
 
