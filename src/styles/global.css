@@ -1370,6 +1370,15 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   background: #0a0e14;
 }
 
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-container * {
+  box-sizing: content-box;
+}
+
 /* Pin markers */
 .map-pin {
   background: none !important;
