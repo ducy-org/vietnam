@@ -189,33 +189,72 @@ function getBadges(date: string): string[] {
     <div class="app-layout">
       <nav class="sidebar">
         <h2>Timeline</h2>
-        {sidebarGroups.map((mg: any) => (
-          <details
-            class="sidebar-month"
-            open={isCurrentMonth(mg, day.date)}
-          >
-            <summary>{mg.label}</summary>
-            {mg.days.map((d: any) => (
-              <a
-                href={`/day/${d.date}`}
-                class={`sidebar-day ${d.date === day.date ? "active" : ""}`}
+        <details class="sidebar-mobile-nav">
+          <summary class="sidebar-mobile-toggle">
+            <span class="sidebar-mobile-label">
+              {formatShortDate(day.date)}{day.day_number != null ? ` · Day ${day.day_number}` : ""}
+            </span>
+            <span class="sidebar-mobile-arrow">▾</span>
+          </summary>
+          <div class="sidebar-mobile-months">
+            {sidebarGroups.map((mg: any) => (
+              <details
+                class="sidebar-month"
+                open={isCurrentMonth(mg, day.date)}
               >
-                <span class="sidebar-day-text">
-                  {formatShortDate(d.date)}
-                  {d.day_number != null ? ` · Day ${d.day_number}` : ""}
-                </span>
-                <span class="sidebar-badges">
-                  {d.significant && <span class="badge badge-star" title="Key event">★</span>}
-                  {getBadges(d.date).map((b: string) => (
-                    <span class={`badge badge-${b.toLowerCase()}`} title={
-                      b === "P" ? "Photos" : b === "V" ? "Video" : b === "D" ? "Documents" : b === "L" ? "Letters" : "Audio"
-                    }>{b}</span>
-                  ))}
-                </span>
-              </a>
+                <summary>{mg.label}</summary>
+                {mg.days.map((d: any) => (
+                  <a
+                    href={`/day/${d.date}`}
+                    class={`sidebar-day ${d.date === day.date ? "active" : ""}`}
+                  >
+                    <span class="sidebar-day-text">
+                      {formatShortDate(d.date)}
+                      {d.day_number != null ? ` · Day ${d.day_number}` : ""}
+                    </span>
+                    <span class="sidebar-badges">
+                      {d.significant && <span class="badge badge-star" title="Key event">★</span>}
+                      {getBadges(d.date).map((b: string) => (
+                        <span class={`badge badge-${b.toLowerCase()}`} title={
+                          b === "P" ? "Photos" : b === "V" ? "Video" : b === "D" ? "Documents" : b === "L" ? "Letters" : "Audio"
+                        }>{b}</span>
+                      ))}
+                    </span>
+                  </a>
+                ))}
+              </details>
             ))}
-          </details>
-        ))}
+          </div>
+        </details>
+        <div class="sidebar-desktop-months">
+          {sidebarGroups.map((mg: any) => (
+            <details
+              class="sidebar-month"
+              open={isCurrentMonth(mg, day.date)}
+            >
+              <summary>{mg.label}</summary>
+              {mg.days.map((d: any) => (
+                <a
+                  href={`/day/${d.date}`}
+                  class={`sidebar-day ${d.date === day.date ? "active" : ""}`}
+                >
+                  <span class="sidebar-day-text">
+                    {formatShortDate(d.date)}
+                    {d.day_number != null ? ` · Day ${d.day_number}` : ""}
+                  </span>
+                  <span class="sidebar-badges">
+                    {d.significant && <span class="badge badge-star" title="Key event">★</span>}
+                    {getBadges(d.date).map((b: string) => (
+                      <span class={`badge badge-${b.toLowerCase()}`} title={
+                        b === "P" ? "Photos" : b === "V" ? "Video" : b === "D" ? "Documents" : b === "L" ? "Letters" : "Audio"
+                      }>{b}</span>
+                    ))}
+                  </span>
+                </a>
+              ))}
+            </details>
+          ))}
+        </div>
       </nav>
 
       <main class="content-panel">

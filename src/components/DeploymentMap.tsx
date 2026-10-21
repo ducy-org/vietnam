@@ -461,7 +461,26 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
         const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
         marker.on("click", () => {
-          mapInstanceRef.current?.flyTo([loc.lat, loc.lng], mapInstanceRef.current.getZoom(), { duration: 0.5 });
+          const map = mapInstanceRef.current;
+          if (map) {
+            const container = map.getContainer();
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            const isLandscape = window.matchMedia("(max-width: 768px) and (orientation: landscape)").matches;
+            const isPortrait = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+            const pinPoint = map.latLngToContainerPoint([loc.lat, loc.lng]);
+            let visibleCenterX = w / 2;
+            let visibleCenterY = h / 2;
+            if (isLandscape) {
+              visibleCenterX = (w * 0.6) / 2;
+            } else if (isPortrait) {
+              visibleCenterY = (h * 0.5) / 2;
+            }
+            const offsetX = pinPoint.x - visibleCenterX;
+            const offsetY = pinPoint.y - visibleCenterY;
+            const newCenter = map.containerPointToLatLng(L.point(w / 2 + offsetX, h / 2 + offsetY));
+            map.flyTo(newCenter, map.getZoom(), { duration: 0.5 });
+          }
           setActivePopup(loc.id);
           setSelectedDay(null);
           setPanelExpanded(false);
@@ -520,6 +539,9 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
               <span class="drag-handle-bar" />
             </button>
             <div class="panel-header">
+              <button class="panel-expand-toggle" onClick={() => setPanelExpanded(!panelExpanded)} aria-label={panelExpanded ? "Collapse panel" : "Expand panel"}>
+                {panelExpanded ? "▸" : "◂"}
+              </button>
               <div class="panel-title">{activeLoc.name.toUpperCase()}</div>
               <button class="panel-close" onClick={() => { setActivePopup(null); setSelectedDay(null); setPanelExpanded(false); }}>
                 &#10005;
