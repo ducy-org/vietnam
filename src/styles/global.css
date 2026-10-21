@@ -984,12 +984,8 @@ details.letter-transcript:not([open]) summary.letter-header::after {
     position: static;
     height: auto;
     max-height: none;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 0.5rem;
-    gap: 0.25rem;
-    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    overflow: hidden;
   }
 
   .sidebar h2 {
@@ -997,17 +993,21 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   }
 
   .sidebar-month {
-    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .sidebar-month summary {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.75rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
     white-space: nowrap;
   }
 
+  .sidebar-month:not([open]) + .sidebar-month:not([open]) {
+    margin-top: -1px;
+  }
+
   .sidebar-day {
-    padding: 0.2rem 0.75rem;
+    padding: 0.35rem 1rem 0.35rem 1.5rem;
     white-space: nowrap;
     min-height: 44px;
     display: flex;
@@ -1575,6 +1575,10 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   to { transform: translateX(0); opacity: 1; }
 }
 
+.panel-drag-handle {
+  display: none;
+}
+
 .panel-header {
   display: flex;
   justify-content: space-between;
@@ -1962,10 +1966,43 @@ details.letter-transcript:not([open]) summary.letter-header::after {
     left: 0;
     right: 0;
     width: 100%;
-    height: 55%;
+    height: 50%;
     border-left: none;
     border-top: 1px solid #1e2d1e;
     z-index: 500;
+    transition: height 0.25s ease-out;
+    animation: panel-slide-up 0.25s ease-out;
+  }
+
+  @keyframes panel-slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .map-panel.panel-expanded {
+    height: 85%;
+  }
+
+  .panel-drag-handle {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .drag-handle-bar {
+    display: block;
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(51, 255, 51, 0.35);
+  }
+
+  .panel-drag-handle:active .drag-handle-bar {
+    background: rgba(51, 255, 51, 0.6);
   }
 
   .map-header {
@@ -1982,7 +2019,7 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   }
 
   .panel-header {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .panel-title {
@@ -2013,6 +2050,32 @@ details.letter-transcript:not([open]) summary.letter-header::after {
 
   .pin-label {
     font-size: 7px;
+  }
+}
+
+/* Map landscape on mobile — panel on the right like desktop */
+@media (max-width: 768px) and (orientation: landscape) {
+  .map-panel {
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    border-top: none;
+    border-left: 1px solid #1e2d1e;
+    animation: panel-slide 0.2s ease-out;
+    transition: width 0.25s ease-out;
+  }
+
+  .map-panel.panel-expanded {
+    width: 75%;
+    height: 100%;
+  }
+
+  .panel-drag-handle {
+    display: none;
   }
 }
 
@@ -3189,7 +3252,7 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--color-text-muted);
-  max-width: 720px;
+  max-width: min(720px, 100%);
   margin: 0 auto 0.5rem;
   text-align: left;
 }

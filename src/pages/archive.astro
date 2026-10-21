@@ -113,6 +113,6 @@ for (const category of Object.keys(CATEGORY_TO_TRANSCRIPT_TYPE)) {
         permission to use or reproduce any items. All other items are in the public domain or used under fair use doctrine.
       </p>
     </div>
-    <MediaArchive items={items} mediaUrl={MEDIA_URL} client:load />
+    <MediaArchive items={items} mediaUrl={MEDIA_URL} client:only="preact" />
   </div>
 </Layout>

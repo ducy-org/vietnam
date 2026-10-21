@@ -271,6 +271,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
   const [activePopup, setActivePopup] = useState<string | null>(initialLocation || null);
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [modalDate, setModalDate] = useState<string | null>(null);
+  const [panelExpanded, setPanelExpanded] = useState(false);
 
   const [tutorialStep, setTutorialStep] = useState(() => {
     if (typeof window !== "undefined" && localStorage.getItem("map-tutorial-done")) return -1;
@@ -460,8 +461,10 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
         const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
 
         marker.on("click", () => {
+          mapInstanceRef.current?.flyTo([loc.lat, loc.lng], mapInstanceRef.current.getZoom(), { duration: 0.5 });
           setActivePopup(loc.id);
           setSelectedDay(null);
+          setPanelExpanded(false);
         });
       }
 
@@ -512,10 +515,13 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
         <div ref={mapRef} class="map-canvas" />
 
         {activeLoc && (
-          <div class="map-panel">
+          <div class={`map-panel ${panelExpanded ? "panel-expanded" : ""}`}>
+            <button class="panel-drag-handle" onClick={() => setPanelExpanded(!panelExpanded)} aria-label={panelExpanded ? "Collapse panel" : "Expand panel"}>
+              <span class="drag-handle-bar" />
+            </button>
             <div class="panel-header">
               <div class="panel-title">{activeLoc.name.toUpperCase()}</div>
-              <button class="panel-close" onClick={() => { setActivePopup(null); setSelectedDay(null); }}>
+              <button class="panel-close" onClick={() => { setActivePopup(null); setSelectedDay(null); setPanelExpanded(false); }}>
                 &#10005;
               </button>
             </div>

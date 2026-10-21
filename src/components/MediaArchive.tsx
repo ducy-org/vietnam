@@ -78,10 +78,15 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
   }
 
   useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (VALID_TABS.has(hash) && hash !== activeTab) {
+      setActiveTab(hash);
+      setExpandedId(null);
+    }
     function onHashChange() {
-      const hash = window.location.hash.replace("#", "");
-      if (VALID_TABS.has(hash)) {
-        setActiveTab(hash);
+      const h = window.location.hash.replace("#", "");
+      if (VALID_TABS.has(h)) {
+        setActiveTab(h);
         setExpandedId(null);
       }
     }
