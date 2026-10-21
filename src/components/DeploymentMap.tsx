@@ -309,14 +309,8 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
     if (!mapRef.current || mapInstanceRef.current) return;
 
     import("leaflet").then((L) => {
-      if (!document.querySelector('link[href*="leaflet"]')) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-        document.head.appendChild(link);
-      }
-
-      const map = L.map(mapRef.current!, {
+      function initMap() {
+        const map = L.map(mapRef.current!, {
         center: [20, -180],
         zoom: 3,
         zoomControl: false,
@@ -370,6 +364,18 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
 
       const bounds = L.latLngBounds(locations.map((l) => [l.lat, l.lng]));
       map.fitBounds(bounds, { padding: [60, 60] });
+      }
+
+      const existing = document.querySelector('link[href*="leaflet"]');
+      if (existing) {
+        initMap();
+      } else {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+        link.onload = () => initMap();
+        document.head.appendChild(link);
+      }
     });
 
     return () => {
