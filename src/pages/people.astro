@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import people from "../data/people.json";
+
+const GROUP_LABELS: Record<string, string> = {
+  "ducy-family": "The Ducy Family",
+  "jouett-command": "USS Jouett Command",
+  "sar-crews": "SAR Helicopter Crews",
+  "jouett-crew": "Jouett Crew & Shipmates",
+};
+
+const GROUP_ORDER = [
+  "ducy-family",
+  "jouett-command",
+  "sar-crews",
+  "jouett-crew",
+];
+
+const grouped = GROUP_ORDER.map((key) => ({
+  key,
+  label: GROUP_LABELS[key] || key,
+  members: people.filter((p) => p.group === key),
+})).filter((g) => g.members.length > 0);
+
+function initials(name: string): string {
+  return name.split(" ").map((w) => w[0]).slice(0, 2).join("");
+}
+---
+
+<Layout title="People — Letters Home">
+  <div class="people-page">
+    <h1>People</h1>
+    <p class="page-intro">
+      The people who appear in the letters, logbook, and familygrams.
+      Mike and Bill's story is also the story of the officers, crew, helicopter pilots,
+      family, and friends who shaped their year.
+    </p>
+
+    {grouped.map((group) => (
+      <section class="people-group">
+        <h2>{group.label}</h2>
+        {group.members.map((person) => (
+          <div class="person-card" id={person.id}>
+            <div class={`person-avatar-lg ${person.color ? `color-${person.color}` : ""}`}>
+              {initials(person.name)}
+            </div>
+            <div class="person-details">
+              <h3>
+                {person.rank && <span class="person-rank-inline">{person.rank} </span>}
+                {person.name}
+              </h3>
+              <div class="person-rank-role">{person.role}</div>
+              <p class="person-bio">{person.bio}</p>
+            </div>
+          </div>
+        ))}
+      </section>
+    ))}
+  </div>
+</Layout>

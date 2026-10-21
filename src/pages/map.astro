@@ -1,0 +1,247 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DeploymentMap from "../components/DeploymentMap.tsx";
+import "../styles/global.css";
+import timelineRaw from "../data/timeline.json";
+import locationsRaw from "../data/locations.json";
+import manifestRaw from "../data/media-manifest.json";
+import transcriptsRaw from "../data/transcripts.json";
+
+const timelineData: any = timelineRaw;
+const allTranscripts: Record<string, any[]> = transcriptsRaw as any;
+
+const mapTranscripts: Record<string, any[]> = transcriptsRaw as any;
+const locationDefs: any[] = locationsRaw;
+const manifest: any = manifestRaw;
+
+function flattenCategory(data: any): any[] {
+  if (Array.isArray(data)) return data;
+  if (data && typeof data === "object") return Object.values(data).flat() as any[];
+  return [];
+}
+
+// Build date → media types lookup
+const mediaBadges: Record<string, string[]> = {};
+function addBadge(date: string, badge: string) {
+  if (!mediaBadges[date]) mediaBadges[date] = [];
+  if (badge && !mediaBadges[date].includes(badge)) mediaBadges[date].push(badge);
+}
+for (const cat of ["photos", "letters", "documents", "video", "slides", "audio", "cruisebook", "logbook"]) {
+  for (const item of flattenCategory(manifest[cat])) {
+    if (!item.date || item.date.length < 10) continue;
+    const badge =
+      cat === "photos" || cat === "slides" ? "P" :
+      cat === "video" ? "V" :
+      cat === "documents" || cat === "cruisebook" ? "D" :
+      cat === "letters" ? "L" :
+      cat === "audio" ? "A" :
+      cat === "logbook" ? "D" : "";
+    addBadge(item.date, badge);
+    const extra: string[] = (item as any).also_dates || [];
+    for (const ad of extra) addBadge(ad, badge);
+  }
+}
+
+// Build location data with timeline entries
+const locations = locationDefs.map((loc: any) => {
+  const days: any[] = [];
+
+  for (const month of timelineData.months) {
+    for (const day of month.days) {
+      if (day.location && loc.matchLocations.includes(day.location)) {
+        // Jul 10 equator/dateline crossing belongs on the equator pin, not Pearl Harbor
+        if (day.date === "1968-07-10" && loc.id === "pearl-harbor") continue;
+
+        days.push({
+          date: day.date,
+          day_number: day.day_number,
+          entry: day.entries?.[0]?.substring(0, 120) || "",
+          significant: day.significant,
+          media: mediaBadges[day.date] || [],
+        });
+      }
+    }
+  }
+
+  // Shift Asian longitudes to negative so the map stays continuous going west
+  // San Diego -117 → Pearl -157 → Guam 144 becomes -216 → Subic 120 becomes -240, etc.
+  let lng = loc.lng;
+  if (lng > 0) lng -= 360;
+
+  return {
+    id: loc.id,
+    name: loc.name,
+    lat: loc.lat,
+    lng,
+    description: loc.description,
+    days,
+  };
+}).filter((loc: any) => loc.days.length > 0);
+
+// Manually add Jul 10 King Neptune's Court to the equator-dateline pin
+const eqLoc = locations.find((l: any) => l.id === "equator-dateline");
+if (!eqLoc) {
+  // Pin was filtered out because matchLocations didn't match — add it manually
+  const jul10media = mediaBadges["1968-07-10"] || [];
+  locations.push({
+    id: "equator-dateline",
+    name: "Equator / Date Line",
+    lat: 0.0,
+    lng: -180,
+    description: "King Neptune's Court — Shellback initiation at the Equator (144th Meridian) and International Date Line crossing, 10 Jul 1968",
+    days: [{
+      date: "1968-07-10",
+      day_number: 176,
+      entry: "King Neptune's Court boards Jouett. SHIP CROSSES EQUATOR AT 144th MERIDIAN. Shellback initiation ceremony.",
+      significant: true,
+      media: jul10media,
+    }, {
+      date: "1968-07-10",
+      day_number: 176,
+      entry: "Crossed International Date Line — same calendar date repeated.",
+      significant: true,
+      media: jul10media,
+    }],
+  });
+} else {
+  const jul10media = mediaBadges["1968-07-10"] || [];
+  eqLoc.days.push({
+    date: "1968-07-10",
+    day_number: 176,
+    entry: "King Neptune's Court boards Jouett. SHIP CROSSES EQUATOR AT 144th MERIDIAN. Shellback initiation ceremony.",
+    significant: true,
+    media: jul10media,
+  }, {
+    date: "1968-07-10",
+    day_number: 176,
+    entry: "Crossed International Date Line — same calendar date repeated.",
+    significant: true,
+    media: jul10media,
+  });
+}
+
+// Build route with explicit coordinates.
+// Outbound goes WEST across Pacific (negative longitudes).
+// WestPac ops use shifted coords matching the pin positions.
+// Return goes EAST back across Pacific (positive longitudes).
+const locMap = Object.fromEntries(locationDefs.map((l: any) => [l.id, l]));
+
+// Helper: get pin coords (Asian locations already shifted to negative)
+function pinCoords(id: string): [number, number] {
+  const loc = locations.find((l: any) => l.id === id);
+  return loc ? [loc.lat, loc.lng] : [0, 0];
+}
+
+// Outbound: all use the shifted (negative) coords matching the pins
+const outbound: [number, number][] = [
+  pinCoords("san-diego"),
+  pinCoords("pearl-harbor"),
+  pinCoords("guam"),
+  pinCoords("subic-bay"),
+  pinCoords("da-nang"),
+  pinCoords("gulf-of-tonkin"),
+];
+
+// WestPac operations (bouncing between stations — all shifted)
+const westpac: [number, number][] = [
+  pinCoords("da-nang"),
+  pinCoords("subic-bay"),
+  pinCoords("gulf-of-tonkin"),
+  pinCoords("hong-kong"),
+  pinCoords("subic-bay"),
+  pinCoords("gulf-of-tonkin"),
+  pinCoords("da-nang"),
+  pinCoords("gulf-of-tonkin"),
+  pinCoords("yokosuka"),
+  pinCoords("subic-bay"),
+  pinCoords("da-nang"),
+  pinCoords("gulf-of-tonkin"),
+  pinCoords("subic-bay"),
+];
+
+// Return: stays in shifted coords — values increase going east
+// Subic(-240) → Guam(-216) → Equator/Dateline(-180) → Pearl(-157) → San Diego(-117)
+const returnRoute: [number, number][] = [
+  pinCoords("guam"),              // -216
+  pinCoords("equator-dateline"),  // 0, -180
+  pinCoords("pearl-harbor"),      // -157
+  pinCoords("san-diego"),         // -117
+];
+
+const route = [...outbound, ...westpac, ...returnRoute];
+
+// Build full day details for the modal, keyed by date
+type DayDetail = {
+  date: string;
+  day_number: number | null;
+  location: string | null;
+  entries: string[];
+  quotes: string[];
+  significant: boolean;
+  photos: { description: string; count?: number }[];
+  documents: { description: string }[];
+};
+
+const dayDetails: Record<string, DayDetail> = {};
+for (const month of timelineData.months) {
+  for (const day of month.days) {
+    dayDetails[day.date] = {
+      date: day.date,
+      day_number: day.day_number,
+      location: day.location || null,
+      entries: day.entries || [],
+      quotes: day.quotes || [],
+      significant: day.significant,
+      photos: day.photos || [],
+      documents: day.documents || [],
+    };
+  }
+}
+
+// Build media by date for the modal
+type MediaEntry = { src: string; thumb?: string; caption: string; type: "image" | "video"; who?: string; speaker?: string; tape?: string };
+const mediaByDate: Record<string, Record<string, MediaEntry[]>> = {};
+function addMedia(date: string, cat: string, entry: MediaEntry) {
+  if (!mediaByDate[date]) mediaByDate[date] = {};
+  if (!mediaByDate[date][cat]) mediaByDate[date][cat] = [];
+  mediaByDate[date][cat].push(entry);
+}
+for (const cat of ["photos", "letters", "documents", "video", "slides", "cruisebook", "logbook"]) {
+  for (const item of flattenCategory(manifest[cat])) {
+    if (!item.date || item.date.length < 10) continue;
+    const entry: MediaEntry = {
+      src: item.web_path,
+      thumb: item.thumb_path,
+      caption: item.description + (item.subcategory ? ` — ${item.subcategory}` : ""),
+      type: cat === "video" ? "video" : "image",
+    };
+    addMedia(item.date, cat, entry);
+    for (const ad of (item.also_dates || [])) addMedia(ad, cat, entry);
+  }
+}
+for (const item of flattenCategory(manifest.audio)) {
+  if (!item.date || item.date.length < 10) continue;
+  const entry: MediaEntry = {
+    src: item.web_path,
+    caption: item.description,
+    type: "video" as const,
+    who: item.who,
+    speaker: item.speaker,
+    tape: item.tape,
+  };
+  addMedia(item.date, "audio", entry);
+  for (const ad of (item.also_dates || [])) addMedia(ad, "audio", entry);
+}
+---
+
+<Layout title="Deployment Map — Letters Home">
+  <DeploymentMap
+    client:only="preact"
+    locations={locations}
+    route={route}
+    dayDetails={dayDetails}
+    mediaByDate={mediaByDate}
+    letterTranscripts={mapTranscripts}
+    initialLocation="san-diego"
+  />
+</Layout>

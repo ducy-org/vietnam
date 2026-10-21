@@ -1,0 +1,40 @@
+---
+import PeopleXray from "../components/PeopleXray.tsx";
+import people from "../data/people.json";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1968" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An interactive documentary following two brothers through the Vietnam War, 1968. Mike Ducy aboard USS Jouett (DLG-29) and Bill Ducy with the Marines in Da Nang." />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">
+        <a href="/" class="site-title">Letters Home</a>
+        <span class="site-subtitle">A Sailor's Perspective of the Vietnam War in 1968</span>
+      </div>
+      <nav class="header-nav">
+        <a href="/map" class="nav-link">Map</a>
+        <a href="/day/1968-01-16" class="nav-link">Timeline</a>
+        <a href="/slideshow" class="nav-link">Slideshows</a>
+        <a href="/cruisebook" class="nav-link">1968 Cruise Book</a>
+        <a href="/about" class="nav-link">About</a>
+        <PeopleXray people={people} client:load />
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <p>&copy; 2026 Ducy Family Archives. From the personal archives of FTG3 Michael F. Ducy, USN. Digitized and curated by Michael Ducy II.</p>
+    </footer>
+  </body>
+</html>

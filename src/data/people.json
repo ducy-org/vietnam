@@ -1,0 +1,179 @@
+[
+  {
+    "id": "mike-ducy",
+    "name": "Mike Ducy",
+    "rank": "FTG3",
+    "role": "USS Jouett, Gunnery Division",
+    "group": "ducy-family",
+    "bio": "Fire Control Technician (Guns) 3rd Class, USS Jouett (DLG-29). Author of the logbook that forms the backbone of this timeline. Enlisted March 1965, reported to Jouett September 1967. Operated the MK51 gun fire control system and stood watches in the gun director. Advanced to FTG-2 in October 1968. Kept a daily logbook, wrote 44 letters home, shot Super 8 film, and recorded cassette tapes. Discharged November 15, 1968. Returned to Decatur, Illinois.",
+    "photo": null,
+    "color": "mike"
+  },
+  {
+    "id": "bill-ducy",
+    "name": "Bill Ducy",
+    "rank": "PFC",
+    "role": "USMC, Da Nang / Hoi An",
+    "group": "ducy-family",
+    "bio": "Private First Class, 7th Communications Battalion, United States Marine Corps. Mike's younger brother. Arrived Vietnam January 30, 1968 \u2014 the day the Tet Offensive began. Served in the Da Nang and Hoi An area for 393 days. Ran patrols, pulled mess duty, survived friendly fire from ARVN troops, and extracted his own shrapnel after a blasting cap incident. Visited Mike aboard Jouett in Da Nang Harbor on April 16, 1968, where they recorded a tape together. His letters chronicle ground-level combat with dark humor and the refrain \"THEY CAN'T STOP THE CLOCK.\" Departed Vietnam February 20, 1969. Discharged June 2, 1969.",
+    "photo": null,
+    "color": "bill"
+  },
+  {
+    "id": "dorothea-ducy",
+    "name": "Dorothea Ducy",
+    "rank": null,
+    "role": "Mother",
+    "group": "ducy-family",
+    "bio": "Mike and Bill's mother. Received most of the letters home and managed the family's end of the correspondence \u2014 forwarding news between brothers, sending care packages, and relaying messages. Saw both sons off at the Decatur airport in August 1967.",
+    "photo": null,
+    "color": "dorothea"
+  },
+  {
+    "id": "dan-ducy",
+    "name": "Daniel Ducy",
+    "rank": null,
+    "role": "Father",
+    "group": "ducy-family",
+    "bio": "Mike and Bill's father. A Marine veteran himself. Lived at 1525 N. Ellen Avenue, Decatur, Illinois. Mike addressed his July 23, 1968 post-deployment letter only to \"Dad,\" indicating the parents had separated during the deployment. Dan received updates from both sons throughout their service.",
+    "photo": null,
+    "color": "dan"
+  },
+  {
+    "id": "david-ducy",
+    "name": "David Ducy",
+    "rank": null,
+    "role": "Younger brother",
+    "group": "ducy-family",
+    "bio": "Mike and Bill's younger brother. Mentioned frequently in letters \u2014 Mike mailed birthday cards, brought him to the airport to say goodbye, and noted how much David had grown during the deployment. Was excited about trick-or-treating and \"really crazy about\" Mike's stereo equipment.",
+    "photo": null,
+    "color": "david"
+  },
+  {
+    "id": "georgia-mae",
+    "name": "Georgia Mae",
+    "rank": null,
+    "role": "Dorothea's sister, San Diego",
+    "group": "ducy-family",
+    "bio": "Dorothea's sister, living in the San Diego area. Mike and Bill both stayed with her during liberty. Mike stored civilian clothes at her house, bought groceries for her at the exchange, and visited on weekends. A constant presence in the letters \u2014 the family's West Coast anchor while both boys were stationed in California and deployed to Vietnam.",
+    "photo": null,
+    "color": null
+  },
+  {
+    "id": "capt-hayes",
+    "name": "Robert S. Hayes",
+    "rank": "CAPT",
+    "role": "Commanding Officer, USS Jouett",
+    "group": "jouett-command",
+    "bio": "Captain Hayes commanded USS Jouett throughout the 1968 WestPac deployment. His familygrams to crew families \u2014 11 letters from October 1967 through November 1968 \u2014 are among the most detailed primary sources, narrating SAR rescues, port calls, and daily life aboard ship. Received the Bronze Star Medal. Reported 932 helicopter landings and 103 days in the combat zone without a serious accident among his crew of 400.",
+    "photo": null
+  },
+  {
+    "id": "capt-emerson",
+    "name": "Arthur T. Emerson Jr.",
+    "rank": "CAPT",
+    "role": "COMDESRON ONE, embarked on Jouett",
+    "group": "jouett-command",
+    "bio": "Commander, Destroyer Squadron ONE. Embarked aboard Jouett and served as commander of the Navy's search and rescue units in the Tonkin Gulf. Of Coronado, California. Highlined aboard from USS Hull on January 27, 1968.",
+    "photo": null
+  },
+  {
+    "id": "cdr-addams",
+    "name": "John F. Addams",
+    "rank": "CDR",
+    "role": "Executive Officer (departed mid-deployment)",
+    "group": "jouett-command",
+    "bio": "Jouett's original Executive Officer. Departed mid-deployment to take command of USS Cochrane. Received the Navy Commendation Medal.",
+    "photo": null
+  },
+  {
+    "id": "lcdr-walker",
+    "name": "John A. Walker Jr.",
+    "rank": "LCDR",
+    "role": "Executive Officer (relieved Addams)",
+    "group": "jouett-command",
+    "bio": "Relieved CDR Addams as Executive Officer mid-deployment. Previously served on staff with Commander Service Force, U.S. Pacific Fleet. Signed the 1968 Command Operations Report and the Plan of the Day for homecoming on July 18, 1968. Received the Navy Commendation Medal.",
+    "photo": null
+  },
+  {
+    "id": "ltjg-lassen",
+    "name": "Clyde E. Lassen",
+    "rank": "LTJG",
+    "role": "HC-7 Det 104 \u2014 Medal of Honor",
+    "group": "sar-crews",
+    "bio": "Pilot of \"Clementine Two\" (UH-2A Seasprite), HC-7 Detachment 104, based on USS Preble. On the night of June 19, 1968, Lassen flew deep into enemy territory in total darkness to rescue two downed F-4J Phantom crew members northwest of Vinh. Under heavy enemy fire, with his starboard door torn off by gunfire, he made multiple landing attempts in rice paddies before recovering both aviators. Landed on Jouett with only 5 minutes of fuel remaining (135 lbs). Awarded the Medal of Honor \u2014 the only Navy helicopter pilot to receive this honor during the Vietnam War. USS Lassen (DDG-82) was later named for him.",
+    "photo": null
+  },
+  {
+    "id": "ltjg-wiley",
+    "name": "Richard A. Wiley",
+    "rank": "LTJG",
+    "role": "HC-7 Det 110, Big Mother pilot",
+    "group": "sar-crews",
+    "bio": "Pilot of \"Big Mother\" (SH-3A Sea King), HC-7 Detachment 110. Flew three of Jouett's five rescue missions: May 7 (VF-92 F-4B, 2 rescued), June 4 (VF-33 F-4J \"Root Beer-204,\" LT Simmons rescued under shore battery fire), and participated in the June 11 mission where his helicopter took small arms damage and a crew member was wounded.",
+    "photo": null
+  },
+  {
+    "id": "lt-mcconnell",
+    "name": "Gary D. McConnell",
+    "rank": "LT",
+    "role": "HC-7 Det 110, Big Mother pilot",
+    "group": "sar-crews",
+    "bio": "Pilot of \"Big Mother\" for the May 8, 1968 rescue \u2014 the deepest inland rescue of the deployment. Flew 18.5 miles into North Vietnam to recover a downed A-4E Skyhawk pilot from VA-56, USS Enterprise. Crew: LTJG John W. Nichols (copilot), AX John R. Cullivan, AX-3 Alan K. Nobles.",
+    "photo": null
+  },
+  {
+    "id": "ltjg-yates",
+    "name": "Cornelius H. \"Skip\" Yates",
+    "rank": "LTJG",
+    "role": "HC-7 Det 107, Clementine pilot",
+    "group": "sar-crews",
+    "bio": "Pilot of \"Clementine Two\" (UH-2B Seasprite), HC-7 Detachment 107. Flew Jouett's first SAR rescue on April 28, 1968 \u2014 recovering both crew of an F-4B Phantom from VF-21, USS Ranger, shot down by 85mm AAA near Vinh. Alert to on-deck recovery: 29 minutes. Crew: LTJG Leonard L. DeVries (copilot), ADJ-2 George A. Smellie, AE-3 Jeffrey M. Payne.",
+    "photo": null
+  },
+  {
+    "id": "rd1-whitfill",
+    "name": "Joseph T. Whitfill",
+    "rank": "RD1",
+    "role": "CIC \u2014 first to hear Medal of Honor distress call",
+    "group": "jouett-crew",
+    "bio": "Radarman First Class in Jouett's Combat Information Center. First to hear the distress call at 0022 on June 19, 1968 that triggered the Medal of Honor rescue mission. Received the Navy Commendation Medal.",
+    "photo": null
+  },
+  {
+    "id": "rd1-melton",
+    "name": "Alan R. Melton",
+    "rank": "RD1",
+    "role": "CIC \u2014 vectored Medal of Honor rescue helo",
+    "group": "jouett-crew",
+    "bio": "Radarman First Class. Directed the radar control that vectored Lassen's rescue helicopter through pitch-black night toward the hillside where the downed aviators were located during the June 19 Medal of Honor rescue.",
+    "photo": null
+  },
+  {
+    "id": "rd1-tanner",
+    "name": "Richard F. Tanner",
+    "rank": "RD1",
+    "role": "CIC \u2014 vectored MiG kill intercept",
+    "group": "jouett-crew",
+    "bio": "Radarman First Class and Air Intercept Controller. On June 26, 1968, executed the intercept from Jouett's CIC that resulted in the destruction of a MiG-21 \u2014 the Navy's 28th MiG kill. The pilot who pulled the trigger was CDR Lowell \"Moose\" Myers (VF-51, F-8H Crusader, USS Bon Homme Richard), but Tanner vectored the intercept. Received the Navy Commendation Medal.",
+    "photo": null
+  },
+  {
+    "id": "ftg3-given",
+    "name": "W.F. \"Giv\" Given",
+    "rank": "FTG-3",
+    "role": "Mike's FTG 'A' school classmate",
+    "group": "jouett-crew",
+    "bio": "Fire Control Technician classmate of Mike's from FTG \"A\" school. Served on a DER (radar picket escort) on Operation Market Time patrol. Wrote to Mike on June 20, 1968, describing Swift boat operations and river supply runs. Getting orders to USS Tulare out of San Diego. Turned 20 during his deployment.",
+    "photo": null
+  },
+  {
+    "id": "ftg3-norris",
+    "name": "A.R. \"Art\" Norris",
+    "rank": "FTG-3",
+    "role": "Jouett shipmate, stayed aboard after Mike left",
+    "group": "jouett-crew",
+    "bio": "Fire Control Technician aboard Jouett. Wrote to Mike on January 6, 1969, after Mike's discharge \u2014 reporting on the cruise book, new faces aboard, and 355 days left in his own enlistment. Wished Mike luck in \"that cruel civilian world.\"",
+    "photo": null
+  }
+]

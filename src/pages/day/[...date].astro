@@ -1,0 +1,577 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Lightbox from "../../components/Lightbox.tsx";
+import AudioWithTranscript from "../../components/AudioWithTranscript.tsx";
+import "../../styles/global.css";
+import timelineRaw from "../../data/timeline.json";
+import manifestRaw from "../../data/media-manifest.json";
+import transcriptsRaw from "../../data/transcripts.json";
+
+const timelineData: any = timelineRaw;
+const manifest: any = manifestRaw;
+const allTranscripts: Record<string, any[]> = transcriptsRaw as any;
+
+export async function getStaticPaths() {
+  const data: any = (await import("../../data/timeline.json")).default;
+  const paths: any[] = [];
+
+  if (data.pre_deployment?.entries) {
+    for (const entry of data.pre_deployment.entries) {
+      paths.push({ params: { date: entry.date } });
+    }
+  }
+
+  for (const month of data.months) {
+    for (const day of month.days) {
+      paths.push({ params: { date: day.date } });
+    }
+  }
+
+  return paths;
+}
+
+// Build date → media lookup from manifest
+type MediaItem = {
+  filename: string;
+  web_path: string;
+  thumb_path?: string;
+  date: string | null;
+  description: string;
+  category: string;
+  subcategory?: string;
+};
+
+const mediaByDate: Record<string, Record<string, MediaItem[]>> = {};
+
+function flattenCategory(data: any): MediaItem[] {
+  if (Array.isArray(data)) return data;
+  if (data && typeof data === "object") {
+    return Object.values(data).flat() as MediaItem[];
+  }
+  return [];
+}
+
+for (const cat of ["photos", "letters", "documents", "video", "slides", "audio", "cruisebook", "logbook"]) {
+  const items: MediaItem[] = flattenCategory(manifest[cat]);
+  for (const item of items) {
+    if (!item.date) continue;
+    if (item.date.length < 10) continue;
+    if (!mediaByDate[item.date]) mediaByDate[item.date] = {};
+    if (!mediaByDate[item.date][cat]) mediaByDate[item.date][cat] = [];
+    mediaByDate[item.date][cat].push(item);
+    const extra: string[] = (item as any).also_dates || [];
+    for (const ad of extra) {
+      if (!mediaByDate[ad]) mediaByDate[ad] = {};
+      if (!mediaByDate[ad][cat]) mediaByDate[ad][cat] = [];
+      mediaByDate[ad][cat].push(item);
+    }
+  }
+}
+
+// Build sidebar media indicators: which dates have which media types
+const mediaBadges: Record<string, Set<string>> = {};
+for (const [date, cats] of Object.entries(mediaByDate)) {
+  mediaBadges[date] = new Set(Object.keys(cats));
+}
+
+const allDays: any[] = [];
+
+if (timelineData.pre_deployment?.entries) {
+  for (const entry of timelineData.pre_deployment.entries) {
+    allDays.push({ ...entry, period: "pre-deployment" });
+  }
+}
+
+for (const month of timelineData.months) {
+  for (const day of month.days) {
+    allDays.push({ ...day, period: "deployment" });
+  }
+}
+
+const dateParam = Astro.params.date;
+const dayIndex = allDays.findIndex((d) => d.date === dateParam);
+const day = dayIndex >= 0 ? allDays[dayIndex] : null;
+const prevDay = dayIndex > 0 ? allDays[dayIndex - 1] : null;
+const nextDay = dayIndex < allDays.length - 1 ? allDays[dayIndex + 1] : null;
+
+const dayMedia = day ? (mediaByDate[day.date] || {}) : {};
+
+const dayTranscripts = day ? (allTranscripts[day.date] || []) : [];
+const letterTranscripts = dayTranscripts.filter((t: any) => t.type === "letter");
+const familygramTranscripts = dayTranscripts.filter((t: any) => t.type === "familygram");
+const audioTranscripts = dayTranscripts.filter((t: any) => t.type === "audio");
+const documentTranscripts = dayTranscripts.filter((t: any) => t.type === "document");
+const cruisebookTranscripts = dayTranscripts.filter((t: any) => t.type === "cruisebook");
+const vigilanceTranscripts = dayTranscripts.filter((t: any) => t.type === "vigilance");
+
+function formatDate(iso: string): string {
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+function formatShortDate(iso: string): string {
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+const title = day
+  ? day.day_number
+    ? `Day ${day.day_number} — ${formatDate(day.date)} | Letters Home`
+    : `${formatDate(day.date)} | Letters Home`
+  : "Day Not Found | Letters Home";
+
+// Group days by actual calendar month for sidebar
+const sidebarGroups: any[] = [];
+
+if (timelineData.pre_deployment?.entries?.length > 0) {
+  sidebarGroups.push({
+    label: "Pre-Deployment",
+    month: "pre",
+    days: timelineData.pre_deployment.entries,
+  });
+}
+
+const calendarMonths: Record<string, any[]> = {};
+for (const m of timelineData.months) {
+  for (const day of m.days) {
+    const monthKey = day.date.substring(0, 7);
+    if (!calendarMonths[monthKey]) calendarMonths[monthKey] = [];
+    calendarMonths[monthKey].push(day);
+  }
+}
+
+for (const [monthKey, days] of Object.entries(calendarMonths).sort()) {
+  sidebarGroups.push({
+    label: new Date(monthKey + "-15").toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+    }),
+    month: monthKey,
+    days,
+  });
+}
+
+function isCurrentMonth(mg: any, currentDate: string): boolean {
+  if (mg.month === "pre") {
+    return currentDate < "1968-01-16";
+  }
+  return currentDate.startsWith(mg.month);
+}
+
+function getBadges(date: string): string[] {
+  const badges: string[] = [];
+  const cats = mediaBadges[date];
+  if (!cats) return badges;
+  if (cats.has("photos") || cats.has("slides")) badges.push("P");
+  if (cats.has("video")) badges.push("V");
+  if (cats.has("documents")) badges.push("D");
+  if (cats.has("letters")) badges.push("L");
+  if (cats.has("audio")) badges.push("A");
+  return badges;
+}
+---
+
+<Layout title={title}>
+  {day ? (
+    <div class="app-layout">
+      <nav class="sidebar">
+        <h2>Timeline</h2>
+        {sidebarGroups.map((mg: any) => (
+          <details
+            class="sidebar-month"
+            open={isCurrentMonth(mg, day.date)}
+          >
+            <summary>{mg.label}</summary>
+            {mg.days.map((d: any) => (
+              <a
+                href={`/day/${d.date}`}
+                class={`sidebar-day ${d.date === day.date ? "active" : ""}`}
+              >
+                <span class="sidebar-day-text">
+                  {formatShortDate(d.date)}
+                  {d.day_number != null ? ` · Day ${d.day_number}` : ""}
+                </span>
+                <span class="sidebar-badges">
+                  {d.significant && <span class="badge badge-star" title="Key event">★</span>}
+                  {getBadges(d.date).map((b: string) => (
+                    <span class={`badge badge-${b.toLowerCase()}`} title={
+                      b === "P" ? "Photos" : b === "V" ? "Video" : b === "D" ? "Documents" : b === "L" ? "Letters" : "Audio"
+                    }>{b}</span>
+                  ))}
+                </span>
+              </a>
+            ))}
+          </details>
+        ))}
+      </nav>
+
+      <main class="content-panel">
+        <div class="day-header">
+          {day.day_number != null && (
+            <div class="day-number">Day {day.day_number} of 184</div>
+          )}
+          <h1 class="day-date">{formatDate(day.date)}</h1>
+          {day.location && <div class="day-location">{day.location}</div>}
+          {day.title && <div class="day-location">{day.title}</div>}
+        </div>
+
+        {day.entries?.length > 0 && (
+          <div class="logbook-entry">
+            <span class="entry-label">
+              {day.period === "pre-deployment" ? "Narrative" : "Logbook"}
+            </span>
+            {day.entries.map((e: string) => (
+              <p style="margin-bottom: 0.5rem;">{e}</p>
+            ))}
+          </div>
+        )}
+
+        {dayMedia.logbook && dayMedia.logbook.length > 0 && (
+          <div class="letter-scans">
+            <h4 class="letter-scans-label">Original Logbook Page</h4>
+            <Lightbox
+              client:load
+              items={dayMedia.logbook.map((l: MediaItem) => ({
+                src: l.web_path, thumb: l.thumb_path,
+                caption: `Logbook — ${formatDate(day.date)}`,
+                type: "image" as const,
+              }))}
+            />
+          </div>
+        )}
+
+        {day.quotes?.length > 0 && day.quotes.map((q: string) => (
+          <div class={q.startsWith("Context:") || q.startsWith("Meanwhile") ? "context-block" : "quote-block"}>
+            <p>{q}</p>
+          </div>
+        ))}
+
+        {/* Photos from manifest */}
+        {dayMedia.photos && dayMedia.photos.length > 0 && (
+          <section class="media-section">
+            <h3 class="media-section-label">Photos</h3>
+            <Lightbox
+              client:load
+              items={dayMedia.photos.map((p: MediaItem) => ({
+                src: p.web_path, thumb: p.thumb_path, caption: p.description, type: "image" as const,
+              }))}
+            />
+          </section>
+        )}
+
+        {/* Video from manifest */}
+        {dayMedia.video && dayMedia.video.length > 0 && (
+          <section class="media-section">
+            <h3 class="media-section-label">Video</h3>
+            <Lightbox
+              client:load
+              items={dayMedia.video.map((v: MediaItem) => ({
+                src: v.web_path, thumb: v.thumb_path, caption: v.description, type: "video" as const,
+              }))}
+            />
+          </section>
+        )}
+
+        {/* Letters — transcript + original scans */}
+        {(letterTranscripts.length > 0 || dayMedia.letters?.length > 0) && (
+          <section class="media-section">
+            <h3 class="media-section-label">Letters</h3>
+
+            {letterTranscripts.map((lt: any) => (
+              <details open class={`letter-transcript letter-${lt.who}`}>
+                <summary class="letter-header">
+                  <span class="letter-from">{lt.label}</span>
+                  <span class="letter-desc">{lt.description}</span>
+                </summary>
+                <div class="letter-body">
+                  {lt.text.split('\n').map((line: string) => (
+                    line.trim() === '' ? <br /> : <p>{line}</p>
+                  ))}
+                </div>
+                {lt.attribution && <div class="transcript-attribution">{lt.attribution}</div>}
+              </details>
+            ))}
+
+            {dayMedia.letters && dayMedia.letters.length > 0 && (
+              <div class="letter-scans">
+                <h4 class="letter-scans-label">{letterTranscripts.length > 0 ? "Original Scans" : "Letter Scans"}</h4>
+                <Lightbox
+                  client:load
+                  items={dayMedia.letters.map((l: MediaItem) => ({
+                    src: l.web_path, thumb: l.thumb_path,
+                    caption: l.description + (l.subcategory ? ` — ${l.subcategory}` : ""),
+                    type: "image" as const,
+                  }))}
+                />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Familygrams */}
+        {(familygramTranscripts.length > 0 || dayMedia.documents?.some((d: MediaItem) => d.subcategory === "familygrams")) && (
+          <section class="media-section">
+            <h3 class="media-section-label">Familygram</h3>
+
+            {familygramTranscripts.map((fg: any) => (
+              <details open class={`letter-transcript letter-${fg.who}`}>
+                <summary class="letter-header">
+                  <span class="letter-from">{fg.label}</span>
+                  <span class="letter-desc">{fg.description}</span>
+                </summary>
+                <div class="letter-body">
+                  {fg.text.split('\n').map((line: string) => (
+                    line.trim() === '' ? <br /> : <p>{line}</p>
+                  ))}
+                </div>
+                {fg.attribution && <div class="transcript-attribution">{fg.attribution}</div>}
+              </details>
+            ))}
+
+            {dayMedia.documents?.filter((d: MediaItem) => d.subcategory === "familygrams").length > 0 && (
+              <div class="letter-scans">
+                <h4 class="letter-scans-label">Original Scans</h4>
+                <Lightbox
+                  client:load
+                  items={dayMedia.documents.filter((d: MediaItem) => d.subcategory === "familygrams").map((d: MediaItem) => ({
+                    src: d.web_path, thumb: d.thumb_path,
+                    caption: d.description,
+                    type: (d.web_path.endsWith(".pdf") ? "pdf" : "image") as any,
+                  }))}
+                />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Documents — transcripts + scans (excluding familygrams and vigilance shown separately) */}
+        {(documentTranscripts.length > 0 || dayMedia.documents?.filter((d: MediaItem) => d.subcategory !== "familygrams" && d.subcategory !== "vigilance").length > 0) && (
+          <section class="media-section">
+            <h3 class="media-section-label">Documents</h3>
+
+            {documentTranscripts.map((dt: any) => (
+              <details open class={`letter-transcript letter-${dt.who}`}>
+                <summary class="letter-header">
+                  <span class="letter-from">{dt.label}</span>
+                  <span class="letter-desc">{dt.description}</span>
+                </summary>
+                <div class="letter-body">
+                  {dt.text.split('\n').map((line: string) => (
+                    line.trim() === '' ? <br /> : <p>{line}</p>
+                  ))}
+                </div>
+                {dt.attribution && <div class="transcript-attribution">{dt.attribution}</div>}
+              </details>
+            ))}
+
+            {dayMedia.documents?.filter((d: MediaItem) => d.subcategory !== "familygrams" && d.subcategory !== "vigilance").length > 0 && (
+              <div class="letter-scans">
+                <h4 class="letter-scans-label">{documentTranscripts.length > 0 ? "Document Scans" : "Scans"}</h4>
+                <Lightbox
+                  client:load
+                  items={dayMedia.documents.filter((d: MediaItem) => d.subcategory !== "familygrams" && d.subcategory !== "vigilance").map((d: MediaItem) => ({
+                    src: d.web_path, thumb: d.thumb_path,
+                    caption: d.description + (d.subcategory ? ` — ${d.subcategory}` : ""),
+                    type: (d.web_path.endsWith(".pdf") ? "pdf" : "image") as any,
+                  }))}
+                />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Vigilance Magazine — transcripts + scans */}
+        {(vigilanceTranscripts.length > 0 || dayMedia.documents?.some((d: MediaItem) => d.subcategory === "vigilance")) && (
+          <section class="media-section">
+            <h3 class="media-section-label">Vigilance Magazine</h3>
+
+            {vigilanceTranscripts.map((vt: any) => (
+              <details open class="letter-transcript letter-ship">
+                <summary class="letter-header">
+                  <span class="letter-from">{vt.label}</span>
+                  <span class="letter-desc">{vt.description}</span>
+                </summary>
+                <div class="letter-body">
+                  {vt.text.split('\n').map((line: string) => (
+                    line.trim() === '' ? <br /> : <p>{line}</p>
+                  ))}
+                </div>
+                {vt.attribution && <div class="transcript-attribution">{vt.attribution}</div>}
+              </details>
+            ))}
+
+            {dayMedia.documents?.filter((d: MediaItem) => d.subcategory === "vigilance").length > 0 && (
+              <div class="letter-scans">
+                <h4 class="letter-scans-label">{vigilanceTranscripts.length > 0 ? "Page Scans" : "Vigilance Pages"}</h4>
+                <Lightbox
+                  client:load
+                  items={dayMedia.documents.filter((d: MediaItem) => d.subcategory === "vigilance").map((d: MediaItem) => ({
+                    src: d.web_path, thumb: d.thumb_path,
+                    caption: d.description + " — Vigilance Magazine",
+                    type: "image" as const,
+                  }))}
+                />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Slides from manifest */}
+        {dayMedia.slides && dayMedia.slides.length > 0 && (
+          <section class="media-section">
+            <h3 class="media-section-label">Slides</h3>
+            <Lightbox
+              client:load
+              items={dayMedia.slides.map((s: MediaItem) => ({
+                src: s.web_path, thumb: s.thumb_path, caption: s.description, type: "image" as const,
+              }))}
+            />
+          </section>
+        )}
+
+        {/* Cruise Book */}
+        {(cruisebookTranscripts.length > 0 || (dayMedia.cruisebook && dayMedia.cruisebook.length > 0)) && (
+          <section class="media-section">
+            <h3 class="media-section-label">Cruise Book</h3>
+
+            {cruisebookTranscripts.map((ct: any) => (
+              <details open class="letter-transcript letter-ship">
+                <summary class="letter-header">
+                  <span class="letter-from">{ct.label}</span>
+                  <span class="letter-desc">{ct.description}</span>
+                </summary>
+                <div class="letter-body">
+                  {ct.text.split('\n').map((line: string) => (
+                    line.trim() === '' ? <br /> : <p>{line}</p>
+                  ))}
+                </div>
+                {ct.attribution && <div class="transcript-attribution">{ct.attribution}</div>}
+              </details>
+            ))}
+
+            {dayMedia.cruisebook && dayMedia.cruisebook.length > 0 && (
+              <div class="letter-scans">
+                <h4 class="letter-scans-label">{cruisebookTranscripts.length > 0 ? "Page Scans" : "Cruise Book Pages"}</h4>
+                <Lightbox
+                  client:load
+                  items={dayMedia.cruisebook.map((c: MediaItem) => ({
+                    src: c.web_path, thumb: c.thumb_path,
+                    caption: `USS Jouett 1968 Cruise Book — ${c.description}`,
+                    type: "image" as const,
+                  }))}
+                />
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Audio — with scrolling transcript when available */}
+        {dayMedia.audio && dayMedia.audio.length > 0 && (
+          <section class="media-section">
+            <h3 class="media-section-label">Audio Recordings</h3>
+            <div class="audio-list">
+              {dayMedia.audio.map((a: any) => {
+                const desc = a.description || "";
+                const transcript = audioTranscripts.find((t: any) => t.match_key && desc.includes(t.match_key))
+                  || audioTranscripts.find((t: any) => t.match_key && t.match_key.includes(desc));
+                return transcript?.segments ? (
+                  <AudioWithTranscript
+                    client:load
+                    src={a.web_path}
+                    label={transcript.label}
+                    description={transcript.description}
+                    who={transcript.who}
+                    tape={transcript.tape}
+                    segments={transcript.segments}
+                    fullText={transcript.text}
+                    attribution={transcript.attribution}
+                  />
+                ) : (
+                  <div class={`audio-card ${a.who === "family" ? "audio-family" : "audio-mike"}`}>
+                    <div class="audio-meta">
+                      <span class="audio-tape">{a.tape || "Audio"}</span>
+                      <span class="audio-speaker">{a.speaker || a.description}</span>
+                      {a.who === "family" && <span class="audio-location">Recorded in Decatur, IL</span>}
+                    </div>
+                    <audio controls controlslist="nodownload" preload="metadata" class="audio-player">
+                      <source src={a.web_path} type="audio/mpeg" />
+                    </audio>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Text-only photo refs from timeline (when no manifest media) */}
+        {(!dayMedia.photos || dayMedia.photos.length === 0) && day.photos?.length > 0 && (
+          <div class="photo-refs">
+            <h3>Photos</h3>
+            <ul>
+              {day.photos.map((p: any) => (
+                <li>
+                  {p.description || p}
+                  {p.count > 1 && ` (${p.count} photos)`}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Text-only doc refs from timeline (when no manifest media) */}
+        {(!dayMedia.documents || dayMedia.documents.length === 0) && day.documents?.length > 0 && (
+          <div class="doc-refs">
+            <h3>Documents</h3>
+            <ul>
+              {day.documents.map((d: any) => (
+                <li>{d.description || d}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div class="day-nav">
+          {prevDay ? (
+            <a href={`/day/${prevDay.date}`}>
+              &larr; {formatShortDate(prevDay.date)}
+            </a>
+          ) : (
+            <span />
+          )}
+          {nextDay ? (
+            <a href={`/day/${nextDay.date}`}>
+              {formatShortDate(nextDay.date)} &rarr;
+            </a>
+          ) : (
+            <span />
+          )}
+        </div>
+      </main>
+    </div>
+  ) : (
+    <div class="not-found">
+      <h1>Day Not Found</h1>
+      <p>No logbook entry for {dateParam}.</p>
+      <p style="margin-top: 1rem;">
+        <a href="/day/1968-01-16">Start from Day 1 &rarr;</a>
+      </p>
+    </div>
+  )}
+  <script>
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      const saved = sessionStorage.getItem('sidebar-scroll');
+      if (saved) sidebar.scrollTop = parseInt(saved, 10);
+      sidebar.addEventListener('click', (e) => {
+        const link = (e.target as HTMLElement).closest('a');
+        if (link) sessionStorage.setItem('sidebar-scroll', String(sidebar.scrollTop));
+      });
+    }
+
+  </script>
+</Layout>

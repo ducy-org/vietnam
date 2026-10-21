@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CruiseBookViewer from "../components/CruiseBookViewer.tsx";
+import "../styles/global.css";
+import manifestRaw from "../data/media-manifest.json";
+
+const manifest: any = manifestRaw;
+const raw: any[] = manifest.cruisebook || [];
+
+function parsePageNum(desc: string): { sort: number; label: string; pageNumbers: string } {
+  const d = desc.toLowerCase();
+  if (d.includes("inside") && d.includes("back")) {
+    return { sort: 999, label: "Inside Back Cover", pageNumbers: "Inside Back" };
+  }
+  if (d === "pgback" || (d.includes("back") && !d.includes("inside") && !d.match(/pg\d/))) {
+    return { sort: 1000, label: "Back Cover", pageNumbers: "Back" };
+  }
+  if (d.includes("cover") && d.includes("inside")) {
+    return { sort: -1, label: "Inside Front Cover", pageNumbers: "Inside Cover" };
+  }
+  if (d.includes("cover")) {
+    return { sort: -2, label: "Front Cover", pageNumbers: "Cover" };
+  }
+
+  const m = d.match(/pg(\d+)(?:-(\d+))?/);
+  if (m) {
+    const start = parseInt(m[1]);
+    const end = m[2] ? parseInt(m[2]) : start;
+    const label = end !== start ? `Pages ${start}–${end}` : `Page ${start}`;
+    const pageNumbers = end !== start ? `${start}–${end}` : `${start}`;
+    return { sort: start, label, pageNumbers };
+  }
+  return { sort: 500, label: desc, pageNumbers: desc };
+}
+
+const pages = raw.map((item: any) => {
+  const parsed = parsePageNum(item.description);
+  return {
+    src: item.web_path,
+    thumb: item.thumb_path || item.web_path,
+    label: parsed.label,
+    pageNumbers: parsed.pageNumbers,
+    sort: parsed.sort,
+  };
+}).sort((a: any, b: any) => a.sort - b.sort);
+---
+
+<Layout title="Cruise Book — USS Jouett (DLG-29) WestPac 1968">
+  <div class="cb-landing">
+    <div class="cb-hero">
+      <h1>USS Jouett (DLG-29) Cruise Book</h1>
+      <h2>Western Pacific Deployment — 1968</h2>
+      <p class="cb-intro">
+        The official cruise book commemorating USS Jouett's 1968 WestPac deployment.
+        {pages.length} pages documenting the ship, her crew, and their journey from
+        San Diego to the Gulf of Tonkin and back. Scanned from FTG3 Michael F. Ducy's
+        personal copy.
+      </p>
+      <p class="cb-stats">
+        {pages.length} scans &mdash; Cover to cover &mdash; Original 1968 printing
+      </p>
+    </div>
+
+    <CruiseBookViewer
+      client:load
+      pages={pages.map((p: any) => ({
+        src: p.src,
+        thumb: p.thumb,
+        label: p.label,
+        pageNumbers: p.pageNumbers,
+      }))}
+    />
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Slideshow from "../components/Slideshow.tsx";
+import "../styles/global.css";
+import slideshowsRaw from "../data/slideshows.json";
+
+const slideshows: any[] = slideshowsRaw as any;
+---
+
+<Layout title="Mike's Slideshows — Letters Home">
+  <div class="ss-page">
+    <div class="ss-page-header">
+      <h1>Mike's Slideshows</h1>
+      <p class="ss-page-intro">
+        Mike Ducy shot 120 film slides throughout the deployment and recorded narration
+        on cassette tape for the family back home. Press play to hear Mike describe
+        each slide in his own words — the images advance automatically.
+      </p>
+    </div>
+
+    {slideshows.map((show: any) => (
+      <section class="ss-section">
+        <h2 class="ss-section-title">{show.title}</h2>
+        <p class="ss-section-subtitle">{show.subtitle} &mdash; {show.date_label}</p>
+        <Slideshow client:load show={show} />
+      </section>
+    ))}
+  </div>
+</Layout>
