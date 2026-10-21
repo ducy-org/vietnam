@@ -3,7 +3,7 @@
     "id": "san-diego",
     "name": "San Diego",
     "lat": 32.6867,
-    "lng": -117.1624,
+    "lng": 242.8376,
     "description": "Naval Station San Diego — Home port of USS Jouett (DLG-29)",
     "matchLocations": ["San Diego", "Underway for San Diego", "Seal Beach"]
   },
@@ -11,7 +11,7 @@
     "id": "pearl-harbor",
     "name": "Pearl Harbor",
     "lat": 21.3500,
-    "lng": -157.9500,
+    "lng": 202.0500,
     "description": "Pearl Harbor Naval Base, Hawaii — Transit stop and liberty port",
     "matchLocations": ["Pearl Harbor", "Underway for Pearl Harbor"]
   },
