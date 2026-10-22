@@ -429,10 +429,14 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
                 action += "+watermark"
             action += "+resize+thumb"
             print(f"  [{action}] {src.name} → {web_name}")
+        # Use MP3 path for WAV files (converted for web)
+        manifest_dst = dst
+        if dst.suffix.lower() == ".wav":
+            manifest_dst = dst.with_suffix(".mp3")
         thumb_dir = dst_dir / "thumbs"
         result = {
             "original": str(src.relative_to(SOURCE_BASE)),
-            "web_path": "/" + str(dst.relative_to(PROJECT_ROOT / "public")),
+            "web_path": "/" + str(manifest_dst.relative_to(PROJECT_ROOT / "public")),
             "date": file_date,
             "description": extract_description(src.name),
             "_skipped": skipped,
@@ -455,6 +459,23 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
         shutil.copy2(src, dst)
         if is_image:
             bake_orientation(dst)
+
+    # Convert WAV to MP3 for web playback
+    if dst.suffix.lower() == ".wav":
+        mp3_dst = dst.with_suffix(".mp3")
+        if not mp3_dst.exists() or force:
+            print(f"  [wav→mp3] {dst.name} → {mp3_dst.name}")
+            r = subprocess.run(
+                ["ffmpeg", "-y", "-i", str(dst), "-codec:a", "libmp3lame",
+                 "-b:a", "192k", str(mp3_dst)],
+                capture_output=True, text=True, timeout=120
+            )
+            if r.returncode != 0:
+                print(f"  WARNING: ffmpeg WAV→MP3 failed: {r.stderr[:200]}")
+            else:
+                dst = mp3_dst
+        else:
+            dst = mp3_dst
 
     # Logbook pages are photographed sideways — rotate 90° CW
     if "logbook" in str(dst_dir) and is_image:
