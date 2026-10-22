@@ -277,6 +277,8 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
     if (typeof window !== "undefined" && localStorage.getItem("map-tutorial-done")) return -1;
     return 0;
   });
+  const tutorialStepRef = useRef(tutorialStep);
+  tutorialStepRef.current = tutorialStep;
   const pointerRef = useRef<HTMLDivElement>(null);
 
   const STEPS = [
@@ -484,6 +486,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
           setActivePopup(loc.id);
           setSelectedDay(null);
           setPanelExpanded(false);
+          if (tutorialStepRef.current === 3 && loc.id === "da-nang") setTutorialStep(4);
         });
       }
 
@@ -585,7 +588,11 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                   data-tutorial-id={`panel-entry-${day.date}`}
                   class={`panel-entry ${day.significant ? "entry-sig" : ""} ${selectedDay === day.date ? "entry-active" : ""}`}
                   onMouseEnter={() => setSelectedDay(day.date)}
-                  onClick={() => setModalDate(day.date)}
+                  onClick={() => {
+                    setModalDate(day.date);
+                    if (tutorialStep === 0 && day.date === "1968-01-16") setTutorialStep(1);
+                    if (tutorialStep === 4 && day.date === "1968-06-13") setTutorialStep(5);
+                  }}
                 >
                   <span class="entry-date">{formatDate(day.date)}</span>
                   <span class="entry-day">
