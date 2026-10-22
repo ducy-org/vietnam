@@ -341,6 +341,10 @@ Audio transcripts are matched to media items bidirectionally — check both `cap
 4. Run `python3 scripts/parse_timeline.py`
 5. Verify with `npm run dev`
 
+### Update people directory
+
+Edit `src/data/people.json` directly — no script generates it. Each person has `id`, `name`, `rank`, `role`, `group`, `bio`, `photo`, and `color` fields.
+
 ### Re-transcribe audio
 
 ```bash
