@@ -23,6 +23,17 @@ const { title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-DZ1NZ4BJKC');
+      document.addEventListener('play', function(e) {
+        var el = e.target;
+        if (!el || !el.tagName) return;
+        var tag = el.tagName.toLowerCase();
+        if (tag === 'audio') {
+          var src = el.querySelector('source');
+          gtag('event', 'audio_play', { event_category: 'media', event_label: (src && src.src) || el.src || '' });
+        } else if (tag === 'video') {
+          gtag('event', 'video_play', { event_category: 'media', event_label: el.src || '' });
+        }
+      }, true);
     </script>
   </head>
   <body>
