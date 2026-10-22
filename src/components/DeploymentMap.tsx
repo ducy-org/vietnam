@@ -492,6 +492,31 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
       const bounds = L.latLngBounds(locations.map((l) => [l.lat, l.lng]));
       map.fitBounds(bounds, { padding: [60, 60] });
 
+      if (initialLocation) {
+        const initLoc = locations.find(l => l.id === initialLocation);
+        if (initLoc) {
+          setTimeout(() => {
+            const container = map.getContainer();
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            const isPortrait = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+            const isLandscape = window.matchMedia("(max-width: 768px) and (orientation: landscape)").matches;
+            const pinPoint = map.latLngToContainerPoint([initLoc.lat, initLoc.lng]);
+            let visibleCenterX = w / 2;
+            let visibleCenterY = h / 2;
+            if (isLandscape) {
+              visibleCenterX = (w * 0.6) / 2;
+            } else if (isPortrait) {
+              visibleCenterY = (h * 0.5) / 2;
+            }
+            const offsetX = pinPoint.x - visibleCenterX;
+            const offsetY = pinPoint.y - visibleCenterY;
+            const newCenter = map.containerPointToLatLng(L.point(w / 2 + offsetX, h / 2 + offsetY));
+            map.setView(newCenter, map.getZoom());
+          }, 200);
+        }
+      }
+
       setTimeout(() => map.invalidateSize(), 100);
       }
 
