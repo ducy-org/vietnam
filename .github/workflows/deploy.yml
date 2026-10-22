@@ -32,7 +32,7 @@ jobs:
           SITE_URL: https://vietnam.ducy.org
           MEDIA_URL: https://vietnam-ducy-media.s3.amazonaws.com
 
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/
 
