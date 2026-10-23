@@ -516,7 +516,7 @@ def main():
         'deployment': {
             'start': '1968-01-16',
             'end': '1968-07-18',
-            'total_days': 187,
+            'total_days': 184,
         },
         'months': months,
         'pre_deployment': {

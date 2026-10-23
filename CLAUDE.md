@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repository.
 
 ## Project Overview
 
-**Letters Home** is an interactive documentary website following FTG3 Mike Ducy's 1968 WestPac deployment aboard USS Jouett (DLG-29) during the Vietnam War. The site presents 187 days of primary source materials — logbook entries, letters, audio recordings, photographs, Super 8 film, and official documents — organized chronologically and geographically.
+**Letters Home** is an interactive documentary website following FTG3 Mike Ducy's 1968 WestPac deployment aboard USS Jouett (DLG-29) during the Vietnam War. The site presents 184 days of primary source materials — logbook entries, letters, audio recordings, photographs, Super 8 film, and official documents — organized chronologically and geographically.
 
 Live site: https://vietnam.ducy.org
 Media CDN: https://vietnam-ducy-media.s3.amazonaws.com
@@ -27,7 +27,7 @@ src/
 ├── pages/              # Astro pages (routes)
 │   ├── index.astro     # Landing page
 │   ├── map.astro       # Interactive deployment map (heavy data prep)
-│   ├── day/[...date].astro  # Day-by-day timeline (187 pages)
+│   ├── day/[...date].astro  # Day-by-day timeline (184 deployment + 15 pre-deployment)
 │   ├── archive.astro   # Media archive browser
 │   ├── cruisebook.astro # 1968 cruise book viewer
 │   ├── slideshow.astro # Narrated slide shows with synced audio
@@ -88,7 +88,7 @@ The master timeline lives outside this repo:
 /Users/michael/Movies/Home Movies/Vietnam Project/Documentation/Mike Ducy Log Book/deployment-timeline.md
 ```
 
-This is a markdown file with tables (`| Date | Day# | Entry |`) covering all 187 days. It is the canonical record — all other data derives from it.
+This is a markdown file with tables (`| Date | Day# | Entry |`) covering all 184 days. It is the canonical record — all other data derives from it.
 
 ### Pipeline Steps
 
