@@ -35,6 +35,13 @@ export default function Lightbox({ items }: { items: LightboxItem[] }) {
     };
   }, [open, close, prev, next]);
 
+  useEffect(() => {
+    if (open >= 0 && items[open] && (window as any).gtag) {
+      const item = items[open];
+      (window as any).gtag("event", "lightbox_view", { event_category: "media", media_type: item.type, media_url: item.src, media_caption: item.caption });
+    }
+  }, [open]);
+
   const current = open >= 0 ? items[open] : null;
 
   return (

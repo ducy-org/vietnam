@@ -4,9 +4,24 @@ import people from "../data/people.json";
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
 }
 
-const { title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1968" } = Astro.props;
+const siteName = "Letters Home";
+const defaultDescription = "An interactive documentary following two brothers through the Vietnam War, 1968. Mike Ducy aboard USS Jouett (DLG-29) and Bill Ducy with the Marines in Da Nang.";
+const defaultImage = "/og-image.jpg";
+
+const {
+  title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1968",
+  description = defaultDescription,
+  image = defaultImage,
+  type = "website",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <html lang="en">
@@ -14,8 +29,57 @@ const { title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="An interactive documentary following two brothers through the Vietnam War, 1968. Mike Ducy aboard USS Jouett (DLG-29) and Bill Ducy with the Marines in Da Nang." />
+    <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+
+    <!-- Structured Data -->
+    {type === "website" ? (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": siteName,
+        "url": Astro.site?.href,
+        "description": description,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Ducy Family Archives",
+        },
+      })} />
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "url": canonicalURL.href,
+        "image": ogImageURL.href,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Ducy Family Archives",
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": siteName,
+          "url": Astro.site?.href,
+        },
+      })} />
+    )}
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZ1NZ4BJKC"></script>
     <script is:inline>
@@ -31,7 +95,8 @@ const { title = "Letters Home — A Sailor's Perspective of the Vietnam War in 1
           var src = el.querySelector('source');
           gtag('event', 'audio_play', { event_category: 'media', event_label: (src && src.src) || el.src || '' });
         } else if (tag === 'video') {
-          gtag('event', 'video_play', { event_category: 'media', event_label: el.src || '' });
+          var vsrc = el.querySelector('source');
+          gtag('event', 'video_play', { event_category: 'media', event_label: el.src || (vsrc && vsrc.src) || '' });
         }
       }, true);
     </script>

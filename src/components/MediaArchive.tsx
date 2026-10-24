@@ -71,6 +71,13 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"date" | "description">("date");
 
+  useEffect(() => {
+    if (lightboxSrc && (window as any).gtag) {
+      const isVideo = lightboxSrc.endsWith(".mp4") || lightboxSrc.endsWith(".webm");
+      (window as any).gtag("event", "lightbox_view", { event_category: "media", media_type: isVideo ? "video" : "image", media_url: lightboxSrc });
+    }
+  }, [lightboxSrc]);
+
   function switchTab(key: string) {
     setActiveTab(key);
     setExpandedId(null);

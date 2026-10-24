@@ -74,6 +74,13 @@ function ModalLightbox({ items, label }: { items: MediaEntry[]; label: string })
     return () => document.removeEventListener("keydown", handleKey, true);
   }, [open, close, prev, next]);
 
+  useEffect(() => {
+    if (open >= 0 && items[open] && (window as any).gtag) {
+      const item = items[open];
+      (window as any).gtag("event", "lightbox_view", { event_category: "media", media_type: item.type, media_url: item.src, media_caption: item.caption });
+    }
+  }, [open]);
+
   const current = open >= 0 ? items[open] : null;
 
   return (
@@ -486,6 +493,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
           setActivePopup(loc.id);
           setSelectedDay(null);
           setPanelExpanded(false);
+          if ((window as any).gtag) (window as any).gtag("event", "map_pin_click", { event_category: "map", location_name: loc.name, location_id: loc.id });
           if (tutorialStepRef.current === 3 && loc.id === "da-nang") setTutorialStep(4);
         });
       }
@@ -590,6 +598,7 @@ export default function DeploymentMap({ locations, route, dayDetails, mediaByDat
                   onMouseEnter={() => setSelectedDay(day.date)}
                   onClick={() => {
                     setModalDate(day.date);
+                    if ((window as any).gtag) (window as any).gtag("event", "map_day_view", { event_category: "map", date: day.date, location_name: activeLoc.name });
                     if (tutorialStep === 0 && day.date === "1968-01-16") setTutorialStep(1);
                     if (tutorialStep === 4 && day.date === "1968-06-13") setTutorialStep(5);
                   }}

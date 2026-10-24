@@ -133,6 +133,15 @@ const title = day
     : `${formatDate(day.date)} | Letters Home`
   : "Day Not Found | Letters Home";
 
+const pageDescription = day
+  ? (() => {
+      const entry = day.entries?.[0] || "";
+      const loc = day.location ? `${day.location}. ` : "";
+      const excerpt = entry.replace(/\n/g, " ").substring(0, 140);
+      return `${formatDate(day.date)}${day.day_number != null ? ` — Day ${day.day_number}` : ""}. ${loc}${excerpt}${excerpt.length >= 140 ? "..." : ""}`;
+    })()
+  : "Day not found in the deployment timeline.";
+
 // Group days by actual calendar month for sidebar
 const sidebarGroups: any[] = [];
 
@@ -184,7 +193,7 @@ function getBadges(date: string): string[] {
 }
 ---
 
-<Layout title={title}>
+<Layout title={title} description={pageDescription} type="article">
   {day ? (
     <div class="app-layout">
       <nav class="sidebar">
