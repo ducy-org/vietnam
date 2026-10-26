@@ -918,6 +918,13 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   opacity: 0.8;
 }
 
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .cta {
   display: inline-block;
   background: var(--color-navy);
@@ -926,11 +933,22 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.15s;
+  transition: background 0.15s, border-color 0.15s;
 }
 
 .cta:hover {
   background: var(--color-navy-dark);
+  color: white;
+}
+
+.cta-outline {
+  background: transparent;
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+}
+
+.cta-outline:hover {
+  background: var(--color-navy);
   color: white;
 }
 
@@ -1136,9 +1154,17 @@ details.letter-transcript:not([open]) summary.letter-header::after {
     font-size: 1.5rem;
   }
 
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .cta {
     font-size: 0.9rem;
     padding: 0.65rem 1.5rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
   }
 
   .logbook-entry {
