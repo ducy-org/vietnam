@@ -293,6 +293,111 @@ a:hover {
   font-style: italic;
 }
 
+.day-banner {
+  position: relative;
+  background: var(--color-navy);
+  color: #fff;
+  border-left: 4px solid var(--color-amber);
+  border-radius: 6px;
+  padding: 1.1rem 3rem 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(19, 40, 65, 0.18);
+}
+
+.day-banner[hidden] {
+  display: none;
+}
+
+.day-banner-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-amber-light);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.day-banner-text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.day-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.day-banner-btn {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.day-banner-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+.day-banner-primary {
+  background: var(--color-amber);
+  border-color: var(--color-amber);
+  color: var(--color-navy-dark);
+}
+
+.day-banner-primary:hover {
+  background: var(--color-amber-light);
+  border-color: var(--color-amber-light);
+  color: var(--color-navy-dark);
+}
+
+.day-banner-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+}
+
+.day-banner-close:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .day-banner {
+    padding: 1rem 2.5rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .day-banner-text {
+    font-size: 0.92rem;
+  }
+
+  .day-banner-actions {
+    flex-direction: column;
+  }
+
+  .day-banner-btn {
+    text-align: center;
+    padding: 0.6rem 1rem;
+  }
+}
+
 .logbook-entry {
   font-family: var(--font-mono);
   font-size: 0.85rem;

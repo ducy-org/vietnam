@@ -267,6 +267,23 @@ function getBadges(date: string): string[] {
       </nav>
 
       <main class="content-panel">
+        <aside class="day-banner" hidden aria-label="About this site">
+          <button type="button" class="day-banner-close" aria-label="Dismiss" data-banner-dismiss>&times;</button>
+          <div class="day-banner-eyebrow">
+            {day.day_number != null ? `Day ${day.day_number} of 184` : "Before the deployment"} · Letters Home
+          </div>
+          <p class="day-banner-text">
+            FTG3 Mike Ducy's 1968 Vietnam deployment aboard USS Jouett (DLG-29), told day by day through his logbook, letters, photographs, and tape recordings home.
+          </p>
+          <div class="day-banner-actions">
+            <a href="/blog/184-days" class="day-banner-btn day-banner-primary" data-banner-target="blog">Read the story &rarr;</a>
+            {day.date !== "1968-01-16" && (
+              <a href="/day/1968-01-16" class="day-banner-btn" data-banner-target="day1">Start at Day 1</a>
+            )}
+            <a href="/map" class="day-banner-btn" data-banner-target="map">See it on the map</a>
+          </div>
+        </aside>
+
         <div class="day-header">
           {day.day_number != null && (
             <div class="day-number">Day {day.day_number} of 184</div>
@@ -628,6 +645,35 @@ function getBadges(date: string): string[] {
         const link = (e.target as HTMLElement).closest('a');
         if (link) sessionStorage.setItem('sidebar-scroll', String(sidebar.scrollTop));
       });
+    }
+
+    const banner = document.querySelector<HTMLElement>('.day-banner');
+    if (banner) {
+      const DISMISS_KEY = 'day-banner-dismissed';
+      const track = (name: string, params: Record<string, string> = {}) => {
+        const g = (window as any).gtag;
+        if (typeof g === 'function') g('event', name, { event_category: 'onboarding', ...params });
+      };
+      let external = false;
+      try {
+        external = document.referrer !== '' && new URL(document.referrer).host !== location.host;
+      } catch {}
+      const fromCampaign = new URLSearchParams(location.search).has('utm_source');
+      if ((external || fromCampaign) && !localStorage.getItem(DISMISS_KEY)) {
+        banner.hidden = false;
+        track('day_banner_view', { date: location.pathname.split('/').filter(Boolean).pop() || '' });
+        banner.addEventListener('click', (e) => {
+          const el = e.target as HTMLElement;
+          if (el.closest('[data-banner-dismiss]')) {
+            localStorage.setItem(DISMISS_KEY, '1');
+            banner.hidden = true;
+            track('day_banner_dismiss');
+            return;
+          }
+          const link = el.closest<HTMLElement>('[data-banner-target]');
+          if (link) track('day_banner_click', { target: link.dataset.bannerTarget || '' });
+        });
+      }
     }
 
   </script>
