@@ -547,7 +547,7 @@ for sub, items in data['photos'].items():
 | URL | Behavior |
 |---|---|
 | `/slideshow#<show>` | Scroll to the show (`japan`, `vietnam`) |
-| `/slideshow#<show>/slide-<N>` | Cue slide N, where N is the filename prefix (the number Mike says), not the array index |
+| `/slideshow#<show>/slide-<N>` | Cue slide N, where N is the filename prefix (e.g. `042-…` → `slide-42`), not the array index. Mike restarts his spoken count each tray, so it can differ from what he says. |
 | `/slideshow#<show>/<m:ss>` | Cue the tape time |
 | `/day/<date>#<tape-slug>[/<m:ss>]` | Scroll to `AudioWithTranscript` (its `id` is the MP3 basename) and cue the time. Also works in blog posts. |
 | `/archive#<tab>/<file-slug>` | Open the tab, scroll to the item, expand its transcript; grid tabs open the lightbox |

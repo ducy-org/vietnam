@@ -64,6 +64,8 @@ for (const category of Object.keys(CATEGORY_TO_TRANSCRIPT_TYPE)) {
   const seenTranscripts = new Set<string>();
 
   for (const item of rawItems) {
+    // Placeholders for lost slides exist only to keep slideshow timing aligned.
+    if (/slide-missing/i.test(item.web_path)) continue;
     const date = item.date && item.date.length >= 10 ? item.date : null;
 
     let transcript: ArchiveItem["transcript"] | undefined;

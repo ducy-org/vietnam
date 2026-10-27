@@ -76,6 +76,30 @@ for (const cat of ["photos", "letters", "documents", "video", "slides", "audio",
   }
 }
 
+// Pre-deployment pages are sparse (one every week or two), so attach photos/slides/film dated
+// between them to the nearest page, labeled with their own date. "YYYY-MM-00" means month only.
+const preDates: string[] = (timelineData.pre_deployment?.entries || []).map((e: any) => e.date).sort();
+if (preDates.length) {
+  const earliest = Date.parse(preDates[0]) - 7 * 864e5;
+  for (const cat of ["photos", "slides", "video"]) {
+    for (const item of flattenCategory(manifest[cat])) {
+      if (!item.date || item.date.length < 10) continue;
+      const monthOnly = item.date.endsWith("-00");
+      const iso = monthOnly ? item.date.slice(0, 8) + "01" : item.date;
+      const t = Date.parse(iso);
+      if (iso >= "1968-01-16" || preDates.includes(iso) || isNaN(t) || t < earliest) continue;
+      const nearest = preDates.reduce((a, b) => (Math.abs(Date.parse(b) - t) < Math.abs(Date.parse(a) - t) ? b : a));
+      const when = monthOnly
+        ? new Date(iso + "T12:00:00").toLocaleDateString("en-US", { month: "short", year: "numeric" })
+        : formatShortDate(iso);
+      const near = { ...item, web_path: m(item.web_path)!, thumb_path: m(item.thumb_path), description: `${item.description} (${when})` };
+      if (!mediaByDate[nearest]) mediaByDate[nearest] = {};
+      if (!mediaByDate[nearest][cat]) mediaByDate[nearest][cat] = [];
+      mediaByDate[nearest][cat].push(near);
+    }
+  }
+}
+
 // Build sidebar media indicators: which dates have which media types
 const mediaBadges: Record<string, Set<string>> = {};
 for (const [date, cats] of Object.entries(mediaByDate)) {
