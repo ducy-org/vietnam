@@ -1,0 +1,70 @@
+{
+  "out": "~/Movies/Home Movies/Vietnam Project/Reddit Videos/19680710-crossing-the-line.mp4",
+  "intro_seconds": 7.0,
+  "outro_seconds": 4.5,
+  "part_gap_seconds": 0.6,
+  "intro": [
+    {"style": "eyebrow", "text": "JULY 10, 1968 · THE EQUATOR AT 180°"},
+    {"style": "title", "text": "Crossing the line"},
+    {"style": "body", "text": "Heading home from Vietnam, USS Jouett crossed the equator and the International Date Line at the same moment. About 350 of her crew were pollywogs, Mike among them."},
+    {"style": "small", "text": "Mike described it on a tape the next day. Two days later, before that tape arrived, his father recorded one of his own in Decatur."}
+  ],
+  "outro": [
+    {"style": "small", "text": "Watch the full 75-foot reel and hear both tapes:"},
+    {"style": "url", "text": "vietnam.ducy.org"},
+    {"style": "small", "text": "Letters Home · Ducy Family Archives"}
+  ],
+  "parts": [
+    {
+      "audio": "/media/audio/tape-8-side-1-mike-ducy-july-11-1968.mp3",
+      "clip_start": 365.2,
+      "clip_end": 399.3,
+      "header": "MIKE · USS JOUETT · TAPE OF JULY 11, 1968",
+      "visuals": [
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 6.0, "start": 365.2, "end": 372.6},
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 15.0, "start": 372.6, "end": 381.0},
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 81.5, "start": 381.0, "end": 391.0},
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 40.0, "start": 391.0, "end": 399.3}
+      ],
+      "captions": [
+        {"start": 365.4, "end": 372.5, "text": "We had planned to cross the equator on the 10th of this month, and that we did."},
+        {"start": 372.56, "end": 376.4, "text": "Let me tell you, I've never seen anything like this before."},
+        {"start": 376.58, "end": 380.9, "text": "This ceremony that they had, and some of the things that they put us through,"},
+        {"start": 381.08, "end": 386.1, "text": "I can hardly describe it, but the best way that I can describe it"},
+        {"start": 386.1, "end": 390.9, "text": "is the 75-foot movie film that I shot,"},
+        {"start": 391.02, "end": 394.45, "text": "which I'm going to be very anxious to get back and take a look at."},
+        {"start": 394.48, "end": 399.3, "text": "It's showing some of the guys going through the ceremony and everything."}
+      ]
+    },
+    {
+      "audio": "/media/audio/tape-9-side-1-david-dan-dorothea-ducy-july-13th-1968.mp3",
+      "clip_start": 682.3,
+      "clip_end": 691.5,
+      "header": "DAN DUCY, HIS FATHER · DECATUR, ILL. · JULY 13, 1968",
+      "visuals": [
+        {"src": "/media/photos/19680710-king-neptune-court-mike-ducy.jpg", "start": 682.3, "end": 691.5}
+      ],
+      "captions": [
+        {"start": 682.46, "end": 689.2, "text": "I imagine by the time you get this tape, you've already made your crossing of the equator,"},
+        {"start": 689.32, "end": 691.5, "text": "and you've become a shellback."}
+      ]
+    },
+    {
+      "audio": "/media/audio/tape-9-side-1-david-dan-dorothea-ducy-july-13th-1968.mp3",
+      "clip_start": 761.6,
+      "clip_end": 791.9,
+      "header": "DAN DUCY, HIS FATHER · DECATUR, ILL. · JULY 13, 1968",
+      "visuals": [
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 162.0, "start": 761.6, "end": 774.3},
+        {"src": "/media/video/19680710-king-neptunes-court-equator-at-180th.mp4", "from": 180.0, "start": 774.3, "end": 783.6},
+        {"src": "/media/documents/ship-pubs/19680710-mike-ducy-neptunes-court-subpoena.jpg", "start": 783.6, "end": 791.9}
+      ],
+      "captions": [
+        {"start": 761.84, "end": 764.3, "text": "But, of course, it'll be something you'll never forget."},
+        {"start": 764.32, "end": 774.22, "text": "And it just so happens that you think, as you think of the service, that that happens to everybody."},
+        {"start": 774.42, "end": 783.9, "text": "But when you think that even during World War II there were so many men that was in Europe and every place else,"},
+        {"start": 784.2, "end": 791.9, "text": "I doubt if 10% of the people in the service during World War II went across the equator."}
+      ]
+    }
+  ]
+}

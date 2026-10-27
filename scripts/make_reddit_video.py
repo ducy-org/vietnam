@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a captioned 4:5 slideshow video from a JSON spec (stills + tape audio + timed captions).
+"""Render a captioned 4:5 video from a JSON spec: one or more tape clips over stills or film, with timed captions.
 
 Usage: python scripts/make_reddit_video.py scripts/reddit_videos/<spec>.json
 """
@@ -101,81 +101,157 @@ def caption_image(text):
     return im
 
 
+class VideoSource:
+    """Streams square-cropped PHOTO x PHOTO frames from a film clip, read forward in time."""
+
+    def __init__(self, path, start, dur):
+        self.proc = subprocess.Popen(
+            ["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start), "-t", str(dur + 1), "-i", str(path),
+             "-vf", f"crop=ih:ih,scale={PHOTO}:{PHOTO},fps={FPS}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+            stdout=subprocess.PIPE)
+        self.idx = -1
+        self.frame = None
+
+    def get(self, local_t):
+        target = max(int(local_t * FPS), 0)
+        while self.idx < target:
+            buf = self.proc.stdout.read(PHOTO * PHOTO * 3)
+            if len(buf) < PHOTO * PHOTO * 3:
+                break
+            self.frame = Image.frombytes("RGB", (PHOTO, PHOTO), buf)
+            self.idx += 1
+        return self.frame
+
+    def close(self):
+        self.proc.kill()
+
+
+def contain(img, t, dur):
+    """Fit a non-square image inside the photo box with a gentle zoom."""
+    z = 1.0 + 0.04 * min(max(t / dur, 0), 1)
+    w, h = img.size
+    scale = PHOTO / max(w, h) * z
+    fitted = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+    box = Image.new("RGB", (PHOTO, PHOTO), BG)
+    box.paste(fitted, ((PHOTO - fitted.width) // 2, (PHOTO - fitted.height) // 2))
+    return box
+
+
+def load_parts(spec):
+    """Normalize single-clip specs into the multi-part form."""
+    if "parts" in spec:
+        return spec["parts"]
+    return [{
+        "audio": spec["audio"], "clip_start": spec["clip_start"], "clip_end": spec["clip_end"],
+        "header": spec["header"], "visuals": spec["slides"], "captions": spec["captions"],
+    }]
+
+
 def main(spec_file):
     spec = json.loads(Path(spec_file).read_text())
     out = Path(spec["out"]).expanduser()
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    clip_start, clip_end = spec["clip_start"], spec["clip_end"]
     intro, outro = spec.get("intro_seconds", 5.0), spec.get("outro_seconds", 4.0)
-    body = clip_end - clip_start
-    total = intro + body + outro
+    gap = spec.get("part_gap_seconds", 0.6)
+    parts = load_parts(spec)
+    footer = spec.get("footer", "vietnam.ducy.org")
+
+    visuals, captions = [], []
+    t = intro
+    for pi, part in enumerate(parts):
+        cs, ce = part["clip_start"], part["clip_end"]
+        part["offset"], part["dur"] = t, ce - cs
+        base = base_frame(part.get("header", spec.get("header", "")), footer)
+        pv = []
+        for v in part["visuals"]:
+            pv.append({
+                "src": v["src"], "from": v.get("from", 0.0), "base": base,
+                "start": max(v["start"], cs) - cs + t, "end": min(v["end"], ce) - cs + t,
+            })
+        pv[0]["start"] = t
+        pv[-1]["end"] = t + part["dur"] + (gap if pi < len(parts) - 1 else 0)
+        visuals += pv
+        for c in part["captions"]:
+            captions.append({"start": c["start"] - cs + t, "end": c["end"] - cs + t, "img": caption_image(c["text"])})
+        t += part["dur"] + (gap if pi < len(parts) - 1 else 0)
+    body_end = t
+    total = body_end + outro
+
+    for i, v in enumerate(visuals):
+        v["dir"] = i
+        path = media_path(v["src"])
+        if path.suffix.lower() in (".mp4", ".mov"):
+            v["video"] = VideoSource(path, v["from"], v["end"] - v["start"] + XFADE)
+        else:
+            img = Image.open(path).convert("RGB")
+            v["img"] = img
+            v["fit"] = "cover" if abs(img.width / img.height - 1) < 0.1 else "contain"
 
     intro_im = card(spec["intro"])
     outro_im = card(spec["outro"])
-    frame_base = base_frame(spec["header"], spec.get("footer", "vietnam.ducy.org"))
 
-    slides = []
-    for i, s in enumerate(spec["slides"]):
-        slides.append({
-            "img": Image.open(media_path(s["src"])).convert("RGB"),
-            "start": max(s["start"], clip_start) - clip_start + intro,
-            "end": min(s["end"], clip_end) - clip_start + intro,
-            "dir": i,
-        })
-    slides[0]["start"] = intro
-    slides[-1]["end"] = intro + body
+    # Every silence must be real samples: a delayed timestamp is ignored by Apple's players.
+    inputs, chain, labels = [], [f"anullsrc=r=48000:cl=mono:d={intro}[lead]"], ["[lead]"]
+    for pi, part in enumerate(parts):
+        inputs += ["-ss", str(part["clip_start"]), "-t", str(part["dur"]), "-i", str(media_path(part["audio"]))]
+        d = part["dur"]
+        chain.append(f"[{pi + 1}:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000,"
+                     f"afade=t=in:d=0.3,afade=t=out:st={d - 0.5}:d=0.5,asetpts=N/SR/TB[p{pi}]")
+        labels.append(f"[p{pi}]")
+        if pi < len(parts) - 1:
+            chain.append(f"anullsrc=r=48000:cl=mono:d={gap}[g{pi}]")
+            labels.append(f"[g{pi}]")
+    chain.append(f"{''.join(labels)}concat=n={len(labels)}:v=0:a=1,apad[a]")
 
-    captions = []
-    for c in spec["captions"]:
-        captions.append({
-            "start": c["start"] - clip_start + intro,
-            "end": c["end"] - clip_start + intro,
-            "img": caption_image(c["text"]),
-        })
-
-    audio = media_path(spec["audio"])
     cmd = [
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
         "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-        "-ss", str(clip_start), "-t", str(body), "-i", str(audio),
-        "-filter_complex",
-        f"[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,afade=t=in:d=0.4,afade=t=out:st={body - 0.8}:d=0.8,adelay={int(intro * 1000)}:all=1,apad[a]",
+        *inputs,
+        "-filter_complex", ";".join(chain),
         "-map", "0:v", "-map", "[a]", "-t", str(total),
         "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(out),
+        "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", str(out),
     ]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
 
-    def slide_frame(s, t):
-        im = frame_base.copy()
-        im.paste(ken_burns(s["img"], t - s["start"], s["end"] - s["start"], s["dir"]), ((W - PHOTO) // 2, PHOTO_Y))
+    def visual_frame(v, t):
+        im = v["base"].copy()
+        local, dur = t - v["start"], v["end"] - v["start"]
+        if "video" in v:
+            pic = v["video"].get(local)
+        elif v["fit"] == "cover":
+            pic = ken_burns(v["img"], local, dur, v["dir"])
+        else:
+            pic = contain(v["img"], local, dur)
+        im.paste(pic, ((W - PHOTO) // 2, PHOTO_Y))
         return im
 
-    n = int(total * FPS)
-    for k in range(n):
+    for k in range(int(total * FPS)):
         t = k / FPS
         if t < intro - XFADE:
             frame = intro_im
         elif t < intro:
-            frame = Image.blend(intro_im, slide_frame(slides[0], intro), (t - (intro - XFADE)) / XFADE)
-        elif t < intro + body:
-            idx = next((i for i, s in enumerate(slides) if s["start"] <= t < s["end"]), len(slides) - 1)
-            s = slides[idx]
-            frame = slide_frame(s, t)
-            if idx + 1 < len(slides) and t > s["end"] - XFADE:
-                frame = Image.blend(frame, slide_frame(slides[idx + 1], t), (t - (s["end"] - XFADE)) / XFADE)
+            frame = Image.blend(intro_im, visual_frame(visuals[0], intro), (t - (intro - XFADE)) / XFADE)
+        elif t < body_end:
+            idx = next((i for i, v in enumerate(visuals) if v["start"] <= t < v["end"]), len(visuals) - 1)
+            v = visuals[idx]
+            frame = visual_frame(v, t)
+            if idx + 1 < len(visuals) and t > v["end"] - XFADE:
+                frame = Image.blend(frame, visual_frame(visuals[idx + 1], t), (t - (v["end"] - XFADE)) / XFADE)
             cap = next((c for c in captions if c["start"] <= t < c["end"]), None)
             if cap:
                 frame = frame.copy()
                 frame.paste(cap["img"], (0, CAPTION_TOP), cap["img"])
-        elif t < intro + body + XFADE:
-            last = slide_frame(slides[-1], intro + body)
-            frame = Image.blend(last, outro_im, (t - intro - body) / XFADE)
+        elif t < body_end + XFADE:
+            frame = Image.blend(visual_frame(visuals[-1], body_end), outro_im, (t - body_end) / XFADE)
         else:
             frame = outro_im
         proc.stdin.write(frame.tobytes())
     proc.stdin.close()
+    for v in visuals:
+        if "video" in v:
+            v["video"].close()
     if proc.wait() != 0:
         sys.exit("ffmpeg failed")
     print(f"Wrote {out} ({total:.1f}s)")

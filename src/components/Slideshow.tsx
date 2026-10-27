@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "preact/hooks";
+import { readHash, parseTime, mediaSlug, cueAudio, scrollToEl } from "../lib/deeplink";
 
 interface SlideData {
   src: string;
@@ -34,6 +35,24 @@ export default function Slideshow({ show }: { show: SlideshowData }) {
   const mounted = useRef(false);
 
   const slides = show.slides;
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const { key, target } = readHash();
+    if (key !== show.id) return;
+    scrollToEl(rootRef.current?.closest("section") || rootRef.current);
+    if (!target || !audioRef.current) return;
+    const slideNum = target.match(/^slide-?(\d+)$/i);
+    let t: number | null = null;
+    if (slideNum) {
+      const n = Number(slideNum[1]);
+      const i = slides.findIndex((s) => parseInt(mediaSlug(s.src), 10) === n);
+      if (i >= 0) { t = slides[i].start; setCurrentSlide(i); }
+    } else {
+      t = parseTime(target);
+    }
+    if (t != null) cueAudio(audioRef.current, t);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -110,7 +129,7 @@ export default function Slideshow({ show }: { show: SlideshowData }) {
   const allSegs = slide?.transcript || [];
 
   return (
-    <div class="ss-viewer">
+    <div class="ss-viewer" ref={rootRef}>
       <div class="ss-main">
         <div class="ss-slide-wrap">
           <img

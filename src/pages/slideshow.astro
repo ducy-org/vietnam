@@ -32,7 +32,7 @@ const slideshows: any[] = (slideshowsRaw as any[]).map((show: any) => ({
     </div>
 
     {slideshows.map((show: any) => (
-      <section class="ss-section">
+      <section class="ss-section" id={show.id}>
         <h2 class="ss-section-title">{show.title}</h2>
         <p class="ss-section-subtitle">{show.subtitle} &mdash; {show.date_label}</p>
         <Slideshow client:load show={show} />

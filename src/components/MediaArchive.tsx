@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "preact/hooks";
+import { readHash, mediaSlug, scrollToEl } from "../lib/deeplink";
 
 type ArchiveItem = {
   id: string;
@@ -59,8 +60,8 @@ const VALID_TABS = new Set(TABS.map(t => t.key));
 
 function getInitialTab(): string {
   if (typeof window !== "undefined") {
-    const hash = window.location.hash.replace("#", "");
-    if (VALID_TABS.has(hash)) return hash;
+    const { key } = readHash();
+    if (VALID_TABS.has(key)) return key;
   }
   return "letters";
 }
@@ -70,6 +71,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"date" | "description">("date");
+  const [pendingTarget, setPendingTarget] = useState(() => readHash().target);
 
   useEffect(() => {
     if (lightboxSrc && (window as any).gtag) {
@@ -85,16 +87,17 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
   }
 
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (VALID_TABS.has(hash) && hash !== activeTab) {
-      setActiveTab(hash);
+    const { key } = readHash();
+    if (VALID_TABS.has(key) && key !== activeTab) {
+      setActiveTab(key);
       setExpandedId(null);
     }
     function onHashChange() {
-      const h = window.location.hash.replace("#", "");
-      if (VALID_TABS.has(h)) {
-        setActiveTab(h);
+      const { key: k, target } = readHash();
+      if (VALID_TABS.has(k)) {
+        setActiveTab(k);
         setExpandedId(null);
+        setPendingTarget(target);
       }
     }
     window.addEventListener("hashchange", onHashChange);
@@ -131,6 +134,26 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
 
   const isGrid = ["photos", "slides", "video"].includes(activeTab);
 
+  useEffect(() => {
+    if (!pendingTarget) return;
+    const target = pendingTarget;
+    setPendingTarget("");
+    if (filtered.type === "grouped" && filtered.groups[target]) {
+      setExpandedId(target);
+      scrollToEl(document.querySelector(`[data-anchor="${CSS.escape(target)}"]`));
+      return;
+    }
+    const item = filtered.flat.find((i) => mediaSlug(i.web_path) === target)
+      || filtered.flat.find((i) => i.date === target);
+    if (!item) return;
+    if (isGrid) {
+      setLightboxSrc(m(item.web_path, mediaUrl));
+    } else if (item.transcript) {
+      setExpandedId(item.id);
+    }
+    scrollToEl(document.querySelector(`[data-anchor="${CSS.escape(mediaSlug(item.web_path))}"]`));
+  }, [pendingTarget, filtered]);
+
   return (
     <div class="archive-container">
       <div class="archive-tabs">
@@ -165,7 +188,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
             const isVideo = item.web_path.endsWith(".mp4") || item.web_path.endsWith(".webm");
             const src = m(item.thumb_path || item.web_path, mediaUrl);
             return (
-              <div key={item.id} class={`archive-grid-item ${isVideo ? "archive-grid-video-item" : ""}`} onClick={() => setLightboxSrc(m(item.web_path, mediaUrl))}>
+              <div key={item.id} data-anchor={mediaSlug(item.web_path)} class={`archive-grid-item ${isVideo ? "archive-grid-video-item" : ""}`} onClick={() => setLightboxSrc(m(item.web_path, mediaUrl))}>
                 <img src={src} alt={item.description} loading="lazy" />
                 {isVideo && <span class="grid-play-badge">&#9654;</span>}
                 <div class="grid-item-caption">
@@ -181,7 +204,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
             const transcript = first.transcript;
             const isExpanded = expandedId === date;
             return (
-              <div key={date} class={`archive-list-item ${transcript ? "has-transcript" : ""}`}>
+              <div key={date} data-anchor={date} class={`archive-list-item ${transcript ? "has-transcript" : ""}`}>
                 <div class="list-item-main" onClick={() => setExpandedId(isExpanded ? null : date)}>
                   <div class="list-item-thumb-stack">
                     <img
@@ -255,7 +278,7 @@ export default function MediaArchive({ items, mediaUrl }: Props) {
             const isExpanded = expandedId === item.id;
             const transcript = item.transcript;
             return (
-              <div key={item.id} class={`archive-list-item ${transcript ? "has-transcript" : ""}`}>
+              <div key={item.id} data-anchor={mediaSlug(item.web_path)} class={`archive-list-item ${transcript ? "has-transcript" : ""}`}>
                 <div class="list-item-main" onClick={() => transcript && setExpandedId(isExpanded ? null : item.id)}>
                   {activeTab !== "audio" && (
                     <div class="list-item-thumb-stack">

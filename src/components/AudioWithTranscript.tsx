@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "preact/hooks";
+import { readHash, parseTime, mediaSlug, cueAudio, scrollToEl } from "../lib/deeplink";
 
 interface Segment {
   start: number;
@@ -31,6 +32,16 @@ export default function AudioWithTranscript({
   const activeRef = useRef<HTMLSpanElement>(null);
   const [currentIdx, setCurrentIdx] = useState(-1);
   const [isPlaying, setIsPlaying] = useState(false);
+  const anchor = mediaSlug(src);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const { key, target } = readHash();
+    if (!anchor || key !== anchor) return;
+    scrollToEl(rootRef.current);
+    const t = target ? parseTime(target) : null;
+    if (t != null && audioRef.current) cueAudio(audioRef.current, t);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -82,7 +93,7 @@ export default function AudioWithTranscript({
   const isMike = who === "mike";
 
   return (
-    <div class={`audio-transcript-block ${isMike ? "audio-mike" : "audio-family"}`}>
+    <div id={anchor || undefined} ref={rootRef} class={`audio-transcript-block ${isMike ? "audio-mike" : "audio-family"}`}>
       <div class="audio-transcript-header">
         <span class="audio-tape">{tape || "AUDIO"}</span>
         <span class="audio-speaker">{label}</span>

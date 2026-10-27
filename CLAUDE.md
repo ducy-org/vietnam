@@ -540,6 +540,25 @@ for sub, items in data['photos'].items():
 - Blockquotes render with white background, amber left border, and subtle shadow
 - Blog uses Palatino serif for body text, matching the site's archival aesthetic
 
+### Deep links
+
+`src/lib/deeplink.ts` parses `#<key>/<target>`. Query strings (UTM tags) go before the `#`. Nothing autoplays; audio is cued and paused.
+
+| URL | Behavior |
+|---|---|
+| `/slideshow#<show>` | Scroll to the show (`japan`, `vietnam`) |
+| `/slideshow#<show>/slide-<N>` | Cue slide N, where N is the filename prefix (the number Mike says), not the array index |
+| `/slideshow#<show>/<m:ss>` | Cue the tape time |
+| `/day/<date>#<tape-slug>[/<m:ss>]` | Scroll to `AudioWithTranscript` (its `id` is the MP3 basename) and cue the time. Also works in blog posts. |
+| `/archive#<tab>/<file-slug>` | Open the tab, scroll to the item, expand its transcript; grid tabs open the lightbox |
+| `/archive#letters/<YYYY-MM-DD>` | Letters are grouped by date |
+
+Slugs are media basenames without extension (`mediaSlug()`), so links break if a file is renamed. Slide narrations have no archive transcript; link them via `/slideshow`.
+
+### Make a Reddit video
+
+`scripts/make_reddit_video.py <spec.json>` renders a 1080×1350 captioned video from stills, a tape clip, and timed captions (specs in `scripts/reddit_videos/`). Audio is loudness-normalized and written at 48 kHz, with the intro as real silent samples; a delayed timestamp makes QuickTime and iOS play the audio early. The full workflow and post guidelines are in `Vietnam Project/Documentation/reddit-video-guide.md`.
+
 ### Re-transcribe audio
 
 ```bash
