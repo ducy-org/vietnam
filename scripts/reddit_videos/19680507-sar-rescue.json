@@ -1,0 +1,150 @@
+{
+  "out": "~/Movies/Home Movies/Vietnam Project/Reddit Videos/19680507-sar-rescue.mp4",
+  "audio": "/media/audio/tape-3a-side-2-mike-ducy-slide-narration.mp3",
+  "clip_start": 241.6,
+  "clip_end": 313.9,
+  "intro_seconds": 7.0,
+  "outro_seconds": 4.5,
+  "header": "MAY 7, 1968 · SAR RESCUE · USS JOUETT (DLG-29)",
+  "intro": [
+    {
+      "style": "eyebrow",
+      "text": "MAY 7, 1968 · GULF OF TONKIN"
+    },
+    {
+      "style": "title",
+      "text": "Two pilots pulled from the sea"
+    },
+    {
+      "style": "body",
+      "text": "A MiG-21's missile hits an F-4B Phantom from USS Enterprise. USS Jouett's \"Big Mother\" helicopter flies in under shore-battery fire and picks up both crew in 28 minutes."
+    },
+    {
+      "style": "small",
+      "text": "Two weeks later, FTG3 Mike Ducy narrated his slides of the rescue on a cassette mailed home to his family."
+    }
+  ],
+  "outro": [
+    {
+      "style": "small",
+      "text": "Hear the full tape, read his logbook for May 7, and follow all 184 days:"
+    },
+    {
+      "style": "url",
+      "text": "vietnam.ducy.org"
+    },
+    {
+      "style": "small",
+      "text": "Letters Home · Ducy Family Archives"
+    }
+  ],
+  "slides": [
+    {
+      "src": "/media/slides/16-north-vietnam-close-up-sar-day.jpg",
+      "start": 235,
+      "end": 246
+    },
+    {
+      "src": "/media/slides/17-big-mother-helo-sar-rescue-return.jpg",
+      "start": 246,
+      "end": 261.5
+    },
+    {
+      "src": "/media/slides/18-rescued-pilot-exiting-helo.jpg",
+      "start": 261.5,
+      "end": 270.5
+    },
+    {
+      "src": "/media/slides/19-pilots-on-deck-medical-officer.jpg",
+      "start": 270.5,
+      "end": 292.3
+    },
+    {
+      "src": "/media/slides/20-rescued-pilot-walking-away.jpg",
+      "start": 292.3,
+      "end": 314
+    }
+  ],
+  "captions": [
+    {
+      "start": 242.02,
+      "end": 245.9,
+      "text": "These pictures were taken the same day that we made a SAR rescue."
+    },
+    {
+      "start": 246.04,
+      "end": 248.9,
+      "text": "Now on to slide 17."
+    },
+    {
+      "start": 249.08,
+      "end": 254.9,
+      "text": "This is the Big Mother helo returning from a SAR rescue on the same day that most of these pictures were taken,"
+    },
+    {
+      "start": 254.9,
+      "end": 257.9,
+      "text": "and you can see some of the mainland there in the background,"
+    },
+    {
+      "start": 258.06,
+      "end": 261.7,
+      "text": "and the helo's coming in for a landing with two rescued pilots aboard."
+    },
+    {
+      "start": 261.98,
+      "end": 266.4,
+      "text": "Slide 18, you can see one of the rescued pilots getting out of the helo there."
+    },
+    {
+      "start": 266.46,
+      "end": 270.6,
+      "text": "He's got on a yellow-type life jacket, and you can see the fellas helping him out."
+    },
+    {
+      "start": 270.84,
+      "end": 274.68,
+      "text": "Now slide 19, you can see one pilot already out and on deck,"
+    },
+    {
+      "start": 274.68,
+      "end": 276.18,
+      "text": "and they're starting to help the other one out."
+    },
+    {
+      "start": 276.28,
+      "end": 280.54,
+      "text": "These pilots have got these big life jackets on,"
+    },
+    {
+      "start": 280.54,
+      "end": 287.38,
+      "text": "and there's a medical officer standing by there, and the colored fellow is a corpsman."
+    },
+    {
+      "start": 287.38,
+      "end": 292.3,
+      "text": "They're waiting to take the guys to sick bay and give them a little physical. One of those two pilots there,"
+    },
+    {
+      "start": 292.3,
+      "end": 300.36,
+      "text": "which you'll see in the next picture, slide 20, shows this pilot walking away with"
+    },
+    {
+      "start": 300.36,
+      "end": 305.1,
+      "text": "the medical officer. This guy was in pretty bad shape as far as"
+    },
+    {
+      "start": 305.1,
+      "end": 310.18,
+      "text": "being shook up and everything. These guys, they weren't hurt or anything, but"
+    },
+    {
+      "start": 310.18,
+      "end": 313.9,
+      "text": "they were really shook up quite a bit. They were really scared."
+    }
+  ]
+}
