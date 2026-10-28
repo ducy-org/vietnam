@@ -100,6 +100,14 @@ python3 scripts/parse_timeline.py
 
 Reads `deployment-timeline.md` → writes `src/data/timeline.json`. Extracts dates, day numbers, entries, locations (pattern-matched), quotes, sources, significance flags.
 
+#### 1b. Build day headlines (SEO)
+
+```bash
+python3 scripts/build_day_headlines.py [--print]
+```
+
+Writes `src/data/day-headlines.json`: one short headline per day page, used for the page `<title>` ("May 7, 1968: Big Mother 71 rescues two VF-92 F-4B pilots near Vinh | Letters Home"), the meta description, and the visible subhead under the date. Hand-written `OVERRIDES` in the script win; other days are derived from the logbook entry (SAR alerts, MiG GQs, Terriers), then from what survives from that day (tape, letter, photos), then routine (port, underway, mail). Run it after `parse_timeline.py` or after media changes, and add an override when a derived headline reads badly. Day pages also use the day's first photo, slide, or film thumbnail as `og:image` (logbook or letter page as a fallback; `OG_PICK` in `day/[...date].astro` forces a specific photo), and list up to three ranked names from the entry in the description.
+
 #### 2. Copy and process media
 
 ```bash

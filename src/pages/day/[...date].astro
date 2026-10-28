@@ -6,6 +6,7 @@ import "../../styles/global.css";
 import timelineRaw from "../../data/timeline.json";
 import manifestRaw from "../../data/media-manifest.json";
 import transcriptsRaw from "../../data/transcripts.json";
+import headlinesRaw from "../../data/day-headlines.json";
 
 const timelineData: any = timelineRaw;
 const manifest: any = manifestRaw;
@@ -151,20 +152,60 @@ function formatShortDate(iso: string): string {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+const headlines: Record<string, string> = headlinesRaw as any;
+const headline = day ? headlines[day.date] || "" : "";
+const shortDate = day
+  ? new Date(day.date + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+  : "";
+
 const title = day
-  ? day.day_number
-    ? `Day ${day.day_number} — ${formatDate(day.date)} | Letters Home`
-    : `${formatDate(day.date)} | Letters Home`
+  ? headline
+    ? `${shortDate}: ${headline} | Letters Home`
+    : `${shortDate}${day.day_number ? ` — Day ${day.day_number}` : ""} | Letters Home`
   : "Day Not Found | Letters Home";
+
+// Names in the day's entry (ranks + names) are what families search for.
+const namesInEntry = day
+  ? [...new Set(
+      (day.entries || []).join(" ").match(/\b(?:CAPT|CDR|LCDR|LTJG|LT|ENS|ADJ-?\d|AE-?\d|ATN-?\d|AX-?\d|RD\d)\.? [A-Z][a-z]+(?: [A-Z]\.)?(?: "[A-Za-z]+")? [A-Z][a-z]+/g) || []
+    )].slice(0, 3)
+  : [];
 
 const pageDescription = day
   ? (() => {
-      const entry = day.entries?.[0] || "";
-      const loc = day.location ? `${day.location}. ` : "";
-      const excerpt = entry.replace(/\n/g, " ").substring(0, 140);
-      return `${formatDate(day.date)}${day.day_number != null ? ` — Day ${day.day_number}` : ""}. ${loc}${excerpt}${excerpt.length >= 140 ? "..." : ""}`;
+      const survives: string[] = [];
+      const n = (k: string) => (dayMedia as any)[k]?.length || 0;
+      if (n("logbook")) survives.push("his logbook page");
+      if (n("photos") + n("slides")) survives.push(`${n("photos") + n("slides")} photo${n("photos") + n("slides") > 1 ? "s" : ""}`);
+      if (n("letters")) survives.push("letters");
+      if (n("audio")) survives.push("a cassette tape");
+      if (n("video")) survives.push("Super 8 film");
+      const lead = headline ? `${shortDate}: ${headline}.` : `${shortDate}.`;
+      const names = namesInEntry.length ? ` Named in the log: ${namesInEntry.join(", ")}.` : "";
+      const where = day.day_number != null ? ` Day ${day.day_number} of 184 aboard USS Jouett (DLG-29)` : " Before the 1968 deployment";
+      const list = survives.length > 1 ? `${survives.slice(0, -1).join(", ")} and ${survives[survives.length - 1]}` : survives[0];
+      const what = survives.length ? `, told through ${list} from FTG3 Mike Ducy.` : ", from FTG3 Mike Ducy's archive.";
+      return lead + names + where + what;
     })()
   : "Day not found in the deployment timeline.";
+
+// Preview image for link cards: the day's first photo, slide, or film frame; else the logbook page.
+const OG_PICK: Record<string, string> = {
+  "1968-04-16": "mike-and-bill-ducy-quarter-deck",
+  "1968-02-29": "big-mother-gulf-of-tonkin",
+};
+const pick = day && OG_PICK[day.date]
+  ? [...((dayMedia as any).photos || [])].find((p: any) => p.web_path.includes(OG_PICK[day.date]))?.web_path
+  : undefined;
+const ogImage = day
+  ? (pick
+    || (dayMedia as any).photos?.[0]?.web_path
+    || (dayMedia as any).slides?.[0]?.web_path
+    || (dayMedia as any).video?.[0]?.thumb_path
+    || (dayMedia as any).logbook?.[0]?.web_path
+    || (dayMedia as any).letters?.[0]?.web_path
+    || undefined)
+  : undefined;
 
 // Group days by actual calendar month for sidebar
 const sidebarGroups: any[] = [];
@@ -217,7 +258,7 @@ function getBadges(date: string): string[] {
 }
 ---
 
-<Layout title={title} description={pageDescription} type="article">
+<Layout title={title} description={pageDescription} image={ogImage} type="article">
   {day ? (
     <div class="app-layout">
       <nav class="sidebar">
@@ -314,7 +355,7 @@ function getBadges(date: string): string[] {
           )}
           <h1 class="day-date">{formatDate(day.date)}</h1>
           {day.location && <div class="day-location">{day.location}</div>}
-          {day.title && <div class="day-location">{day.title}</div>}
+          {headline ? <p class="day-headline">{headline}</p> : day.title && <div class="day-location">{day.title}</div>}
         </div>
 
         {day.entries?.length > 0 && (

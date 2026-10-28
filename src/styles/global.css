@@ -293,6 +293,14 @@ a:hover {
   font-style: italic;
 }
 
+.day-headline {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0.4rem 0 0;
+}
+
 .day-banner {
   position: relative;
   background: var(--color-navy);
