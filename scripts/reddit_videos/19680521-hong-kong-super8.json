@@ -1,0 +1,41 @@
+{
+  "out": "~/Movies/Home Movies/Vietnam Project/Reddit Posts/2026-10-28_r-HongKong_19680521-hong-kong-super8/19680521-hong-kong-super8.mp4",
+  "intro": [
+    {
+      "text": "FM: USS JOUETT (DLG-29)",
+      "style": "muted"
+    },
+    {
+      "text": "TO: HOME // DECATUR, ILL.",
+      "style": "muted"
+    },
+    "",
+    {
+      "text": "21 MAY 1968 // 0800 HRS",
+      "style": "amber"
+    },
+    "ANCHORED, HONG KONG HARBOR",
+    "",
+    "LIBERTY CALL 1130.",
+    "NEW SUPER 8 CAMERA BOUGHT TODAY."
+  ],
+  "parts": [
+    {
+      "duration": 75.0,
+      "stamp": {
+        "when": "21-23 MAY 1968 // LIBERTY",
+        "where": "HONG KONG",
+        "audio": "FILM: FTG3 MIKE DUCY // NEW SUPER 8 CAMERA"
+      },
+      "visuals": [
+        {
+          "src": "/media/video/19680521-liberty-in-hong-kong.mp4",
+          "from": 180.0,
+          "start": 0,
+          "end": 75.0
+        }
+      ],
+      "captions": []
+    }
+  ]
+}

@@ -558,7 +558,7 @@ Slugs are media basenames without extension (`mediaSlug()`), so links break if a
 
 ### Make a Reddit video
 
-`scripts/make_reddit_video.py <spec.json>` renders a 1080×1350 captioned video from stills, a tape clip, and timed captions (specs in `scripts/reddit_videos/`). Audio is loudness-normalized and written at 48 kHz, with the intro as real silent samples; a delayed timestamp makes QuickTime and iOS play the audio early. The full workflow and post guidelines are in `Vietnam Project/Documentation/reddit-video-guide.md`.
+`scripts/make_reddit_video.py <spec.json>` renders a 1080×1350 video in the house teletype style (Courier, typed cards and location stamps, synthesized teletype sound) from one or more tape clips or silent parts over stills or film (specs in `scripts/reddit_videos/`). Style rules and spec format: `Vietnam Project/Documentation/reddit-video-style.md`. Audio is loudness-normalized and written at 48 kHz, with the intro as real silent samples; a delayed timestamp makes QuickTime and iOS play the audio early. The full workflow and post guidelines are in `Vietnam Project/Documentation/reddit-video-guide.md`.
 
 ### Re-transcribe audio
 

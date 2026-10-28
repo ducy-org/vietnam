@@ -1,0 +1,41 @@
+{
+  "out": "~/Movies/Home Movies/Vietnam Project/Reddit Posts/2026-11-08_r-Philippines_19680703-san-bernardino-strait/19680703-san-bernardino-strait.mp4",
+  "intro": [
+    {
+      "text": "FM: USS JOUETT (DLG-29)",
+      "style": "muted"
+    },
+    {
+      "text": "TO: HOME // DECATUR, ILL.",
+      "style": "muted"
+    },
+    "",
+    {
+      "text": "03 JUL 1968 // 0830 HRS",
+      "style": "amber"
+    },
+    "SAN BERNARDINO STRAIT // P.I.",
+    "",
+    "ACTIVE VOLCANO IN THE STRAIT.",
+    "UNDERWAY FOR GUAM."
+  ],
+  "parts": [
+    {
+      "duration": 58.5,
+      "stamp": {
+        "when": "03 JUL 1968 // 0830 HRS",
+        "where": "SAN BERNARDINO STRAIT // P.I.",
+        "audio": "FILM: FTG3 MIKE DUCY // SUPER 8"
+      },
+      "visuals": [
+        {
+          "src": "/media/video/19680703-san-bernadino-straits-with-volcano.mp4",
+          "from": 0.0,
+          "start": 0,
+          "end": 58.5
+        }
+      ],
+      "captions": []
+    }
+  ]
+}
