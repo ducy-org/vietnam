@@ -202,11 +202,10 @@ def _env(n, tau):
 def key_sound():
     n = int(0.045 * SR)
     t = np.arange(n) / SR
-    noise = rng.standard_normal(n) * _env(n, 0.004)
-    noise = np.convolve(np.diff(noise, prepend=0), np.ones(4) / 4, "same")
-    click = np.sin(2 * np.pi * rng.uniform(2000, 2800) * t) * _env(n, 0.005)
-    thunk = np.sin(2 * np.pi * rng.uniform(110, 170) * t) * _env(n, 0.012)
-    s = 0.6 * noise + 0.5 * click + 0.8 * thunk
+    noise = np.convolve(rng.standard_normal(n) * _env(n, 0.004), np.ones(14) / 14, "same")
+    click = np.sin(2 * np.pi * rng.uniform(700, 1100) * t) * _env(n, 0.003)
+    thunk = np.sin(2 * np.pi * rng.uniform(85, 130) * t) * _env(n, 0.018)
+    s = 0.5 * noise + 0.35 * click + 1.0 * thunk
     return s / np.abs(s).max() * rng.uniform(0.7, 1.0)
 
 
@@ -216,7 +215,7 @@ def cr_sound():
     s = np.zeros(n)
     for k in range(9):
         i, m = int((0.012 + k * 0.02) * SR), int(0.01 * SR)
-        s[i:i + m] += rng.standard_normal(m) * _env(m, 0.002) * 0.5
+        s[i:i + m] += np.convolve(rng.standard_normal(m), np.ones(10) / 10, "same") * _env(m, 0.002) * 0.5
     i = int(0.21 * SR)
     m = n - i
     s[i:] += np.sin(2 * np.pi * 95 * t[:m]) * _env(m, 0.02) + rng.standard_normal(m) * _env(m, 0.003) * 0.6
@@ -226,7 +225,7 @@ def cr_sound():
 def bell_sound():
     n = int(1.2 * SR)
     t = np.arange(n) / SR
-    s = (np.sin(2 * np.pi * 1870 * t) + 0.4 * np.sin(2 * np.pi * 3740 * t) + 0.2 * np.sin(2 * np.pi * 5600 * t)) * _env(n, 0.35)
+    s = (np.sin(2 * np.pi * 1180 * t) + 0.3 * np.sin(2 * np.pi * 2360 * t)) * _env(n, 0.3)
     return s / np.abs(s).max()
 
 
@@ -240,8 +239,8 @@ def motor_hum(n):
     return s / np.abs(s).max() * ramp
 
 
-def write_sfx(path, total, typed, bells):
-    """typed: [(Teletype, gain)] → clacks and carriage returns plus motor hum while typing."""
+def write_sfx(path, total, typed, bells, quiet):
+    """typed: [(Teletype, gain)] → clacks, carriage returns, motor hum. quiet: (start, end) forced silent."""
     track = np.zeros(int(total * SR) + SR)
 
     def add(sig, at, gain):
@@ -255,6 +254,13 @@ def write_sfx(path, total, typed, bells):
             add(key_sound() if kind == "key" else cr_sound(), at, gain * (1.0 if kind == "key" else 0.8))
     for at, gain in bells:
         add(bell_sound(), at, gain)
+    a, b = int(quiet[0] * SR), int(quiet[1] * SR)
+    fade = int(0.03 * SR)
+    track[a - fade:a] *= np.linspace(1, 0, fade)
+    track[a:b] = 0
+    spec = np.fft.rfft(track)
+    f = np.fft.rfftfreq(len(track), 1 / SR)
+    track = np.fft.irfft(spec / np.sqrt(1 + (f / 2000) ** 4), len(track))  # roll off the squeaky highs
     track = np.tanh(track * 1.2) / np.tanh(1.2)
     with wave.open(str(path), "wb") as w:
         w.setnchannels(1)
@@ -268,7 +274,8 @@ def write_sfx(path, total, typed, bells):
 DEFAULT_OUTRO = [
     "FULL TAPE. LOGBOOK. 184 DAYS:", "",
     {"text": "VIETNAM.DUCY.ORG", "style": "big"}, "",
-    {"text": "LETTERS HOME // DUCY FAMILY ARCHIVES", "style": "muted"}, {"text": "NNNN", "style": "muted"},
+    "LETTERS HOME", {"text": "A SAILOR'S PERSPECTIVE OF THE VIETNAM WAR IN 1968", "style": "muted"}, "",
+    {"text": "NNNN", "style": "muted"},
 ]
 
 
@@ -286,7 +293,7 @@ def main(spec_file):
     intro = Teletype(card_lines(spec["intro"]), CARD_LEAD, CARD_CPS, W - 2 * CARD_X)
     intro_end = intro.end + CARD_HOLD
 
-    visuals, captions, typed = [], [], [(intro, 0.4)]
+    visuals, captions, typed = [], [], [(intro, 0.3)]
     t, prev_key, stamp = intro_end, None, None
     parts = spec["parts"]
     for pi, part in enumerate(parts):
@@ -299,7 +306,6 @@ def main(spec_file):
         if key != prev_key:
             lines = [(st["when"], "s"), (st["where"], "s")] + ([(st["audio"], "s")] if st.get("audio") else [])
             stamp = Teletype(lines, t + 0.15, STAMP_CPS)
-            typed.append((stamp, 0.22 if part.get("audio") else 0.4))
             prev_key = key
         pv = [{"src": v["src"], "from": v.get("from", 0.0), "stamp": stamp,
                "start": max(v["start"], cs) - cs + t, "end": min(v["end"], ce) - cs + t} for v in part["visuals"]]
@@ -310,8 +316,11 @@ def main(spec_file):
         t += part["dur"] + tail
     body_end = t
 
-    outro = Teletype(card_lines(spec.get("outro") or DEFAULT_OUTRO), body_end + 0.3, CARD_CPS, W - 2 * CARD_X)
-    typed.append((outro, 0.36))
+    outro_lines = spec.get("outro") or DEFAULT_OUTRO
+    if not spec.get("outro") and not any(p.get("audio") for p in parts):
+        outro_lines = ["FULL REEL. LOGBOOK. 184 DAYS:"] + outro_lines[1:]
+    outro = Teletype(card_lines(outro_lines), body_end + 0.3, CARD_CPS, W - 2 * CARD_X)
+    typed.append((outro, 0.26))
     total = outro.end + CARD_HOLD
 
     for i, v in enumerate(visuals):
@@ -324,7 +333,7 @@ def main(spec_file):
             v["img"], v["fit"] = img, ("cover" if abs(img.width / img.height - 1) < 0.1 else "contain")
 
     sfx = Path(tempfile.mkdtemp()) / "sfx.wav"
-    write_sfx(sfx, total, typed, [(max(intro.start - 0.4, 0), 0.35)])
+    write_sfx(sfx, total, typed, [(max(intro.start - 0.4, 0), 0.22)], (intro_end, outro.start - 0.05))
 
     # Every silence must be real samples: a delayed timestamp is ignored by Apple's players.
     inputs, chain, labels, n_in = [], [f"anullsrc=r={SR}:cl=mono:d={intro_end}[lead]"], ["[lead]"], 1
