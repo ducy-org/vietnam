@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "preact/hooks";
+import { readHash, mediaSlug } from "../lib/deeplink";
 
 interface LightboxItem {
   src: string;
@@ -9,6 +10,13 @@ interface LightboxItem {
 
 export default function Lightbox({ items }: { items: LightboxItem[] }) {
   const [open, setOpen] = useState(-1);
+
+  useEffect(() => {
+    const { key } = readHash();
+    if (!key) return;
+    const i = items.findIndex((it) => mediaSlug(it.src) === key);
+    if (i >= 0) setOpen(i);
+  }, []);
 
   const close = useCallback(() => setOpen(-1), []);
   const prev = useCallback(
