@@ -618,14 +618,6 @@
         "category": "photos"
       },
       {
-        "original": "Photos/Sorted:Dated/19680229 - Big Mother LOG Helo, Gulf of Tonkin.JPG",
-        "web_path": "/media/photos/19680229-big-mother-log-helo-gulf-of-tonkin.jpg",
-        "date": "1968-02-29",
-        "description": "Big Mother LOG Helo, Gulf of Tonkin",
-        "thumb_path": "/media/photos/thumbs/19680229-big-mother-log-helo-gulf-of-tonkin.jpg",
-        "category": "photos"
-      },
-      {
         "original": "Photos/Sorted:Dated/19680229 - Big Mother, Gulf of Tonkin.JPG",
         "web_path": "/media/photos/19680229-big-mother-gulf-of-tonkin.jpg",
         "date": "1968-02-29",
@@ -730,11 +722,19 @@
         "category": "photos"
       },
       {
-        "original": "Photos/Sorted:Dated/19680229 - SAR Helo, Gulf of Tonkin.JPG",
-        "web_path": "/media/photos/19680229-sar-helo-gulf-of-tonkin.jpg",
+        "original": "Photos/Sorted:Dated/19680229 - USAF HH-3E Jolly Green Giant 2, Gulf of Tonkin.JPG",
+        "web_path": "/media/photos/19680229-usaf-hh-3e-jolly-green-giant-2-gulf-of-tonkin.jpg",
         "date": "1968-02-29",
-        "description": "SAR Helo, Gulf of Tonkin",
-        "thumb_path": "/media/photos/thumbs/19680229-sar-helo-gulf-of-tonkin.jpg",
+        "description": "USAF HH-3E Jolly Green Giant 2, Gulf of Tonkin",
+        "thumb_path": "/media/photos/thumbs/19680229-usaf-hh-3e-jolly-green-giant-2-gulf-of-tonkin.jpg",
+        "category": "photos"
+      },
+      {
+        "original": "Photos/Sorted:Dated/19680229 - USAF HH-3E Jolly Green Giant, Gulf of Tonkin.JPG",
+        "web_path": "/media/photos/19680229-usaf-hh-3e-jolly-green-giant-gulf-of-tonkin.jpg",
+        "date": "1968-02-29",
+        "description": "USAF HH-3E Jolly Green Giant, Gulf of Tonkin",
+        "thumb_path": "/media/photos/thumbs/19680229-usaf-hh-3e-jolly-green-giant-gulf-of-tonkin.jpg",
         "category": "photos"
       },
       {
