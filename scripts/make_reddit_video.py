@@ -126,12 +126,15 @@ def stamp_draw(d, tt, t):
 # ---------- visuals ----------
 
 class VideoSource:
-    """Streams square-cropped PHOTO x PHOTO frames from a film clip, read forward in time."""
+    """Streams PHOTO x PHOTO frames (whole film frame, letterboxed) from a film clip, read forward in time."""
 
     def __init__(self, path, start, dur):
         self.proc = subprocess.Popen(
             ["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", str(start), "-t", str(dur + 1), "-i", str(path),
-             "-vf", f"crop=ih:ih,scale={PHOTO}:{PHOTO},fps={FPS}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+             # Show the whole film frame (no crop); Super 8 is framed tight already.
+             "-vf", f"scale={PHOTO}:{PHOTO}:force_original_aspect_ratio=decrease,"
+                    f"pad={PHOTO}:{PHOTO}:(ow-iw)/2:(oh-ih)/2:color=0x{BG[0]:02X}{BG[1]:02X}{BG[2]:02X},fps={FPS}",
+             "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
             stdout=subprocess.PIPE)
         self.idx, self.frame = -1, None
 
