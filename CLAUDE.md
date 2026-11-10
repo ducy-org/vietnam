@@ -27,7 +27,7 @@ src/
 ├── pages/              # Astro pages (routes)
 │   ├── index.astro     # Landing page
 │   ├── map.astro       # Interactive deployment map (heavy data prep)
-│   ├── day/[...date].astro  # Day-by-day timeline (184 deployment + 15 pre-deployment)
+│   ├── day/[...date].astro  # Day-by-day timeline (pre-deployment, 184 deployment days, post-deployment)
 │   ├── archive.astro   # Media archive browser
 │   ├── cruisebook.astro # 1968 cruise book viewer
 │   ├── slideshow.astro # Narrated slide shows with synced audio
@@ -99,6 +99,8 @@ python3 scripts/parse_timeline.py
 ```
 
 Reads `deployment-timeline.md` → writes `src/data/timeline.json`. Extracts dates, day numbers, entries, locations (pattern-matched), quotes, sources, significance flags.
+
+**Post-deployment pages** (`post_deployment.entries`) come from the `## Post-Deployment` section of `deployment-timeline.md` (Mike home, Bill still in Vietnam, Bill's return, and onward). There are no tables there: each `>` paragraph, `***…***` line, or dated `###` heading becomes part of the day named by the **first date in its bold lead-in** (`23 Jul 1968`, `Nov 18, 1968`, or `Nov 7`, with the year taken from the month heading). Undated paragraphs attach to the previous date. To add a day page (a new letter from Bill, a tape, a document), add a paragraph like `> **Meanwhile in Da Nang — Bill's letter, 3 Nov 1968:** …`, then rerun this script and `build_day_headlines.py` (add an `OVERRIDES` headline). Media dated that day shows up on the page automatically. Bill's archive sources in `copy_media.py` take an optional 4th tuple item, a filename regex, so only items with a day page get published; widen it as pages are added (`build_transcripts.py` has the matching filter).
 
 #### 1b. Build day headlines (SEO)
 
@@ -554,7 +556,7 @@ for sub, items in data['photos'].items():
 
 | URL | Behavior |
 |---|---|
-| `/slideshow#<show>` | Scroll to the show (`japan`, `vietnam`) |
+| `/slideshow#<show>` | Scroll to the show (`bill`, `japan`, `vietnam`) |
 | `/slideshow#<show>/slide-<N>` | Cue slide N, where N is the filename prefix (e.g. `042-…` → `slide-42`), not the array index. Mike restarts his spoken count each tray, so it can differ from what he says. |
 | `/slideshow#<show>/<m:ss>` | Cue the tape time |
 | `/day/<date>#<tape-slug>[/<m:ss>]` | Scroll to `AudioWithTranscript` (its `id` is the MP3 basename) and cue the time. Also works in blog posts. |

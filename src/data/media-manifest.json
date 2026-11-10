@@ -3718,6 +3718,15 @@
         "subcategory": "bill"
       },
       {
+        "original": "Documentation/Letters/Bill to Mike/19681018 - Bill to Mike pg 1.jpeg",
+        "web_path": "/media/letters/bill/19681018-bill-to-mike-pg-1.jpg",
+        "date": "1968-10-18",
+        "description": "Bill to Mike pg 1",
+        "thumb_path": "/media/letters/bill/thumbs/19681018-bill-to-mike-pg-1.jpg",
+        "category": "letters",
+        "subcategory": "bill"
+      },
+      {
         "original": "Documentation/Letters/Bill to Mike/19681103 - Bill to Mike pg 1.jpeg",
         "web_path": "/media/letters/bill/19681103-bill-to-mike-pg-1.jpg",
         "date": "1968-11-03",
@@ -3903,15 +3912,6 @@
         "date": "1969-05-20",
         "description": "Bill to Mike pg 3",
         "thumb_path": "/media/letters/bill/thumbs/19690520-bill-to-mike-pg-3.jpg",
-        "category": "letters",
-        "subcategory": "bill"
-      },
-      {
-        "original": "Documentation/Letters/Bill to Mike/19691018 - Bill to Mike pg 1.jpeg",
-        "web_path": "/media/letters/bill/19691018-bill-to-mike-pg-1.jpg",
-        "date": "1969-10-18",
-        "description": "Bill to Mike pg 1",
-        "thumb_path": "/media/letters/bill/thumbs/19691018-bill-to-mike-pg-1.jpg",
         "category": "letters",
         "subcategory": "bill"
       }
@@ -5502,6 +5502,136 @@
         "thumb_path": "/media/documents/hc7/thumbs/rescue-043.jpg",
         "category": "documents",
         "subcategory": "hc7"
+      }
+    ],
+    "bill-newspapers": [
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 01 - Cover, Humping It by Cpl Henry C Casselli.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-01-cover-humping-it-by-cpl-henry-c-casselli.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 01 - Cover, Humping It by Cpl Henry C Casselli",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-01-cover-humping-it-by-cpl-henry-c-casselli.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 02 - Page 1, Birthday Recap and Commandant's Message.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-02-page-1-birthday-recap-and-commandants-message.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 02 - Page 1, Birthday Recap and Commandant's Message",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-02-page-1-birthday-recap-and-commandants-message.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 03 - Page 3, Gen Cushman's Message and Why Humping It.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-03-page-3-gen-cushmans-message-and-why-humping-it.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 03 - Page 3, Gen Cushman's Message and Why Humping It",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-03-page-3-gen-cushmans-message-and-why-humping-it.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 04 - Page 4, Marine Corps Aviation.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-04-page-4-marine-corps-aviation.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 04 - Page 4, Marine Corps Aviation",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-04-page-4-marine-corps-aviation.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 05 - Page 5, Combat Art.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-05-page-5-combat-art.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 05 - Page 5, Combat Art",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-05-page-5-combat-art.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 06 - Page 6, Calling a Boot and Medal of Honor.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-06-page-6-calling-a-boot-and-medal-of-honor.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 06 - Page 6, Calling a Boot and Medal of Honor",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-06-page-6-calling-a-boot-and-medal-of-honor.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 07 - Supplement Cover, I Corps Map.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-07-supplement-cover-i-corps-map.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 07 - Supplement Cover, I Corps Map",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-07-supplement-cover-i-corps-map.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 08 - Supplement Centerfold Left, We Pause and Look Back.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-08-supplement-centerfold-left-we-pause-and-look-back.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 08 - Supplement Centerfold Left, We Pause and Look Back",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-08-supplement-centerfold-left-we-pause-and-look-back.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 09 - Supplement Centerfold Right.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-09-supplement-centerfold-right.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 09 - Supplement Centerfold Right",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-09-supplement-centerfold-right.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 10 - Supplement Page 4, Sandy Dunes to Dense Jungles.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-10-supplement-page-4-sandy-dunes-to-dense-jungles.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 10 - Supplement Page 4, Sandy Dunes to Dense Jungles",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-10-supplement-page-4-sandy-dunes-to-dense-jungles.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 11 - Page 7, Faces.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-11-page-7-faces.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 11 - Page 7, Faces",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-11-page-7-faces.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      },
+      {
+        "original": "Bill's/Newspapers/19681108 - Sea Tiger Birthday Issue 12 - Page 8, The Past Holds a Key to the Future.jpg",
+        "web_path": "/media/documents/bill-newspapers/19681108-sea-tiger-birthday-issue-12-page-8-the-past-holds-a-key-to-the-future.jpg",
+        "date": "1968-11-08",
+        "description": "Sea Tiger Birthday Issue 12 - Page 8, The Past Holds a Key to the Future",
+        "thumb_path": "/media/documents/bill-newspapers/thumbs/19681108-sea-tiger-birthday-issue-12-page-8-the-past-holds-a-key-to-the-future.jpg",
+        "category": "documents",
+        "subcategory": "bill-newspapers"
+      }
+    ],
+    "bill-misc": [
+      {
+        "original": "Bill's/misc docs/19681110 - 1st Marine Division RVN 193rd Marine Corps Birthday Program - Cover.jpg",
+        "web_path": "/media/documents/bill-misc/19681110-1st-marine-division-rvn-193rd-marine-corps-birthday-program-cover.jpg",
+        "date": "1968-11-10",
+        "description": "1st Marine Division RVN 193rd Marine Corps Birthday Program - Cover",
+        "thumb_path": "/media/documents/bill-misc/thumbs/19681110-1st-marine-division-rvn-193rd-marine-corps-birthday-program-cover.jpg",
+        "category": "documents",
+        "subcategory": "bill-misc"
+      },
+      {
+        "original": "Bill's/misc docs/19681110 - 1st Marine Division RVN 193rd Marine Corps Birthday Program - MajGen Carl A Youngdale Message and Birthday Menu.jpg",
+        "web_path": "/media/documents/bill-misc/19681110-1st-marine-division-rvn-193rd-marine-corps-birthday-program-majgen-carl-a-youngdale-message-and-birthday-menu.jpg",
+        "date": "1968-11-10",
+        "description": "1st Marine Division RVN 193rd Marine Corps Birthday Program - MajGen Carl A Youngdale Message and Birthday Menu",
+        "thumb_path": "/media/documents/bill-misc/thumbs/19681110-1st-marine-division-rvn-193rd-marine-corps-birthday-program-majgen-carl-a-youngdale-message-and-birthday-menu.jpg",
+        "category": "documents",
+        "subcategory": "bill-misc"
       }
     ]
   },
@@ -7458,6 +7588,326 @@
       "date": null,
       "description": "IMAG0040",
       "thumb_path": "/media/slides/thumbs/imag0040.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/001-trench-by-rice-paddies.JPG",
+      "web_path": "/media/slides/001-trench-by-rice-paddies.jpg",
+      "date": null,
+      "description": "001-trench-by-rice-paddies",
+      "thumb_path": "/media/slides/thumbs/001-trench-by-rice-paddies.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/002-van-hit-in-rocket-attack.JPG",
+      "web_path": "/media/slides/002-van-hit-in-rocket-attack.jpg",
+      "date": null,
+      "description": "002-van-hit-in-rocket-attack",
+      "thumb_path": "/media/slides/thumbs/002-van-hit-in-rocket-attack.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/003-sandbagging-hootches-after-rocket-attack.JPG",
+      "web_path": "/media/slides/003-sandbagging-hootches-after-rocket-attack.jpg",
+      "date": null,
+      "description": "003-sandbagging-hootches-after-rocket-attack",
+      "thumb_path": "/media/slides/thumbs/003-sandbagging-hootches-after-rocket-attack.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/004-buddy-with-shovel-and-sandbags.JPG",
+      "web_path": "/media/slides/004-buddy-with-shovel-and-sandbags.jpg",
+      "date": null,
+      "description": "004-buddy-with-shovel-and-sandbags",
+      "thumb_path": "/media/slides/thumbs/004-buddy-with-shovel-and-sandbags.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/005-finished-sandbag-wall-middle-hootch.JPG",
+      "web_path": "/media/slides/005-finished-sandbag-wall-middle-hootch.jpg",
+      "date": null,
+      "description": "005-finished-sandbag-wall-middle-hootch",
+      "thumb_path": "/media/slides/thumbs/005-finished-sandbag-wall-middle-hootch.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/006-buddy-goofing-off-with-pick.JPG",
+      "web_path": "/media/slides/006-buddy-goofing-off-with-pick.jpg",
+      "date": null,
+      "description": "006-buddy-goofing-off-with-pick",
+      "thumb_path": "/media/slides/thumbs/006-buddy-goofing-off-with-pick.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/007-filling-sandbags.JPG",
+      "web_path": "/media/slides/007-filling-sandbags.jpg",
+      "date": null,
+      "description": "007-filling-sandbags",
+      "thumb_path": "/media/slides/thumbs/007-filling-sandbags.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/008-trench-bill-slept-in.JPG",
+      "web_path": "/media/slides/008-trench-bill-slept-in.jpg",
+      "date": null,
+      "description": "008-trench-bill-slept-in",
+      "thumb_path": "/media/slides/thumbs/008-trench-bill-slept-in.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/009-back-porch-of-bills-hootch.JPG",
+      "web_path": "/media/slides/009-back-porch-of-bills-hootch.jpg",
+      "date": null,
+      "description": "009-back-porch-of-bills-hootch",
+      "thumb_path": "/media/slides/thumbs/009-back-porch-of-bills-hootch.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/010-collected-shells-on-cloth.JPG",
+      "web_path": "/media/slides/010-collected-shells-on-cloth.jpg",
+      "date": null,
+      "description": "010-collected-shells-on-cloth",
+      "thumb_path": "/media/slides/thumbs/010-collected-shells-on-cloth.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/011-collected-shells-close-up.JPG",
+      "web_path": "/media/slides/011-collected-shells-close-up.jpg",
+      "date": null,
+      "description": "011-collected-shells-close-up",
+      "thumb_path": "/media/slides/thumbs/011-collected-shells-close-up.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/012-blank-frame-slide-missing.JPG",
+      "web_path": "/media/slides/012-blank-frame-slide-missing.jpg",
+      "date": null,
+      "description": "012-blank-frame-slide-missing",
+      "thumb_path": "/media/slides/thumbs/012-blank-frame-slide-missing.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/013-show-begins-two-women-and-a-man.JPG",
+      "web_path": "/media/slides/013-show-begins-two-women-and-a-man.jpg",
+      "date": null,
+      "description": "013-show-begins-two-women-and-a-man",
+      "thumb_path": "/media/slides/thumbs/013-show-begins-two-women-and-a-man.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/014-singer-in-red-sequin-gown.JPG",
+      "web_path": "/media/slides/014-singer-in-red-sequin-gown.jpg",
+      "date": null,
+      "description": "014-singer-in-red-sequin-gown",
+      "thumb_path": "/media/slides/thumbs/014-singer-in-red-sequin-gown.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/015-border-inspector-skit.JPG",
+      "web_path": "/media/slides/015-border-inspector-skit.jpg",
+      "date": null,
+      "description": "015-border-inspector-skit",
+      "thumb_path": "/media/slides/thumbs/015-border-inspector-skit.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/016-man-in-pink-dress-skit.JPG",
+      "web_path": "/media/slides/016-man-in-pink-dress-skit.jpg",
+      "date": null,
+      "description": "016-man-in-pink-dress-skit",
+      "thumb_path": "/media/slides/thumbs/016-man-in-pink-dress-skit.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/017-skit-goes-farther-troops-taking-pictures.JPG",
+      "web_path": "/media/slides/017-skit-goes-farther-troops-taking-pictures.jpg",
+      "date": null,
+      "description": "017-skit-goes-farther-troops-taking-pictures",
+      "thumb_path": "/media/slides/thumbs/017-skit-goes-farther-troops-taking-pictures.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/018-inspector-lady-and-drummer.JPG",
+      "web_path": "/media/slides/018-inspector-lady-and-drummer.jpg",
+      "date": null,
+      "description": "018-inspector-lady-and-drummer",
+      "thumb_path": "/media/slides/thumbs/018-inspector-lady-and-drummer.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/019-dancer-looking-bills-way.JPG",
+      "web_path": "/media/slides/019-dancer-looking-bills-way.jpg",
+      "date": null,
+      "description": "019-dancer-looking-bills-way",
+      "thumb_path": "/media/slides/thumbs/019-dancer-looking-bills-way.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/020-end-of-first-tray-act.JPG",
+      "web_path": "/media/slides/020-end-of-first-tray-act.jpg",
+      "date": null,
+      "description": "020-end-of-first-tray-act",
+      "thumb_path": "/media/slides/thumbs/020-end-of-first-tray-act.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/021-troops-taking-pictures-of-show.JPG",
+      "web_path": "/media/slides/021-troops-taking-pictures-of-show.jpg",
+      "date": null,
+      "description": "021-troops-taking-pictures-of-show",
+      "thumb_path": "/media/slides/thumbs/021-troops-taking-pictures-of-show.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/022-dancer-gathering-clothes.JPG",
+      "web_path": "/media/slides/022-dancer-gathering-clothes.jpg",
+      "date": null,
+      "description": "022-dancer-gathering-clothes",
+      "thumb_path": "/media/slides/thumbs/022-dancer-gathering-clothes.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/023-man-dressed-as-arab-singing.JPG",
+      "web_path": "/media/slides/023-man-dressed-as-arab-singing.jpg",
+      "date": null,
+      "description": "023-man-dressed-as-arab-singing",
+      "thumb_path": "/media/slides/thumbs/023-man-dressed-as-arab-singing.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/024-singer-returns-in-white.JPG",
+      "web_path": "/media/slides/024-singer-returns-in-white.jpg",
+      "date": null,
+      "description": "024-singer-returns-in-white",
+      "thumb_path": "/media/slides/thumbs/024-singer-returns-in-white.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/025-singer-serenades-bills-buddy.JPG",
+      "web_path": "/media/slides/025-singer-serenades-bills-buddy.jpg",
+      "date": null,
+      "description": "025-singer-serenades-bills-buddy",
+      "thumb_path": "/media/slides/thumbs/025-singer-serenades-bills-buddy.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/026-buddy-arms-around-singer.JPG",
+      "web_path": "/media/slides/026-buddy-arms-around-singer.jpg",
+      "date": null,
+      "description": "026-buddy-arms-around-singer",
+      "thumb_path": "/media/slides/thumbs/026-buddy-arms-around-singer.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/027-singer-on-buddys-lap.JPG",
+      "web_path": "/media/slides/027-singer-on-buddys-lap.jpg",
+      "date": null,
+      "description": "027-singer-on-buddys-lap",
+      "thumb_path": "/media/slides/thumbs/027-singer-on-buddys-lap.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/028-buddy-picks-up-singer.JPG",
+      "web_path": "/media/slides/028-buddy-picks-up-singer.jpg",
+      "date": null,
+      "description": "028-buddy-picks-up-singer",
+      "thumb_path": "/media/slides/thumbs/028-buddy-picks-up-singer.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/029-farewell-kiss.JPG",
+      "web_path": "/media/slides/029-farewell-kiss.jpg",
+      "date": null,
+      "description": "029-farewell-kiss",
+      "thumb_path": "/media/slides/thumbs/029-farewell-kiss.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/030-another-marine-called-on-stage.JPG",
+      "web_path": "/media/slides/030-another-marine-called-on-stage.jpg",
+      "date": null,
+      "description": "030-another-marine-called-on-stage",
+      "thumb_path": "/media/slides/thumbs/030-another-marine-called-on-stage.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/031-dancer-ready-to-twist-and-boogaloo.JPG",
+      "web_path": "/media/slides/031-dancer-ready-to-twist-and-boogaloo.jpg",
+      "date": null,
+      "description": "031-dancer-ready-to-twist-and-boogaloo",
+      "thumb_path": "/media/slides/thumbs/031-dancer-ready-to-twist-and-boogaloo.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/032-dancer-singing-and-shaking.JPG",
+      "web_path": "/media/slides/032-dancer-singing-and-shaking.jpg",
+      "date": null,
+      "description": "032-dancer-singing-and-shaking",
+      "thumb_path": "/media/slides/thumbs/032-dancer-singing-and-shaking.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/033-dancer-doing-the-twist.JPG",
+      "web_path": "/media/slides/033-dancer-doing-the-twist.jpg",
+      "date": null,
+      "description": "033-dancer-doing-the-twist",
+      "thumb_path": "/media/slides/thumbs/033-dancer-doing-the-twist.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/034-doc-the-corpsman-dancing.JPG",
+      "web_path": "/media/slides/034-doc-the-corpsman-dancing.jpg",
+      "date": null,
+      "description": "034-doc-the-corpsman-dancing",
+      "thumb_path": "/media/slides/thumbs/034-doc-the-corpsman-dancing.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/035-performers-saying-goodbye.JPG",
+      "web_path": "/media/slides/035-performers-saying-goodbye.jpg",
+      "date": null,
+      "description": "035-performers-saying-goodbye",
+      "thumb_path": "/media/slides/thumbs/035-performers-saying-goodbye.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/036-dancer-signing-covers.JPG",
+      "web_path": "/media/slides/036-dancer-signing-covers.jpg",
+      "date": null,
+      "description": "036-dancer-signing-covers",
+      "thumb_path": "/media/slides/thumbs/036-dancer-signing-covers.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/037-dancer-signing-covers-close-up.JPG",
+      "web_path": "/media/slides/037-dancer-signing-covers-close-up.jpg",
+      "date": null,
+      "description": "037-dancer-signing-covers-close-up",
+      "thumb_path": "/media/slides/thumbs/037-dancer-signing-covers-close-up.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/038-truck-hit-by-chopper-rotor.JPG",
+      "web_path": "/media/slides/038-truck-hit-by-chopper-rotor.jpg",
+      "date": null,
+      "description": "038-truck-hit-by-chopper-rotor",
+      "thumb_path": "/media/slides/thumbs/038-truck-hit-by-chopper-rotor.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/039-bananas-from-laundry-worker.JPG",
+      "web_path": "/media/slides/039-bananas-from-laundry-worker.jpg",
+      "date": null,
+      "description": "039-bananas-from-laundry-worker",
+      "thumb_path": "/media/slides/thumbs/039-bananas-from-laundry-worker.jpg",
+      "category": "slides"
+    },
+    {
+      "original": "Photos/Slides/slideshow/bill-danang/040-bill-in-flak-jacket-before-bunker-watch.JPG",
+      "web_path": "/media/slides/040-bill-in-flak-jacket-before-bunker-watch.jpg",
+      "date": null,
+      "description": "040-bill-in-flak-jacket-before-bunker-watch",
+      "thumb_path": "/media/slides/thumbs/040-bill-in-flak-jacket-before-bunker-watch.jpg",
       "category": "slides"
     },
     {

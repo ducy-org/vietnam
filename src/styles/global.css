@@ -3279,6 +3279,7 @@ details.letter-transcript:not([open]) summary.letter-header::after {
   color: var(--color-text-muted);
   max-width: 700px;
   margin: 0 auto;
+  text-wrap: balance;
 }
 
 .ss-section {

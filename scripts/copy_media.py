@@ -610,6 +610,9 @@ CATEGORIES = {
             ("Documentation/Newspaper Clippings", "documents/newspaper", False),
             ("Documentation/Misc", "documents/misc", False),
             ("Documentation/HC-7 Seadevils", "documents/hc7", False),
+            # Bill's archive: only items that have a post-deployment day page so far
+            ("Bill's/Newspapers", "documents/bill-newspapers", False, r"^19681108 - Sea Tiger"),
+            ("Bill's/misc docs", "documents/bill-misc", False, r"^19681110 - "),
         ],
         "watermark": True,
     },
@@ -648,7 +651,7 @@ def process_category(cat_name: str, cat_config: dict, dry_run: bool,
     watermark = cat_config.get("watermark", False)
     filter_exts = cat_config.get("filter_exts", None)
 
-    for src_rel, dst_rel, recurse in cat_config["sources"]:
+    for src_rel, dst_rel, recurse, *only in cat_config["sources"]:
         src_dir = SOURCE_BASE / src_rel
         dst_dir = MEDIA_OUT / dst_rel
 
@@ -657,6 +660,8 @@ def process_category(cat_name: str, cat_config: dict, dry_run: bool,
 
         if filter_exts:
             files = [f for f in files if f.suffix.lower() in filter_exts]
+        if only:  # optional 4th tuple item: filename regex
+            files = [f for f in files if re.search(only[0], f.name)]
 
         entries = []
         for f in files:
@@ -780,7 +785,7 @@ def main():
 
         # Check for SSN files
         if cat_name == "documents":
-            for src_rel, dst_rel, _ in cat_config["sources"]:
+            for src_rel, *_ in cat_config["sources"]:
                 if "Service Records" in src_rel:
                     src_dir = SOURCE_BASE / src_rel
                     for warn_file in SSN_WARNING_FILES:

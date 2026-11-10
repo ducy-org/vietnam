@@ -28,6 +28,10 @@ export async function getStaticPaths() {
     }
   }
 
+  for (const entry of data.post_deployment?.entries || []) {
+    paths.push({ params: { date: entry.date } });
+  }
+
   return paths;
 }
 
@@ -121,6 +125,10 @@ for (const month of timelineData.months) {
   }
 }
 
+for (const entry of timelineData.post_deployment?.entries || []) {
+  allDays.push({ ...entry, period: "post-deployment" });
+}
+
 const dateParam = Astro.params.date;
 const dayIndex = allDays.findIndex((d) => d.date === dateParam);
 const day = dayIndex >= 0 ? allDays[dayIndex] : null;
@@ -182,7 +190,9 @@ const pageDescription = day
       if (n("video")) survives.push("Super 8 film");
       const lead = headline ? `${shortDate}: ${headline}.` : `${shortDate}.`;
       const names = namesInEntry.length ? ` Named in the log: ${namesInEntry.join(", ")}.` : "";
-      const where = day.day_number != null ? ` Day ${day.day_number} of 184 aboard USS Jouett (DLG-29)` : " Before the 1968 deployment";
+      const where = day.day_number != null
+        ? ` Day ${day.day_number} of 184 aboard USS Jouett (DLG-29)`
+        : day.period === "post-deployment" ? " After the 1968 deployment" : " Before the 1968 deployment";
       const list = survives.length > 1 ? `${survives.slice(0, -1).join(", ")} and ${survives[survives.length - 1]}` : survives[0];
       const what = survives.length ? `, told through ${list} from FTG3 Mike Ducy.` : ", from FTG3 Mike Ducy's archive.";
       return lead + names + where + what;
@@ -238,9 +248,20 @@ for (const [monthKey, days] of Object.entries(calendarMonths).sort()) {
   });
 }
 
+if (timelineData.post_deployment?.entries?.length > 0) {
+  sidebarGroups.push({
+    label: "Post-Deployment",
+    month: "post",
+    days: timelineData.post_deployment.entries,
+  });
+}
+
 function isCurrentMonth(mg: any, currentDate: string): boolean {
   if (mg.month === "pre") {
     return currentDate < "1968-01-16";
+  }
+  if (mg.month === "post") {
+    return currentDate > "1968-07-18";
   }
   return currentDate.startsWith(mg.month);
 }
@@ -335,7 +356,7 @@ function getBadges(date: string): string[] {
         <aside class="day-banner" hidden aria-label="About this site">
           <button type="button" class="day-banner-close" aria-label="Dismiss" data-banner-dismiss>&times;</button>
           <div class="day-banner-eyebrow">
-            {day.day_number != null ? `Day ${day.day_number} of 184` : "Before the deployment"} · Letters Home
+            {day.day_number != null ? `Day ${day.day_number} of 184` : day.period === "post-deployment" ? "After the deployment" : "Before the deployment"} · Letters Home
           </div>
           <p class="day-banner-text">
             FTG3 Mike Ducy's 1968 Vietnam deployment aboard USS Jouett (DLG-29), told day by day through his logbook, letters, photographs, and tape recordings home.
@@ -361,7 +382,7 @@ function getBadges(date: string): string[] {
         {day.entries?.length > 0 && (
           <div class="logbook-entry">
             <span class="entry-label">
-              {day.period === "pre-deployment" ? "Narrative" : "Logbook"}
+              {day.period === "deployment" ? "Logbook" : "Narrative"}
             </span>
             {day.entries.map((e: string) => (
               <p style="margin-bottom: 0.5rem;">{e}</p>

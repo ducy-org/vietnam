@@ -194,7 +194,8 @@ def parse_deployment_timeline(filepath):
             title = strip_md(m.group(1))
             # Skip "Pre-Deployment" and non-month sections
             if any(kw in title for kw in ['Deployment Statistics', 'Key Personnel',
-                                           'Sources', 'Research', 'Pre-Deployment']):
+                                           'Sources', 'Research', 'Pre-Deployment',
+                                           'Post-Deployment']):
                 # Save current month if any
                 if current_month and current_days:
                     current_month['days'] = current_days
@@ -442,6 +443,98 @@ def parse_predeployment_timeline(filepath):
     return entries
 
 
+POST_MONTHS = {m: i for i, m in enumerate(
+    ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'], 1)}
+_MON = r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?'
+
+
+def find_post_date(text, default_year):
+    """First date in text: '23 Jul 1968', 'Nov 18, 1968', or 'Nov 7' (year from context)."""
+    for pat, order in ((r'~?(\d{1,2})\s+' + _MON + r',?\s+(\d{4})', 'dmy'),
+                       (_MON + r'\s+(\d{1,2}),?\s+(\d{4})', 'mdy'),
+                       (_MON + r'\s+(\d{1,2})\b', 'md')):
+        m = re.search(pat, text)
+        if not m:
+            continue
+        if order == 'dmy':
+            d, mon, y = int(m.group(1)), m.group(2), int(m.group(3))
+        elif order == 'mdy':
+            mon, d, y = m.group(1), int(m.group(2)), int(m.group(3))
+        else:
+            mon, d, y = m.group(1), int(m.group(2)), default_year
+        return f"{y}-{POST_MONTHS[mon.lower()]:02d}-{d:02d}"
+    return None
+
+
+def parse_postdeployment_timeline(filepath):
+    """Parse the '## Post-Deployment' section: dated paragraphs grouped into day entries.
+
+    A paragraph's date is the first date in its bold lead-in (or the line); undated
+    lines attach to the previous entry. Month headers (### October 1968: ...) set the
+    year for dates written without one.
+    """
+    lines = filepath.read_text().splitlines()
+    by_date = {}
+    current = None
+    year = 1968
+    active = False
+
+    def entry_for(date):
+        if date not in by_date:
+            by_date[date] = {
+                'date': date, 'day_number': None, 'day_of_week': None, 'title': None,
+                'entries': [], 'sources': [], 'significant': False, 'location': None,
+                'quotes': [], 'photos': [], 'documents': [],
+            }
+        return by_date[date]
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith('## '):
+            active = 'Post-Deployment' in stripped
+            continue
+        if not active or not stripped or stripped == '---':
+            continue
+
+        ym = re.search(r'\b(19\d\d)\b', stripped)
+        if stripped.startswith('### '):
+            header = strip_md(stripped[4:])
+            if ym:
+                year = int(ym.group(1))
+            date = find_post_date(header, year)
+            if date and re.search(r'\d{1,2}', header.split(str(year))[0] if ym else header):
+                current = entry_for(date)
+                title = re.sub(r'\s*[–—-]\s*\d{1,2}\s+\w+\s+\d{4}$', '', header)
+                current['title'] = f"{current['title']}; {title}" if current['title'] else title
+                current['significant'] = True
+            continue
+
+        lead = re.match(r'^>?\s*\*\*(.+?)\*\*', stripped)
+        date = find_post_date(lead.group(1) if lead else stripped, year)
+        if date:
+            current = entry_for(date)
+        if current is None:
+            continue
+
+        if stripped.startswith('> **Photo'):
+            current['photos'].append(parse_photo_line(stripped))
+        elif stripped.startswith('> **Document'):
+            current['documents'].append(parse_document_line(stripped))
+            current['quotes'].append(parse_quote_line(stripped))
+        elif stripped.startswith('> '):
+            current['quotes'].append(parse_quote_line(stripped))
+        elif stripped.startswith('***'):
+            current['entries'].append(strip_md(stripped))
+            current['significant'] = True
+        else:
+            current['entries'].append(strip_md(stripped))
+        for src in ("Letter", "Familygram", "Bill's letter", "Norris's letter", "Document"):
+            if src.lower() in stripped.lower() and src not in current['sources']:
+                current['sources'].append(src)
+
+    return [by_date[d] for d in sorted(by_date)]
+
+
 def merge_duplicate_dates(days):
     """Merge days with the same date (e.g., Date Line crossing)."""
     merged = {}
@@ -487,6 +580,8 @@ def main():
     if pre_file.exists():
         pre_entries = parse_predeployment_timeline(pre_file)
 
+    post_entries = parse_postdeployment_timeline(dep_file)
+
     # Compute day numbers from calendar: Jan 16 = Day 0, Jan 17 = Day 1, etc.
     from datetime import date as dt_date
     deployment_start = dt_date(1968, 1, 16)
@@ -524,6 +619,11 @@ def main():
             'end': '1968-01-14',
             'entries': pre_entries,
         },
+        'post_deployment': {
+            'start': '1968-07-19',
+            'end': post_entries[-1]['date'] if post_entries else '1968-07-19',
+            'entries': post_entries,
+        },
     }
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -542,6 +642,9 @@ def main():
     print(f"  Entries:          {len(pre_entries)}")
     print(f"  Photos:           {pre_photos}")
     print(f"  Documents:        {pre_documents}")
+    print()
+    print(f"Post-deployment timeline parsed:")
+    print(f"  Entries:          {len(post_entries)}")
     print()
     print(f"Output: {OUTPUT}")
 

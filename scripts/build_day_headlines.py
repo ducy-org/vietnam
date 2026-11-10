@@ -17,6 +17,17 @@ MANIFEST = ROOT / "src" / "data" / "media-manifest.json"
 OUT = ROOT / "src" / "data" / "day-headlines.json"
 
 OVERRIDES = {
+    # Post-deployment (Mike home, Bill still in Vietnam)
+    "1968-09-18": "Mike's Early Discharge Confirmed",
+    "1968-10-11": "Navy Unit Commendation for USS Jouett",
+    "1968-10-30": "Mike's Last Letter From the Navy",
+    "1968-11-03": "Bill Starts 60 Days of Night Patrols",
+    "1968-11-08": "The Sea Tiger's Marine Corps Birthday Issue",
+    "1968-11-10": "193rd Marine Corps Birthday in Da Nang",
+    "1968-11-15": "Mike Discharged From the Navy",
+    "1968-12-08": "Bill Back From R&R in Taipei",
+    "1969-02-18": "Bill's Last Letter From Vietnam",
+    "1969-02-20": "Bill Leaves Vietnam After 393 Days",
     "1967-08-22": "First letter home from Treasure Island, San Francisco",
     "1967-08-30": "Treasure Island: hippies, mess cooking, and a camera",
     "1967-09-06": "Reporting aboard USS Jouett",
@@ -193,6 +204,8 @@ def main():
     for m in t["months"]:
         for d in m["days"]:
             out[d["date"]] = OVERRIDES.get(d["date"]) or derive(d, media)
+    for e in t.get("post_deployment", {}).get("entries", []):
+        out[e["date"]] = OVERRIDES.get(e["date"]) or e.get("title") or ""
     OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False))
     if "--print" in sys.argv:
         for k in sorted(out):

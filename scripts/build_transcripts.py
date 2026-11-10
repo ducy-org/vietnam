@@ -25,6 +25,8 @@ DOC_TRANSCRIPT_DIRS = [
     (PROJECT / "Documentation/Newspaper Clippings/transcripts", "document", "newspaper"),
     (PROJECT / "Documentation/Training & Service Records/transcripts", "document", "service-records"),
     (PROJECT / "Documentation/Plans of the Day/transcripts", "document", "plans-of-the-day"),
+    (PROJECT / "Bill's/Newspapers/transcripts", "document", "bill-newspapers"),
+    (PROJECT / "Bill's/misc docs/transcripts", "document", "bill-misc"),
 ]
 
 # Files to skip in document transcript processing
@@ -218,6 +220,9 @@ def build_doc_transcripts():
         for f in sorted(src_dir.glob("*.txt")):
             if f.name in SKIP_DOC_TRANSCRIPTS:
                 continue
+            # Bill's archive: only items with a post-deployment day page so far (match copy_media.py)
+            if "Bill's" in str(src_dir) and not f.name.startswith(("19681108 - Sea Tiger", "19681110 - ")):
+                continue
 
             text = f.read_text(encoding="utf-8").strip()
             if not text:
@@ -232,7 +237,10 @@ def build_doc_transcripts():
                 continue
 
             label = extract_doc_label(f.name)
-            who = "mike" if "mike" in f.name.lower() or "ducy" in f.name.lower() else "ship"
+            if "Bill's" in str(src_dir):
+                who = "bill"
+            else:
+                who = "mike" if "mike" in f.name.lower() or "ducy" in f.name.lower() else "ship"
 
             entry = {
                 "date": date,
