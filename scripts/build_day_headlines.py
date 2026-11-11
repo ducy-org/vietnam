@@ -17,6 +17,7 @@ MANIFEST = ROOT / "src" / "data" / "media-manifest.json"
 OUT = ROOT / "src" / "data" / "day-headlines.json"
 
 OVERRIDES = {
+    "1968-02-26": "Bill's Tape Home From Da Nang, Narrating His Slides",
     # Post-deployment (Mike home, Bill still in Vietnam)
     "1968-09-18": "Mike's Early Discharge Confirmed",
     "1968-10-11": "Navy Unit Commendation for USS Jouett",
