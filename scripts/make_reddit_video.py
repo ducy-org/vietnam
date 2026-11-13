@@ -47,6 +47,9 @@ def font(size):
 
 
 def media_path(web_path):
+    """Site web path (/media/...) or, for archive items not on the site yet, an absolute or ~ path."""
+    if web_path.startswith(("~", "/Users/")):
+        return Path(web_path).expanduser()
     return ROOT / "public" / web_path.lstrip("/")
 
 

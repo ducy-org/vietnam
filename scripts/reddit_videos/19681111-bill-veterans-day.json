@@ -1,0 +1,105 @@
+{
+  "out": "~/Movies/Home Movies/Vietnam Project/Reddit Posts/2026-11-11_bill-veterans-day-video/bill-ducy-veterans-day.mp4",
+  "part_gap_seconds": 0.6,
+  "intro": [
+    {"text": "FM: PFC BILL DUCY, USMC", "style": "muted"},
+    {"text": "TO: HOME // DECATUR, ILL.", "style": "muted"},
+    "",
+    {"text": "VETERANS DAY", "style": "amber"},
+    "DA NANG // HOI AN, RVN",
+    "JAN 1968 - FEB 1969",
+    "",
+    "HIS OWN WORDS, ON TAPE."
+  ],
+  "outro": [
+    "HIS TAPES. HIS LETTERS. 1968:", "",
+    {"text": "VIETNAM.DUCY.ORG", "style": "big"}, "",
+    "LETTERS HOME",
+    {"text": "TWO BROTHERS IN THE VIETNAM WAR, 1968", "style": "muted"}, "",
+    {"text": "NNNN", "style": "muted"}
+  ],
+  "parts": [
+    {
+      "duration": 3.5,
+      "stamp": {"when": "1967", "where": "U.S. MARINE CORPS", "audio": "PFC BILL DUCY"},
+      "visuals": [{"src": "/Users/michael/Movies/Home Movies/Vietnam Project/Bill's/incoming/1967 - Bill Ducy, USMC Boot Camp Graduation Portrait in Dress Blues.jpg", "start": 0, "end": 3.5}],
+      "captions": []
+    },
+    {
+      "audio": "/media/audio/19680226-bill-ducy-to-mike-ducy-to-john-and-georgia-mae-pritchett-to-home.mp3",
+      "clip_start": 13.7,
+      "clip_end": 28.8,
+      "visuals": [
+        {"src": "/media/slides/003-sandbagging-hootches-after-rocket-attack.jpg", "start": 13.7, "end": 21.6},
+        {"src": "/media/slides/004-buddy-with-shovel-and-sandbags.jpg", "start": 21.6, "end": 28.8}
+      ],
+      "captions": [
+        {"start": 13.78, "end": 18.46, "text": "This next one here, we're building bunkers after the rocket attack came."},
+        {"start": 18.94, "end": 24.12, "text": "Started building around the backs of the hootches there."},
+        {"start": 24.12, "end": 28.68, "text": "They're filling sandbags and having a good time."}
+      ],
+      "stamp": {"when": "FEB 1968 // AFTER TET", "where": "DA NANG, RVN", "audio": "AUDIO: PFC BILL DUCY // TAPE HOME, 26 FEB 68"}
+    },
+    {
+      "audio": "/media/audio/19680226-bill-ducy-to-mike-ducy-to-john-and-georgia-mae-pritchett-to-home.mp3",
+      "clip_start": 651.2,
+      "clip_end": 671.8,
+      "visuals": [
+        {"src": "/media/slides/040-bill-in-flak-jacket-before-bunker-watch.jpg", "start": 651.2, "end": 671.8}
+      ],
+      "captions": [
+        {"start": 651.22, "end": 658.22, "text": "It's me getting ready to go out to the bunker."},
+        {"start": 658.22, "end": 663.22, "text": "I got my helmet, my flak jacket on, my rifle, my cartridge, my gas mask."},
+        {"start": 663.22, "end": 671.66, "text": "Standing in front of my hootches and sandbags here. We got sandbags about chest high."}
+      ],
+      "stamp": {"when": "FEB 1968", "where": "DA NANG, RVN", "audio": "AUDIO: PFC BILL DUCY // TAPE HOME, 26 FEB 68"}
+    },
+    {
+      "audio": "/media/audio/tape-2-side-1-mike-ducy-bill-ducy-april-16th-1968.mp3",
+      "clip_start": 9.3,
+      "clip_end": 17.1,
+      "visuals": [
+        {"src": "/media/photos/19680416-mike-and-bill-ducy-quarter-deck-da-nang.jpg", "start": 9.3, "end": 17.1}
+      ],
+      "captions": [
+        {"start": 9.4, "end": 14.3, "text": "Well, right now I'm in Da Nang Harbor, and right beside me is Bill."},
+        {"start": 14.3, "end": 17.1, "text": "He came aboard the ship just about an hour and a half ago."}
+      ],
+      "stamp": {"when": "16 APR 1968", "where": "USS JOUETT (DLG-29) // DA NANG HARBOR", "audio": "AUDIO: FTG3 MIKE DUCY, HIS BROTHER // TAPE 2"}
+    },
+    {
+      "audio": "/media/audio/tape-2-side-1-mike-ducy-bill-ducy-april-16th-1968.mp3",
+      "clip_start": 333.2,
+      "clip_end": 359.2,
+      "visuals": [
+        {"src": "/media/photos/19680416-mike-and-bill-upper-deck-da-nang.jpg", "start": 333.2, "end": 346.3},
+        {"src": "/media/photos/19680416-bill-ducy-in-utility-boat-m16-da-nang.jpg", "start": 346.3, "end": 359.2}
+      ],
+      "captions": [
+        {"start": 333.3, "end": 339.7, "text": "And today is really hot for me because I've been doing a lot of walking,"},
+        {"start": 339.7, "end": 346.3, "text": "which I wasn't used to doing, especially on hard ground. We used to walk in the sand up to our knees."},
+        {"start": 346.3, "end": 352.9, "text": "I had to carry all my gear and my rifle and my 782 gear and my helmet and my flak jacket,"},
+        {"start": 352.9, "end": 359.1, "text": "which is fairly hot in this type of weather. It's kind of a relief to get on this ship and take it all off."}
+      ],
+      "stamp": {"when": "16 APR 1968", "where": "USS JOUETT (DLG-29) // DA NANG HARBOR", "audio": "AUDIO: PFC BILL DUCY // TAPE 2"}
+    },
+    {
+      "duration": 5.0,
+      "stamp": {"when": "3 NOV 1968", "where": "DA NANG // LETTER TO MIKE", "audio": "60 DAYS OF NIGHT PATROLS"},
+      "visuals": [{"src": "/media/letters/bill/19681103-bill-to-mike-pg-1.jpg", "start": 0, "end": 5.0}],
+      "captions": [{"start": 0.3, "end": 5.0, "text": "\"Its not really to bad out there, but it does get kind of scary. you know?\""}]
+    },
+    {
+      "duration": 3.5,
+      "stamp": {"when": "FEB 1969", "where": "DA NANG, RVN", "audio": "4 - 3 - 2 - 1 // SHORT"},
+      "visuals": [{"src": "/Users/michael/Movies/Home Movies/Vietnam Project/Bill's/negatives/IMAG0019.JPG", "start": 0, "end": 3.5}],
+      "captions": []
+    },
+    {
+      "duration": 4.5,
+      "stamp": {"when": "MAR 1969", "where": "HOME", "audio": "389 DAYS IN 'NAM"},
+      "visuals": [{"src": "/Users/michael/Movies/Home Movies/Vietnam Project/Bill's/incoming/misc-photos-cropped/196902 - Bill Ducy Homecoming, Hi Bill Welcome Home, 389 Days in Nam.jpg", "start": 0, "end": 4.5}],
+      "captions": []
+    }
+  ]
+}

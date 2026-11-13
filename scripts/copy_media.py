@@ -255,31 +255,24 @@ def convert_heic(src: Path, dst: Path) -> bool:
 
 
 def bake_orientation(img_path: Path) -> None:
-    """Apply EXIF orientation to pixel data so browsers render correctly."""
+    """Apply EXIF orientation to pixel data so browsers render correctly.
+
+    Uses Pillow: `sips -g orientation` reports <nil> for some JPEGs that do carry
+    an Orientation tag, which left site copies sideways (e.g. Waikiki, MK51).
+    """
+    if not HAS_PILLOW:
+        return
     try:
-        result = subprocess.run(
-            ["sips", "-g", "orientation", str(img_path)],
-            capture_output=True, text=True, timeout=10
-        )
-        for line in result.stdout.splitlines():
-            if "orientation" in line:
-                val = line.split(":")[-1].strip()
-                rotation = {
-                    "6": 90,    # rotated 90° CW — rotate pixels 90° CW
-                    "8": 270,   # rotated 90° CCW — rotate pixels 270° CW
-                    "3": 180,   # upside down
-                }.get(val)
-                if rotation:
-                    subprocess.run(
-                        ["sips", "--rotate", str(rotation), str(img_path)],
-                        capture_output=True, text=True, timeout=15
-                    )
-                    subprocess.run(
-                        ["sips", "--setProperty", "orientation", "1", str(img_path)],
-                        capture_output=True, text=True, timeout=10
-                    )
-    except Exception:
-        pass
+        from PIL import ImageOps
+        with Image.open(img_path) as im:
+            if im.getexif().get(274, 1) in (1, None):
+                return
+            fixed = ImageOps.exif_transpose(im)
+            exif = fixed.getexif()
+            exif[274] = 1
+            fixed.save(img_path, quality=92, exif=exif.tobytes())
+    except Exception as e:
+        print(f"  WARNING: orientation bake failed for {img_path.name}: {e}")
 
 
 def resize_for_web(img_path: Path) -> None:
@@ -477,12 +470,19 @@ def process_file(src: Path, dst_dir: Path, dry_run: bool, force: bool,
         else:
             dst = mp3_dst
 
-    # Logbook pages are photographed sideways — rotate 90° CW
+    # Logbook pages are photographed sideways — rotate 90° CW, but only landscape
+    # frames (a source already cropped to portrait, e.g. IMG_1478, is upright)
     if "logbook" in str(dst_dir) and is_image:
-        subprocess.run(
-            ["sips", "--rotate", "90", str(dst)],
+        dims = subprocess.run(
+            ["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(dst)],
             capture_output=True, text=True, timeout=15
-        )
+        ).stdout.split()
+        w, h = int(dims[dims.index("pixelWidth:") + 1]), int(dims[dims.index("pixelHeight:") + 1])
+        if w > h:
+            subprocess.run(
+                ["sips", "--rotate", "90", str(dst)],
+                capture_output=True, text=True, timeout=15
+            )
 
     # Resize for web, then watermark, then generate thumbnail
     is_pdf = dst.suffix.lower() == ".pdf"
